@@ -13,8 +13,6 @@ namespace RemixGame
 
 		[SerializeField] private Sensor groundSensor;
 
-		[SerializeField] private float weightLimit = 1;
-
 		// Member variable. It is owned by the object itself.
 		// Can be used from any method in this class.
 		// TODO: Decide wether to keep the input or not

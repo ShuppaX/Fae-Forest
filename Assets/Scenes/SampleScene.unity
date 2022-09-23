@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 120976875}
   - component: {fileID: 120976877}
   - component: {fileID: 120976876}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 286671854}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,12 +401,12 @@ GameObject:
   m_Component:
   - component: {fileID: 568435359}
   - component: {fileID: 568435358}
-  - component: {fileID: 568435363}
   - component: {fileID: 568435362}
+  - component: {fileID: 568435363}
   - component: {fileID: 568435361}
   - component: {fileID: 568435360}
   - component: {fileID: 568435364}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,6 @@ MonoBehaviour:
   speed: 5
   jumpHeight: 1
   groundSensor: {fileID: 652028009}
-  weightLimit: 1
 --- !u!114 &568435363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,7 +628,7 @@ GameObject:
   - component: {fileID: 652028011}
   - component: {fileID: 652028010}
   - component: {fileID: 652028009}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundSensor
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -701,7 +700,7 @@ GameObject:
   - component: {fileID: 1289993473}
   - component: {fileID: 1289993475}
   - component: {fileID: 1289993474}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289993471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6602964, y: -1.0715882, z: -0.025562087}
+  m_LocalPosition: {x: 3.57, y: -1.37, z: -0.025562087}
   m_LocalScale: {x: 5.300417, y: 0.4858, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -851,7 +850,7 @@ GameObject:
   - component: {fileID: 1622809270}
   - component: {fileID: 1622809272}
   - component: {fileID: 1622809271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
