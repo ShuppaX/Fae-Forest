@@ -17,6 +17,7 @@ namespace RemixGame
             Character2.gameObject.SetActive(false);
         }
 
+        //changes the player characters back and forth by activating the inactive object
         public void Swap()
         {
             switch (currentCharacter)
