@@ -8,7 +8,7 @@ namespace RemixGame.Code
 
     public class PlayerMovement : MonoBehaviour
     {
-        public Rigidbody2D rb;
+        private Rigidbody2D rb;
 
         public Transform groundCheck;
 
@@ -21,14 +21,13 @@ namespace RemixGame.Code
         private float jumpingPower = 8f;
 
 
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
-
+            rb = gameObject.GetComponent<Rigidbody2D>();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
@@ -58,6 +57,5 @@ namespace RemixGame.Code
         {
             horizontal = context.ReadValue<Vector2>().x;
         }
-
     }
 }

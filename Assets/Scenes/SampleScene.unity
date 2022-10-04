@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 145055712}
   - component: {fileID: 145055711}
   m_Layer: 0
-  m_Name: firstBlock (1)
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 180030594}
   - component: {fileID: 180030595}
   m_Layer: 6
-  m_Name: Square
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +240,7 @@ Transform:
   m_Children:
   - {fileID: 1415938441}
   m_Father: {fileID: 2137336430}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &180030593
 SpriteRenderer:
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 342476477}
   - component: {fileID: 342476476}
   m_Layer: 0
-  m_Name: sideBlock1
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 569435819}
   - component: {fileID: 569435821}
   m_Layer: 6
-  m_Name: Square (5)
+  m_Name: Platform 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 758622754}
   - component: {fileID: 758622756}
   m_Layer: 6
-  m_Name: Square (6)
+  m_Name: Platform 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 962643461}
   - component: {fileID: 962643460}
   m_Layer: 0
-  m_Name: firstBlock (4)
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -932,7 +932,7 @@ GameObject:
   - component: {fileID: 975670505}
   - component: {fileID: 975670507}
   m_Layer: 0
-  m_Name: sideBlock1 (1)
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 1386415921}
   - component: {fileID: 1386415920}
   m_Layer: 0
-  m_Name: firstBlock (2)
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1119,7 +1119,7 @@ GameObject:
   - component: {fileID: 1415938441}
   - component: {fileID: 1415938440}
   m_Layer: 0
-  m_Name: firstBlock (3)
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 1422356300}
   - component: {fileID: 1422356302}
   m_Layer: 6
-  m_Name: Square (4)
+  m_Name: Right wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1225,7 +1225,7 @@ Transform:
   m_Children:
   - {fileID: 975670506}
   m_Father: {fileID: 2137336430}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1422356300
 BoxCollider2D:
@@ -1317,7 +1317,7 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RotationalOffset: 0
+  m_RotationalOffset: 270
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
@@ -1335,7 +1335,7 @@ GameObject:
   - component: {fileID: 1708555096}
   - component: {fileID: 1708555095}
   m_Layer: 0
-  m_Name: firstBlock
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 1868340316}
   - component: {fileID: 1868340318}
   m_Layer: 6
-  m_Name: Square (2)
+  m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1441,7 +1441,7 @@ Transform:
   m_Children:
   - {fileID: 962643461}
   m_Father: {fileID: 2137336430}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1868340316
 BoxCollider2D:
@@ -1533,7 +1533,7 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RotationalOffset: 0
+  m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
@@ -1553,7 +1553,7 @@ GameObject:
   - component: {fileID: 1986782811}
   - component: {fileID: 1986782812}
   m_Layer: 6
-  m_Name: Square (1)
+  m_Name: Platform 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1573,7 +1573,7 @@ Transform:
   m_Children:
   - {fileID: 1708555096}
   m_Father: {fileID: 2137336430}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1986782810
 SpriteRenderer:
@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 2133483319}
   - component: {fileID: 2133483321}
   m_Layer: 6
-  m_Name: Square (3)
+  m_Name: Left wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1720,7 +1720,7 @@ Transform:
   m_Children:
   - {fileID: 342476477}
   m_Father: {fileID: 2137336430}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2133483319
 BoxCollider2D:
@@ -1812,7 +1812,7 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RotationalOffset: 0
+  m_RotationalOffset: 90
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
@@ -1848,11 +1848,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 180030592}
-  - {fileID: 1986782809}
   - {fileID: 1868340315}
   - {fileID: 2133483318}
   - {fileID: 1422356299}
+  - {fileID: 180030592}
+  - {fileID: 1986782809}
   - {fileID: 569435818}
   - {fileID: 758622753}
   m_Father: {fileID: 0}
