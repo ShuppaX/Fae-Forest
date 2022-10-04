@@ -20,7 +20,7 @@ namespace RemixGame.Code
 
         [SerializeField] private Projectile projectilePrefab;
 
-        [SerializeField] private int fireRate = 4;
+        [SerializeField] private float fireRate = 0.5f;
 
         private Rigidbody2D rb;
 
@@ -30,10 +30,9 @@ namespace RemixGame.Code
 
         private bool buttonPressed = false;
 
-
         private void Awake()
         {
-            rb = gameObject.GetComponent<Rigidbody2D>();
+            rb = GetComponent<Rigidbody2D>();
         }
 
         // Update is called once per frame
@@ -81,11 +80,12 @@ namespace RemixGame.Code
             if (allowFiring)
             {
                 allowFiring = false;
-                Instantiate(projectilePrefab, projectileLaunchOffset.position, transform.rotation);
+                Instantiate(projectilePrefab, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
                 buttonPressed = false;
             }
         }
 
+        // IEnumerator used to have a firerate in seconds between every shot.
         IEnumerator Firerate()
         {
             if (!allowFiring)
