@@ -1241,6 +1241,8 @@ GameObject:
   m_Component:
   - component: {fileID: 823647969}
   - component: {fileID: 823647971}
+  - component: {fileID: 823647973}
+  - component: {fileID: 823647972}
   m_Layer: 8
   m_Name: 9-Sliced
   m_TagString: Untagged
@@ -1315,6 +1317,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &823647972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823647968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &823647973
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823647968}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000047683716, y: 0.00000023841858}
+  m_Size: {x: 0.9423238, y: 0.7886612}
+  m_Direction: 0
 --- !u!1 &962643459
 GameObject:
   m_ObjectHideFlags: 0
