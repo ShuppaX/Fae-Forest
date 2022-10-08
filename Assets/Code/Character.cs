@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements.Experimental;
 
 namespace RemixGame.Code
 {
@@ -13,8 +14,6 @@ namespace RemixGame.Code
         [SerializeField] private float jumpingPower = 8f;
 
         [SerializeField] private Transform groundCheck;
-
-        [SerializeField] private LayerMask groundlayer;
 
         [SerializeField] private Transform projectileLaunchOffset;
 
@@ -30,9 +29,21 @@ namespace RemixGame.Code
 
         private bool buttonPressed = false;
 
+        private Vector2 currentScale;
+
+        private bool goingRight;
+
+        private bool facingRight;
+
+        public bool FacingRight
+        {
+            get { return facingRight; }
+        }
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            currentScale = transform.localScale;
         }
 
         // Update is called once per frame
@@ -45,7 +56,7 @@ namespace RemixGame.Code
         // Groundcheck using empty object under characters feet. Checks overlaps within a circle
         private bool IsGrounded()
         {
-            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
+            return Physics2D.OverlapCircle(groundCheck.position, 0.2f);
         }
 
         // jump action with rigidbody velocity applying force directly
@@ -66,6 +77,9 @@ namespace RemixGame.Code
         public void Move(InputAction.CallbackContext context)
         {
             horizontal = context.ReadValue<Vector2>().x;
+            CheckDirectionOfMovement();
+            CheckWayOfFacing();
+            Flip();
         }
 
         // Method to fire projectiles when the set button is pressed.
@@ -86,12 +100,50 @@ namespace RemixGame.Code
         }
 
         // IEnumerator used to have a firerate in seconds between every shot.
+        // TODO: Modify this to be a destroy after set time instead of being a firerate
         IEnumerator Firerate()
         {
             if (!allowFiring)
             {
                 yield return new WaitForSeconds(fireRate);
                 allowFiring = true;
+            }
+        }
+
+        private void CheckDirectionOfMovement()
+        {
+            if (horizontal > 0)
+            {
+                goingRight = true;
+            }
+            else if (horizontal < 0)
+            {
+                goingRight = false;
+            }
+        }
+
+        private void CheckWayOfFacing()
+        {
+            if (currentScale.x == 1)
+            {
+                facingRight = true;
+            }
+            else
+            {
+                facingRight = false;
+            }
+        }
+
+        private void Flip()
+        {
+            if (!goingRight && facingRight)
+            {
+                currentScale.x *= -1;
+                transform.localScale = currentScale;
+            } else if (goingRight && !facingRight)
+            {
+                currentScale.x *= -1;
+                transform.localScale = currentScale;
             }
         }
     }

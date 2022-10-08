@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 6200283782297569852}
   m_Layer: 0
   m_Name: PlayerCharacter 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,6 +281,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 50d86d12-8445-4f20-97a7-b90340bb05ce
     m_ActionName: Player/Swap Character[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f88a691c-f730-4d8a-a1cd-d100e85d2224
+    m_ActionName: Player/Fire[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -298,15 +302,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5432c51b243a647b3a1d7e05c1fda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpingPower: 8
+  speed: 6
+  jumpingPower: 7
   groundCheck: {fileID: 6200283782264780950}
   groundlayer:
     serializedVersion: 2
     m_Bits: 64
-  projectileLaunchOffset: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  fireRate: 4
+  projectileLaunchOffset: {fileID: 8953899311149835159}
+  projectilePrefab: {fileID: 1088176623263173541, guid: 8b240899616d4e24e9de1b657a85fc6e, type: 3}
+  fireRate: 1
 --- !u!1 &6647628754065225566
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +350,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6647628754065225566}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

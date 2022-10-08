@@ -7,23 +7,12 @@ namespace RemixGame
 {
     public class TempEnemyDestroy : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        // Simple OnCollision detection for objects with the tag "Projectile"
+        // to destroy the gameobject.
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-
-        private void OnCollisionEnter(Collision col)
-        {
-            if (col.gameObject.tag.Equals("Projectile"))
+            if (collision.gameObject.tag.Equals("Projectile"))
             {
-                Destroy(col.gameObject);
                 Destroy(gameObject);
             }
         }
