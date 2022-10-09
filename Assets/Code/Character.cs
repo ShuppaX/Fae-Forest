@@ -15,6 +15,8 @@ namespace RemixGame.Code
 
         [SerializeField] private Transform groundCheck;
 
+        [SerializeField] private LayerMask groundlayer;
+
         [SerializeField] private Transform projectileLaunchOffset;
 
         [SerializeField] private Projectile projectilePrefab;
@@ -56,6 +58,7 @@ namespace RemixGame.Code
         // Groundcheck using empty object under characters feet. Checks overlaps within a circle
         private bool IsGrounded()
         {
+            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
             return Physics2D.OverlapCircle(groundCheck.position, 0.2f);
         }
 
