@@ -9,10 +9,6 @@ namespace RemixGame.Code
 
     public class Character : MonoBehaviour
     {
-        [SerializeField] private float speed = 8f;
-
-        [SerializeField] private float jumpingPower = 8f;
-
         [SerializeField] private Transform groundCheck;
 
         [SerializeField] private LayerMask groundlayer;
@@ -21,21 +17,25 @@ namespace RemixGame.Code
 
         [SerializeField] private Projectile projectilePrefab;
 
-        [SerializeField] private float fireRate = 0.5f;
+        [SerializeField] private GameObject characterOne;
 
-        private Rigidbody2D rb;
+        [SerializeField] private GameObject characterTwo;
+
+        [SerializeField] private float speed = 8f;
+
+        [SerializeField] private float jumpingPower = 8f;
+
+        private Rigidbody2D rbOne;
+
+        private Rigidbody2D rbTwo;
 
         private float horizontal;
-
-        private bool allowFiring = true;
-
-        private bool buttonPressed = false;
 
         private Vector2 currentScale;
 
         private bool goingRight;
 
-        private bool facingRight;
+        private bool facingRight = true;
 
         public bool FacingRight
         {
@@ -44,39 +44,62 @@ namespace RemixGame.Code
 
         private void Awake()
         {
-            rb = GetComponent<Rigidbody2D>();
+            rbOne = characterOne.GetComponent<Rigidbody2D>();
+            rbTwo = characterTwo.GetComponent<Rigidbody2D>();
             currentScale = transform.localScale;
         }
 
         // Update is called once per frame
         private void FixedUpdate()
         {
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
+            if (characterOne.activeSelf)
+            {
+                rbOne.velocity = new Vector2(horizontal * speed, rbOne.velocity.y);
+            }
+            else if (characterTwo.activeSelf)
+            {
+                rbTwo.velocity = new Vector2(horizontal * speed, rbTwo.velocity.y);
+            }
         }
 
         // Groundcheck using empty object under characters feet. Checks overlaps within a circle
         private bool IsGrounded()
         {
             return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
-            return Physics2D.OverlapCircle(groundCheck.position, 0.2f);
         }
 
         // jump action with rigidbody velocity applying force directly
         public void Jump(InputAction.CallbackContext context)
         {
-            if (context.performed && IsGrounded())
+            if (characterOne.activeSelf)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            }
+                if (context.performed && IsGrounded())
+                {
+                    rbOne.velocity = new Vector2(rbOne.velocity.x, jumpingPower);
+                }
 
-            // reduced jump height with just a tap of the button
-            if (context.canceled && rb.velocity.y > 0f)
+                // reduced jump height with just a tap of the button
+                if (context.canceled && rbOne.velocity.y > 0f)
+                {
+                    rbOne.velocity = new Vector2(rbOne.velocity.x, rbOne.velocity.y * 0.5f);
+                }
+            } else if (characterTwo.activeSelf)
             {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+                if (context.performed && IsGrounded())
+                {
+                    rbTwo.velocity = new Vector2(rbTwo.velocity.x, jumpingPower);
+                }
+
+                // reduced jump height with just a tap of the button
+                if (context.canceled && rbTwo.velocity.y > 0f)
+                {
+                    rbTwo.velocity = new Vector2(rbTwo.velocity.x, rbTwo.velocity.y * 0.5f);
+                }
             }
+            
         }
 
+        // Method to move the character
         public void Move(InputAction.CallbackContext context)
         {
             horizontal = context.ReadValue<Vector2>().x;
@@ -88,31 +111,42 @@ namespace RemixGame.Code
         // Method to fire projectiles when the set button is pressed.
         public void Fire(InputAction.CallbackContext context)
         {
-            if (!allowFiring && !buttonPressed)
+            if (context.performed)
             {
-                buttonPressed = true;
-                StartCoroutine(Firerate());
-            }
-
-            if (allowFiring)
-            {
-                allowFiring = false;
                 Instantiate(projectilePrefab, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
-                buttonPressed = false;
             }
         }
 
-        // IEnumerator used to have a firerate in seconds between every shot.
-        // TODO: Modify this to be a destroy after set time instead of being a firerate
-        IEnumerator Firerate()
+        // Method to swap between characters
+        public void Swap(InputAction.CallbackContext context)
         {
-            if (!allowFiring)
+            if (characterOne.activeSelf)
             {
-                yield return new WaitForSeconds(fireRate);
-                allowFiring = true;
+                characterTwo.transform.position = characterOne.transform.position;
+
+                characterTwo.GetComponent<Character>().facingRight = characterOne.GetComponent<Character>().facingRight;
+                characterTwo.GetComponent<Character>().FlipOnSwap();
+
+                rbTwo.velocity = rbOne.velocity;
+
+                characterOne.SetActive(false);
+                characterTwo.SetActive(true);
+            }
+            else if (characterTwo.activeSelf)
+            {
+                characterOne.transform.position = characterTwo.transform.position;
+
+                characterOne.GetComponent<Character>().facingRight = characterTwo.GetComponent<Character>().facingRight;
+                characterOne.GetComponent<Character>().FlipOnSwap();
+
+                rbOne.velocity = rbTwo.velocity;
+
+                characterTwo.SetActive(false);
+                characterOne.SetActive(true);
             }
         }
 
+        // Method to check which way the character is moving
         private void CheckDirectionOfMovement()
         {
             if (horizontal > 0)
@@ -125,6 +159,7 @@ namespace RemixGame.Code
             }
         }
 
+        // Method to check which way the character is already facing
         private void CheckWayOfFacing()
         {
             if (currentScale.x == 1)
@@ -137,13 +172,30 @@ namespace RemixGame.Code
             }
         }
 
+        // Method to make the character face the other way
         private void Flip()
         {
             if (!goingRight && facingRight)
             {
                 currentScale.x *= -1;
                 transform.localScale = currentScale;
-            } else if (goingRight && !facingRight)
+            }
+            else if (goingRight && !facingRight)
+            {
+                currentScale.x *= -1;
+                transform.localScale = currentScale;
+            }
+        }
+
+        // Methos used to flip the character face the same way than the other character was facing
+        private void FlipOnSwap()
+        {
+            if (facingRight && currentScale.x == -1)
+            {
+                currentScale.x *= -1;
+                transform.localScale = currentScale;
+            }
+            else if (!facingRight && currentScale.x == 1)
             {
                 currentScale.x *= -1;
                 transform.localScale = currentScale;
