@@ -165,7 +165,7 @@ namespace RemixGame.Code
         // Method to check which way the character is already facing
         private void CheckWayOfFacing()
         {
-            if (currentScale.x == 1)
+            if (currentScale.x > 0)
             {
                 facingRight = true;
             }
@@ -193,12 +193,12 @@ namespace RemixGame.Code
         // Methos used to flip the character face the same way than the other character was facing
         private void FlipOnSwap()
         {
-            if (facingRight && currentScale.x == -1)
+            if (facingRight && currentScale.x < 0)
             {
                 currentScale.x *= -1;
                 transform.localScale = currentScale;
             }
-            else if (!facingRight && currentScale.x == 1)
+            else if (!facingRight && currentScale.x > 0)
             {
                 currentScale.x *= -1;
                 transform.localScale = currentScale;
