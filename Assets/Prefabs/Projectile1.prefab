@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  projectileDespawnTime: 0.75
+  projectileDespawnTime: 0.6
 --- !u!1 &585127551578875845
 GameObject:
   m_ObjectHideFlags: 0

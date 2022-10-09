@@ -169,4 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  projectileDespawnTime: 0.75
+  projectileDespawnTime: 0.6

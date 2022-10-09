@@ -47,6 +47,9 @@ namespace RemixGame.Code
             rbOne = characterOne.GetComponent<Rigidbody2D>();
             rbTwo = characterTwo.GetComponent<Rigidbody2D>();
             currentScale = transform.localScale;
+
+            characterOne.SetActive(true);
+            characterTwo.SetActive(false);
         }
 
         // Update is called once per frame
