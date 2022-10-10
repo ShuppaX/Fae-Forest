@@ -502,6 +502,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &267251719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5823844965255878492, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
+  m_PrefabInstance: {fileID: 1781935564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &267251722
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267251719}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 49ad1d82590211f4583490634d44c1bc, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 49ad1d82590211f4583490634d44c1bc, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &329334201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,6 +1978,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 599206609}
     m_Modifications:
+    - target: {fileID: 5823844965255878493, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 253.33334
+      objectReference: {fileID: 0}
     - target: {fileID: 5823844965593964360, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
       propertyPath: m_Name
       value: Projectile2
