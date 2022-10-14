@@ -308,7 +308,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -439,7 +439,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -919,7 +919,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1474,7 +1474,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1605,7 +1605,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1736,7 +1736,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1998,7 +1998,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -2327,7 +2327,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -2458,7 +2458,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -2642,22 +2642,6 @@ PrefabInstance:
     - target: {fileID: 3574805776670998515, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3574805776670998519, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
-      propertyPath: m_Size.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3574805776670998519, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
-      propertyPath: m_Size.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3574805776670998519, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3574805776670998519, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
