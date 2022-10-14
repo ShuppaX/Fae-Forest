@@ -42,3 +42,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background_image
+    uniqueID: 2121082721
+    locked: 0
+  - name: Background
+    uniqueID: 4098209747
+    locked: 0
+  - name: Blocks
+    uniqueID: 472689903
+    locked: 0
+  - name: Characters
+    uniqueID: 440215873
+    locked: 0
+  - name: Projectiles
+    uniqueID: 797688589
+    locked: 0
+  - name: Foreground
+    uniqueID: 3230023351
+    locked: 0
