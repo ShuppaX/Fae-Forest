@@ -8,28 +8,34 @@ namespace RemixGame
 {
     public class EnemyAi : MonoBehaviour
     {
-         [Header("Pathfinding")]
-    public Transform target;
-    public float activateDistance = 50f;
-    public float pathUpdateSeconds = 0.5f;
+        
+        //headers look nice in editor
+        [Header("Pathfinding")]
+        public GameObject chara1;
+        public Transform character1coord;
+        public GameObject chara2;
+        public Transform character2coord;
+        public Transform target;
+        public float activateDistance = 50f;
+        public float pathUpdateSeconds = 0.5f;
 
-    [Header("Physics")]
-    public float speed = 200f;
-    public float nextWaypointDistance = 3f;
-    public float jumpNodeHeightRequirement = 0.8f;
-    public float jumpModifier = 0.3f;
-    public float jumpCheckOffset = 0.1f;
+        [Header("Physics")]
+        public float speed = 200f;
+        public float nextWaypointDistance = 3f;
+        public float jumpNodeHeightRequirement = 0.8f;
+        public float jumpModifier = 0.3f;
+        public float jumpCheckOffset = 0.1f;
 
-    [Header("Custom Behavior")]
-    public bool followEnabled = true;
-    public bool jumpEnabled = true;
-    public bool directionLookEnabled = true;
+        [Header("Custom Behavior")]
+        public bool followEnabled = true;
+        public bool jumpEnabled = true;
+        public bool directionLookEnabled = true;
 
-    private Path path;
-    private int currentWaypoint = 0;
-    RaycastHit2D isGrounded;
-    Seeker seeker;
-    Rigidbody2D rb;
+        private Path path;
+        private int currentWaypoint = 0;
+        RaycastHit2D isGrounded;
+        Seeker seeker;
+        Rigidbody2D rb;
 
     public void Start()
     {
@@ -41,6 +47,15 @@ namespace RemixGame
 
     private void FixedUpdate()
     {
+        if (chara1.activeSelf)
+        {
+            target = character1coord;
+        }
+        else
+        {
+            target = character2coord;
+        }
+        
         if (TargetInDistance() && followEnabled)
         {
             PathFollow();

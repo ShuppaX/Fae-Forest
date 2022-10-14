@@ -2045,7 +2045,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b32ec78c61a264d8d31899b9868701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 370541846}
+  chara1: {fileID: 370541844}
+  character1coord: {fileID: 370541846}
+  chara2: {fileID: 2129523745}
+  character2coord: {fileID: 2129523746}
+  target: {fileID: 0}
   activateDistance: 50
   pathUpdateSeconds: 0.5
   speed: 200
