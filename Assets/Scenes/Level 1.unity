@@ -2159,6 +2159,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 599206609}
     m_Modifications:
+    - target: {fileID: 472901218694930144, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234353278560427549, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5823844965255878493, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 253.33334
@@ -2627,6 +2635,14 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3574805776670998515, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574805776670998515, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998519, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_Size.x
       value: 0.8
@@ -2655,6 +2671,14 @@ PrefabInstance:
     - target: {fileID: 6200283782264780951, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200283782297569840, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200283782297569840, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6200283782297569841, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Name
@@ -2824,6 +2848,14 @@ PrefabInstance:
     - target: {fileID: 7147695549753841090, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147695549753841092, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147695549753841092, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
