@@ -2050,8 +2050,10 @@ MonoBehaviour:
   chara2: {fileID: 2129523745}
   character2coord: {fileID: 2129523746}
   target: {fileID: 0}
-  activateDistance: 50
+  activateDistance: 8.03
   pathUpdateSeconds: 0.5
+  patrolAcceleration: 3
+  patrolmaxSpeed: 6
   speed: 200
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8
@@ -2074,7 +2076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   drawGizmos: 1
-  detailedGizmos: 0
+  detailedGizmos: 1
   startEndModifier:
     addPoints: 0
     exactStartPoint: 3
