@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 3574805776670998518}
   - component: {fileID: 7689728358986159595}
   - component: {fileID: 3574805776670998516}
+  - component: {fileID: 1931326862096827321}
+  - component: {fileID: 7202364970778703297}
   m_Layer: 8
-  m_Name: Enemy 1
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3574805776670998512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8418984, y: 1.5808505, z: 0}
-  m_LocalScale: {x: 0.94, y: 0.79, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,8 +123,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016347017, y: -0.0040620943}
-  m_Size: {x: 0.75396144, y: 0.8971187}
+  m_Offset: {x: 0.016347026, y: 0.01583154}
+  m_Size: {x: 0.754, y: 0.857}
   m_Direction: 0
 --- !u!114 &3574805776670998516
 MonoBehaviour:
@@ -136,3 +138,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1931326862096827321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574805776670998512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b32ec78c61a264d8d31899b9868701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chara1: {fileID: 0}
+  character1coord: {fileID: 0}
+  chara2: {fileID: 0}
+  character2coord: {fileID: 0}
+  target: {fileID: 0}
+  activateDistance: 8.03
+  pathUpdateSeconds: 0.5
+  patrolAcceleration: 3
+  patrolmaxSpeed: 6
+  speed: 200
+  nextWaypointDistance: 3
+  jumpNodeHeightRequirement: 0.8
+  jumpModifier: 1
+  jumpCheckOffset: 0.1
+  followEnabled: 1
+  jumpEnabled: 1
+  directionLookEnabled: 1
+--- !u!114 &7202364970778703297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574805776670998512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 1
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1

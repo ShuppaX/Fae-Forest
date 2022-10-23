@@ -15,7 +15,7 @@ namespace RemixGame.Code
 
         [SerializeField] private Transform projectileLaunchOffset;
 
-        [SerializeField] private Projectile projectilePrefab;
+        [SerializeField] private PlayerProjectile projectilePrefab;
 
         [SerializeField] private GameObject characterOne;
 
