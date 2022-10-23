@@ -44,6 +44,7 @@ namespace RemixGame
             StartCoroutine(DespawnTimer());
         }
 
+        // The projectile is destroyed if the timercoroutine has passed.
         private void Update()
         {
             if (timerPassed)
@@ -73,6 +74,8 @@ namespace RemixGame
             Destroy(gameObject);
         }
 
+        // Simple despawn timer coroutine to track determine if the projectile has been instantiated
+        // for enough time.
         IEnumerator DespawnTimer()
         {
             if (!timerPassed)

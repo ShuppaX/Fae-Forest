@@ -304,11 +304,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -366,7 +366,7 @@ Transform:
   m_GameObject: {fileID: 158419955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.357, y: 1.59, z: 0}
-  m_LocalScale: {x: 0.98331785, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384120879}
@@ -435,11 +435,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -617,7 +617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329334202}
   m_Layer: 6
-  m_Name: Area blocks
+  m_Name: Border blocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -858,7 +858,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 1984
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
@@ -999,11 +999,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1410,7 +1410,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 1984
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -1541,7 +1541,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 1984
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
@@ -1603,7 +1603,7 @@ Transform:
   m_GameObject: {fileID: 1073145913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.21, y: -0.33, z: 0}
-  m_LocalScale: {x: 0.929249, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384120879}
@@ -1672,11 +1672,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1804,7 +1804,7 @@ Transform:
   m_GameObject: {fileID: 1256109879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.45637, y: 1.59, z: 0}
-  m_LocalScale: {x: 1, y: 0.93779993, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384120879}
@@ -1873,11 +1873,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1935,7 +1935,7 @@ Transform:
   m_GameObject: {fileID: 1403979725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.21, y: -2.59, z: 0}
-  m_LocalScale: {x: 0.929249, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384120879}
@@ -2004,11 +2004,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -2135,7 +2135,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 1984
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -2197,7 +2197,7 @@ Transform:
   m_GameObject: {fileID: 1481836700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.357, y: -0.33, z: 0}
-  m_LocalScale: {x: 0.98331785, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384120879}
@@ -2266,11 +2266,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -2464,7 +2464,7 @@ Transform:
   m_GameObject: {fileID: 1837836477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.45637, y: -0.33, z: 0}
-  m_LocalScale: {x: 1, y: 0.93779993, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384120879}
@@ -2533,11 +2533,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -2595,7 +2595,7 @@ Transform:
   m_GameObject: {fileID: 1913810297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.21, y: 1.59, z: 0}
-  m_LocalScale: {x: 0.929249, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384120879}
@@ -2664,11 +2664,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 179
+  m_SurfaceArc: 178
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -2766,7 +2766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137336429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.38525975, y: -0.021014165, z: 0.04504037}
+  m_LocalPosition: {x: -0.38525975, y: -0.021014165, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2834,6 +2834,18 @@ PrefabInstance:
     - target: {fileID: 4122380411766175667, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6119545113657412629, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
+      propertyPath: enemyProjectilePrefab
+      value: 
+      objectReference: {fileID: 5823844965761093937}
+    - target: {fileID: 8888860613548802325, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888860613548802325, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
@@ -2942,9 +2954,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 599206609}
     m_Modifications:
+    - target: {fileID: 1750384238153921336, guid: df9207510017956489aae051ff3da076, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1750384238490925868, guid: df9207510017956489aae051ff3da076, type: 3}
       propertyPath: m_Name
       value: Enemy Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750384238490925868, guid: df9207510017956489aae051ff3da076, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1750384238490925869, guid: df9207510017956489aae051ff3da076, type: 3}
       propertyPath: m_RootOrder
@@ -2997,6 +3017,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1750384238490925869, guid: df9207510017956489aae051ff3da076, type: 3}
   m_PrefabInstance: {fileID: 5231187235148311069}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5823844965761093937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8815482007010425, guid: df9207510017956489aae051ff3da076, type: 3}
+  m_PrefabInstance: {fileID: 5231187235148311069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def7cbe4dd6ba04290645c9f4f3dd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6200283781927030565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3098,7 +3129,7 @@ PrefabInstance:
       objectReference: {fileID: 239233158}
     - target: {fileID: 6200283782297569855, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Keyboard&Mouse
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 280ab06b6b1733147890179781aab120, type: 3}

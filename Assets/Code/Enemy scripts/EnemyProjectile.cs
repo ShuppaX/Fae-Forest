@@ -10,15 +10,27 @@ namespace RemixGame
 
         private Rigidbody2D projectileRb;
 
+        private Vector2 initialPosition;
+
         private void Awake()
         {
             projectileRb = gameObject.GetComponent<Rigidbody2D>();
+            initialPosition = transform.position;
         }
 
-        // This is used for the movement of the projectile
+        // This is used for the movement of the projectile and the direction is taken from
+        // the initial position of the projectile spawn
         private void FixedUpdate()
         {
-            projectileRb.velocity = transform.right * Speed;
+            if (initialPosition.x < 0)
+            {
+                projectileRb.velocity = transform.right * Speed;
+            }
+            
+            if (initialPosition.x > 0)
+            {
+                projectileRb.velocity = -transform.right * Speed;
+            }
         }
 
         // This is used to destroy the projectile if it collides with something
