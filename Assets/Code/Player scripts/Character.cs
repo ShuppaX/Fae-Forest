@@ -80,7 +80,7 @@ namespace RemixGame.Code
             {
                 if (context.performed && IsGrounded())
                 {
-                    GetComponent<Rigidbody2D>().AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                    rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 }
 
                
@@ -88,7 +88,7 @@ namespace RemixGame.Code
             {
                 if (context.performed && IsGrounded())
                 {
-                    GetComponent<Rigidbody2D>().AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                    rbTwo.AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 }
             }
             

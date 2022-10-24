@@ -1855,7 +1855,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 120
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -3256,6 +3256,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 239233158}
     - target: {fileID: 6200283782297569853, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_Mass
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200283782297569853, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_GravityScale
       value: 1.05
       objectReference: {fileID: 0}
@@ -3359,6 +3363,10 @@ PrefabInstance:
     - target: {fileID: 7147695549753841092, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147695549753841093, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_Mass
+      value: 0.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
