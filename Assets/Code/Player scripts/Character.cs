@@ -23,7 +23,7 @@ namespace RemixGame.Code
 
         [SerializeField] private float speed = 8f;
 
-        [SerializeField] private float jumpingPower = 8f;
+        [SerializeField] private float jumpingPower = 10f;
 
         private Rigidbody2D rbOne;
 
@@ -72,31 +72,23 @@ namespace RemixGame.Code
         }
 
         // jump action with rigidbody velocity applying force directly
+        //changed to impulse jumps ~3 units upwards, needs to jump 4 and wont work
+        //TODO jump 4 units, adding force wont work.
         public void Jump(InputAction.CallbackContext context)
         {
             if (characterOne.activeSelf)
             {
                 if (context.performed && IsGrounded())
                 {
-                    rbOne.velocity = new Vector2(rbOne.velocity.x, jumpingPower);
+                    GetComponent<Rigidbody2D>().AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 }
 
-                // reduced jump height with just a tap of the button
-                if (context.canceled && rbOne.velocity.y > 0f)
-                {
-                    rbOne.velocity = new Vector2(rbOne.velocity.x, rbOne.velocity.y * 0.5f);
-                }
+               
             } else if (characterTwo.activeSelf)
             {
                 if (context.performed && IsGrounded())
                 {
-                    rbTwo.velocity = new Vector2(rbTwo.velocity.x, jumpingPower);
-                }
-
-                // reduced jump height with just a tap of the button
-                if (context.canceled && rbTwo.velocity.y > 0f)
-                {
-                    rbTwo.velocity = new Vector2(rbTwo.velocity.x, rbTwo.velocity.y * 0.5f);
+                    GetComponent<Rigidbody2D>().AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 }
             }
             
