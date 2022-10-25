@@ -3279,6 +3279,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2129523745}
     - target: {fileID: 1931326862096827321, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
+      propertyPath: jumpModifier
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931326862096827321, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: character1coord
       value: 
       objectReference: {fileID: 370541846}
