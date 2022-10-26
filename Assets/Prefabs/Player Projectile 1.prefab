@@ -278,7 +278,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6462264, g: 0.9902118, b: 1, a: 0.34117648}
+      maxColor: {r: 0.64705884, g: 1, b: 0.76762885, a: 0.38431373}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -792,7 +792,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: 6771d97718c0c5e479cc12f2df22a4be, type: 3}
+    m_Texture: {fileID: 2800000, guid: 506b7955d98ab4e4db79501afed1901e, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -4899,7 +4899,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 585127551107461072}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -18.614998, y: -13.150001, z: 288.67926}
 --- !u!212 &585127551578875865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4941,8 +4941,8 @@ SpriteRenderer:
   m_SortingLayerID: 797688589
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 6771d97718c0c5e479cc12f2df22a4be, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 506b7955d98ab4e4db79501afed1901e, type: 3}
+  m_Color: {r: 0.92156863, g: 1, b: 0.95379734, a: 0.98039216}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
