@@ -72,8 +72,6 @@ namespace RemixGame.Code
         }
 
         // jump action with rigidbody velocity applying force directly
-        //changed to impulse jumps ~3 units upwards, needs to jump 4 and wont work
-        //TODO jump 4 units, adding force wont work.
         public void Jump(InputAction.CallbackContext context)
         {
             if (characterOne.activeSelf)
