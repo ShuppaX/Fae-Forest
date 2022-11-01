@@ -7672,7 +7672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  minDistance: 0
+  minDistance: 2
   target: {fileID: 239233159}
   aggrorange: 5
   Castpoint: {fileID: 1800718545}

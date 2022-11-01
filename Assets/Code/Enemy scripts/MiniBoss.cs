@@ -23,14 +23,12 @@ namespace RemixGame
 
         private bool isFacingLeft;
 
-        // Start is called before the first frame update
         void Start()
         {
             rb2d = GetComponent<Rigidbody2D>();
             
         }
 
-        // Update is called once per frame
         void Update()
         {
 
@@ -38,32 +36,12 @@ namespace RemixGame
             {
                 ChasePlayer();
                 ShootPlayer();
-                isAgro = true;
                 //TODO: Shoot
             }
             else
             {
-                if (isAgro)
-                {
-                    if (!isSearching)
-                    {
-                        isSearching = true;
-                        Invoke("StopChasingPlayer",5);
-                    }
-                }
+                StopChasingPlayer();
             }
-
-            if (isAgro)
-            {
-                ShootPlayer();
-                ChasePlayer();
-            }
-            
-            
-            
-            
-           
-        
         }
 
         void ShootPlayer()
@@ -137,7 +115,7 @@ namespace RemixGame
             }
             else
             {
-                Debug.DrawLine(Castpoint.position, endPos, Color.blue);
+                Debug.DrawLine(Castpoint.position, endPos, Color.cyan);
 
             }
 
