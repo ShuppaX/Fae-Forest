@@ -20,10 +20,16 @@ namespace RemixGame
         {
             activeSceneNumber = SceneManager.GetActiveScene().buildIndex;
 
-            if (activeSceneNumber < 5)
+            if (activeSceneNumber < 4)
             {
                 nextSceneNumber = activeSceneNumber + 1;
             }
+            else
+            {
+                nextSceneNumber = 0;
+            }
+            
+            
         }
 
         private void Update()

@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: character2coord
       value: 
       objectReference: {fileID: 2129523746}
+    - target: {fileID: 1931326862096827321, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
+      propertyPath: activateDistance
+      value: 6.62
+      objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998512, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_Name
       value: Enemy 1 (1)
@@ -1977,6 +1981,10 @@ PrefabInstance:
       propertyPath: character2coord
       value: 
       objectReference: {fileID: 2129523746}
+    - target: {fileID: 1931326862096827321, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
+      propertyPath: activateDistance
+      value: 6.62
+      objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998512, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_Name
       value: Enemy 1 (3)
@@ -2398,6 +2406,10 @@ PrefabInstance:
       propertyPath: character2coord
       value: 
       objectReference: {fileID: 2129523746}
+    - target: {fileID: 1931326862096827321, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
+      propertyPath: activateDistance
+      value: 6.62
+      objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998512, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_Name
       value: Enemy 1 (4)
@@ -3221,6 +3233,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 2147483649
+  - first: {x: -13, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
   - first: {x: -12, y: 4, z: 0}
     second:
       serializedVersion: 2
@@ -3301,6 +3323,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 2147483649
+  - first: {x: 12, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
   - first: {x: -11, y: 6, z: 0}
     second:
       serializedVersion: 2
@@ -3369,7 +3401,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 58
+  - m_RefCount: 60
     m_Data: {fileID: 11400000, guid: fdd59ad94902ef340b857ea3e3d6af0f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -3378,10 +3410,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 58
+  - m_RefCount: 60
     m_Data: {fileID: 2118582512, guid: 3e0b2162a30d122459c93ea6e0a5957a, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 58
+  - m_RefCount: 60
     m_Data:
       e00: 1
       e01: 0
@@ -3400,7 +3432,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 58
+  - m_RefCount: 60
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -3478,11 +3510,11 @@ CompositeCollider2D:
         Y: 59999900
       - X: 110000041
         Y: 59999900
-    - - X: 120000100
+    - - X: 130000100
         Y: 39999959
-      - X: 120000100
+      - X: 130000100
         Y: 50000041
-      - X: 120000041
+      - X: 130000041
         Y: 50000100
       - X: 89999959
         Y: 50000100
@@ -3492,7 +3524,7 @@ CompositeCollider2D:
         Y: 39999959
       - X: 89999959
         Y: 39999900
-      - X: 120000041
+      - X: 130000041
         Y: 39999900
     - - X: -89999900
         Y: 39999959
@@ -3500,13 +3532,13 @@ CompositeCollider2D:
         Y: 50000041
       - X: -89999959
         Y: 50000100
-      - X: -120000041
+      - X: -130000041
         Y: 50000100
-      - X: -120000100
+      - X: -130000100
         Y: 50000041
-      - X: -120000100
+      - X: -130000100
         Y: 39999959
-      - X: -120000041
+      - X: -130000041
         Y: 39999900
       - X: -89999959
         Y: 39999900
@@ -3746,14 +3778,14 @@ CompositeCollider2D:
       - {x: 8.000026, y: 5.99999}
     - - {x: -9.000026, y: 3.99999}
       - {x: -9.000026, y: 5.00001}
-      - {x: -12.00001, y: 4.9999747}
-      - {x: -11.999974, y: 3.99999}
+      - {x: -13.00001, y: 4.9999747}
+      - {x: -12.999974, y: 3.99999}
     - - {x: 0.9999748, y: 3.99999}
       - {x: 0.9999748, y: 5.00001}
       - {x: -1.00001, y: 4.9999747}
       - {x: -0.9999748, y: 3.99999}
-    - - {x: 11.999974, y: 3.99999}
-      - {x: 11.999974, y: 5.00001}
+    - - {x: 12.999974, y: 3.99999}
+      - {x: 12.999974, y: 5.00001}
       - {x: 8.99999, y: 4.9999747}
       - {x: 9.000026, y: 3.99999}
     - - {x: -8.000026, y: 1.99999}
@@ -3858,6 +3890,10 @@ PrefabInstance:
       propertyPath: character2coord
       value: 
       objectReference: {fileID: 2129523746}
+    - target: {fileID: 1931326862096827321, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
+      propertyPath: activateDistance
+      value: 6.62
+      objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998512, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_Name
       value: Enemy 1 (2)
@@ -4220,6 +4256,10 @@ PrefabInstance:
       propertyPath: character2coord
       value: 
       objectReference: {fileID: 2129523746}
+    - target: {fileID: 1931326862096827321, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
+      propertyPath: activateDistance
+      value: 6.62
+      objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998512, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_Name
       value: Enemy 1
@@ -4371,6 +4411,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 239233159}
     m_Modifications:
+    - target: {fileID: 2065826107496112973, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_Size.y
+      value: 0.61
+      objectReference: {fileID: 0}
     - target: {fileID: 6200283782264780951, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -4492,6 +4536,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 239233159}
     m_Modifications:
+    - target: {fileID: 6500152638205772937, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_Size.y
+      value: 0.61
+      objectReference: {fileID: 0}
     - target: {fileID: 7147695547804348572, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_Layer
       value: 7
