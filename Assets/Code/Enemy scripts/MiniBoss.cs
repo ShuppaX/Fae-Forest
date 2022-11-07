@@ -17,16 +17,19 @@ namespace RemixGame
         public GameObject projectile;
         public float timeBetweenShots;
         private float nextShotTime;
+
+        private EnemyAi _enemyAi;
+        
        // private bool isAgro;
        // private bool isSearching;
         private Rigidbody2D rb2d;
 
         private bool isFacingLeft;
 
-        void Start()
+        void Awake()
         {
+            _enemyAi = GetComponent<EnemyAi>();
             rb2d = GetComponent<Rigidbody2D>();
-            
         }
 
         void Update()
@@ -40,7 +43,7 @@ namespace RemixGame
             }
             else
             {
-                StopChasingPlayer();
+                _enemyAi.Patrolmove();
             }
         }
 

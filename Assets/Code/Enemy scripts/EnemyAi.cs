@@ -156,7 +156,7 @@ namespace RemixGame
         /// Patrol methods
         /// </summary>
 
-        void Patrolmove()
+       public void Patrolmove()
         {
             patroltimeLeft -= Time.deltaTime;
             if (patroltimeLeft <= 0)
