@@ -90,7 +90,7 @@ namespace RemixGame
         bool LineOfSight(float distance)
         {
             bool val = false;
-            float castDist = -distance;
+            float castDist = distance;
             Vector2 endPos = Castpoint.position + Vector3.right * castDist ;
 
             if (isFacingLeft)
@@ -123,5 +123,9 @@ namespace RemixGame
 
             return val;
         }
+
     }
-}
+    }
+
+
+
