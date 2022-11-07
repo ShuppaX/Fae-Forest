@@ -4451,6 +4451,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.61
       objectReference: {fileID: 0}
+    - target: {fileID: 6200283782264780950, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44
+      objectReference: {fileID: 0}
     - target: {fileID: 6200283782264780951, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -4542,6 +4546,10 @@ PrefabInstance:
     - target: {fileID: 6200283782297569852, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: speed
       value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200283782297569852, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: jumpCd
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6200283782297569852, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: characterTwo
@@ -4637,6 +4645,18 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.61
       objectReference: {fileID: 0}
+    - target: {fileID: 7147695547804348515, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147695547804348515, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147695547804348515, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44
+      objectReference: {fileID: 0}
     - target: {fileID: 7147695547804348572, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -4644,6 +4664,10 @@ PrefabInstance:
     - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: speed
       value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: jumpCd
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: characterOne

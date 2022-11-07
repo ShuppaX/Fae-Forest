@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,9 @@ namespace RemixGame.Code
         [SerializeField] private float speed = 8f;
 
         [SerializeField] private float jumpingPower = 10f;
+
+        [SerializeField] float jumpCd = 0.6f;
+        private float sinceJump = 0f;
 
         private Rigidbody2D rbOne;
 
@@ -63,9 +67,14 @@ namespace RemixGame.Code
             {
                 rbTwo.velocity = new Vector2(horizontal * speed, rbTwo.velocity.y);
             }
+            
+            sinceJump += Time.deltaTime;
+
         }
+        
 
         // Groundcheck using empty object under characters feet. Checks overlaps within a circle
+        //testing with cd to avoid moon launch
         private bool IsGrounded()
         {
             return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
@@ -76,16 +85,18 @@ namespace RemixGame.Code
         {
             if (characterOne.activeSelf)
             {
-                if (context.performed && IsGrounded())
+                if (context.performed && sinceJump > jumpCd && IsGrounded())
                 {
+                    sinceJump = 0;
                     rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 }
 
                
             } else if (characterTwo.activeSelf)
             {
-                if (context.performed && IsGrounded())
+                if (context.performed && sinceJump > jumpCd && IsGrounded())
                 {
+                    sinceJump = 0;
                     rbTwo.AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 }
             }
