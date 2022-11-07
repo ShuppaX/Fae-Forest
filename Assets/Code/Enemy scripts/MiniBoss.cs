@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RemixGame.Code;
 using UnityEngine;
 
 namespace RemixGame
@@ -16,8 +17,8 @@ namespace RemixGame
         public GameObject projectile;
         public float timeBetweenShots;
         private float nextShotTime;
-        private bool isAgro;
-        private bool isSearching;
+       // private bool isAgro;
+       // private bool isSearching;
         private Rigidbody2D rb2d;
 
         private bool isFacingLeft;
@@ -79,8 +80,6 @@ namespace RemixGame
 
         void StopChasingPlayer()
         {
-            isSearching = false;
-            isAgro = false;
             rb2d.velocity = new Vector2(0, 0);
             
         }
@@ -96,12 +95,13 @@ namespace RemixGame
                 castDist = -distance;
             }
 
-            RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endPos, 1 << LayerMask.NameToLayer("Ground"));
+            RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endPos, 1 << LayerMask.NameToLayer("Player"));
 
             if (hit.collider !=null)
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.GetComponent<Character>())
                 {
+                    Debug.Log("Hit "+ hit.collider.gameObject.name);
                     val = true;
                 }
                 else 

@@ -26,7 +26,7 @@ namespace RemixGame.Code
 
         [SerializeField] private float jumpingPower = 10f;
 
-        [SerializeField] float jumpCd = 0.6f;
+        [SerializeField] double jumpCd = 0.6;
         private float sinceJump = 0f;
 
         private Rigidbody2D rbOne;
