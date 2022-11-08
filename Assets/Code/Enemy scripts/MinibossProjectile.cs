@@ -4,30 +4,29 @@ using UnityEngine;
 
 namespace RemixGame
 {
-    public class EnemyProjectile : MonoBehaviour
+    public class MinibossProjectile : MonoBehaviour
     {
         [SerializeField] private float Speed = 4f;
 
-        private Rigidbody2D projectileRb;
+        [SerializeField] private GameObject miniboss;
 
-        private Vector2 initialPosition;
+        private Rigidbody2D projectileRb;
 
         private void Awake()
         {
             projectileRb = gameObject.GetComponent<Rigidbody2D>();
-            initialPosition = transform.position;
         }
 
         // This is used for the movement of the projectile and the direction is taken from
         // the initial position of the projectile spawn
         private void FixedUpdate()
         {
-            if (initialPosition.x < 0)
+            if (!miniboss.GetComponent<MiniBoss>().IsFacingLeft)
             {
                 projectileRb.velocity = transform.right * Speed;
             }
-            
-            if (initialPosition.x > 0)
+
+            if (miniboss.GetComponent<MiniBoss>().IsFacingLeft)
             {
                 projectileRb.velocity = -transform.right * Speed;
             }

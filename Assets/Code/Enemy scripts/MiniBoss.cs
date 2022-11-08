@@ -26,13 +26,18 @@ namespace RemixGame
 
         private bool isFacingLeft;
 
-        void Awake()
+        public bool IsFacingLeft
+        {
+            get { return isFacingLeft; }
+        }
+
+        private void Awake()
         {
             _enemyAi = GetComponent<EnemyAi>();
             rb2d = GetComponent<Rigidbody2D>();
         }
 
-        void Update()
+        private void Update()
         {
 
             if (LineOfSight(aggrorange))
@@ -47,7 +52,7 @@ namespace RemixGame
             }
         }
 
-        void ShootPlayer()
+        private void ShootPlayer()
         {
             if(Time.time > nextShotTime)
             {
@@ -63,7 +68,7 @@ namespace RemixGame
             
         }
 
-        void ChasePlayer()
+        private void ChasePlayer()
         {
             if (transform.position.x < target.position.x)
             {
@@ -71,6 +76,7 @@ namespace RemixGame
                 rb2d.velocity = new Vector2(speed, 0);
                 transform.localScale = new Vector2(1,1);
                 isFacingLeft = false;
+                Debug.Log("Miniboss is facing right");
             }
             else
             {
@@ -78,16 +84,17 @@ namespace RemixGame
                 rb2d.velocity = new Vector2(speed, 0);
                 transform.localScale = new Vector2(-1,1);
                 isFacingLeft = true;
+                Debug.Log("Miniboss is facing left");
             }
         }
 
-        void StopChasingPlayer()
+        private void StopChasingPlayer()
         {
             rb2d.velocity = new Vector2(0, 0);
             
         }
 
-        bool LineOfSight(float distance)
+        private bool LineOfSight(float distance)
         {
             bool val = false;
             float castDist = distance;

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &48762063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8280545886267945377, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+  m_PrefabInstance: {fileID: 5467312464577264922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &107437655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,11 +1648,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &197571092 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1750384238490925868, guid: df9207510017956489aae051ff3da076, type: 3}
-  m_PrefabInstance: {fileID: 5231187235148311069}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &239233158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +1946,7 @@ Transform:
   - {fileID: 1705835007}
   - {fileID: 1781935565}
   - {fileID: 5823844965761093936}
+  - {fileID: 7677308321099439207}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3612,6 +3613,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4173298091665978518
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 599206609}
+    m_Modifications:
+    - target: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: miniboss
+      value: 
+      objectReference: {fileID: 48762063}
+    - target: {fileID: 6008311789515221232, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_Name
+      value: Miniboss Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
 --- !u!1001 &5231187235148311069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3791,7 +3853,7 @@ PrefabInstance:
     - target: {fileID: 5467312464138423745, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 197571092}
+      objectReference: {fileID: 7677308321099439206}
     - target: {fileID: 8280545886267945377, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_Name
       value: Miniboss
@@ -4050,3 +4112,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+--- !u!1 &7677308321099439206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6008311789515221232, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+  m_PrefabInstance: {fileID: 4173298091665978518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7677308321099439207 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6008311789515221233, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+  m_PrefabInstance: {fileID: 4173298091665978518}
+  m_PrefabAsset: {fileID: 0}
