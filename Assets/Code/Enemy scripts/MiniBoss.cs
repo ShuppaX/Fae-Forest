@@ -43,8 +43,8 @@ namespace RemixGame
             if (LineOfSight(aggrorange))
             {
                 ChasePlayer();
-                ShootPlayer();
-                //TODO: Shoot
+                ShootPlayer(); 
+                
             }
             else
             {
