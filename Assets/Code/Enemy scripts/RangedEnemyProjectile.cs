@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RemixGame
 {
-    public class EnemyProjectile : MonoBehaviour
+    public class RangedEnemyProjectile : MonoBehaviour
     {
         [SerializeField] private float Speed = 4f;
 
