@@ -8,7 +8,7 @@ namespace RemixGame
     {
         [SerializeField] private Transform projectileLaunchOffset;
 
-        [SerializeField] private EnemyProjectile enemyProjectilePrefab;
+        [SerializeField] private RangedEnemyProjectile enemyProjectilePrefab;
 
         [SerializeField] private float fireRate = 1f;
 

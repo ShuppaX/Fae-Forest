@@ -21,12 +21,12 @@ namespace RemixGame
         // the initial position of the projectile spawn
         private void FixedUpdate()
         {
-            if (!miniboss.GetComponent<MiniBoss>().IsFacingLeft)
+            if (!miniboss.GetComponent<Miniboss>().IsFacingLeft)
             {
                 projectileRb.velocity = transform.right * Speed;
             }
 
-            if (miniboss.GetComponent<MiniBoss>().IsFacingLeft)
+            if (miniboss.GetComponent<Miniboss>().IsFacingLeft)
             {
                 projectileRb.velocity = -transform.right * Speed;
             }

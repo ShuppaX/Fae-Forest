@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace RemixGame
 {
-    public class MiniBoss : MonoBehaviour
+    public class Miniboss : MonoBehaviour
     {
         [SerializeField] float speed;
         [SerializeField] float minDistance;
