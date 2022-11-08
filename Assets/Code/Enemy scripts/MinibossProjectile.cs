@@ -12,21 +12,31 @@ namespace RemixGame
 
         private Rigidbody2D projectileRb;
 
+        private bool mbFacingLeft;
+
         private void Awake()
         {
             projectileRb = gameObject.GetComponent<Rigidbody2D>();
+
+            if (miniboss.GetComponent<Miniboss>().IsFacingLeft)
+            {
+                mbFacingLeft = true;
+            } else if (!miniboss.GetComponent<Miniboss>().IsFacingLeft)
+            {
+                mbFacingLeft = false;
+            }
         }
 
         // This is used for the movement of the projectile and the direction is taken from
         // the initial position of the projectile spawn
         private void FixedUpdate()
         {
-            if (!miniboss.GetComponent<Miniboss>().IsFacingLeft)
+            if (!mbFacingLeft)
             {
                 projectileRb.velocity = transform.right * Speed;
             }
 
-            if (miniboss.GetComponent<Miniboss>().IsFacingLeft)
+            if (mbFacingLeft)
             {
                 projectileRb.velocity = -transform.right * Speed;
             }
