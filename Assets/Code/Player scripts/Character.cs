@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements.Experimental;
 
-namespace RemixGame.Code
+namespace RemixGame
 {
 
     public class Character : MonoBehaviour
