@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace RemixGame
 {
@@ -18,10 +21,11 @@ namespace RemixGame
         private float nextShotTime;
 
         private EnemyAi _enemyAi;
-        
-       // private bool isAgro;
-       // private bool isSearching;
+
+        private float aggroTimeCap = 10;
+        private float sinceAggro;
         private Rigidbody2D rb2d;
+        public bool flip;
 
         private bool isFacingLeft;
 
@@ -41,6 +45,7 @@ namespace RemixGame
 
             if (LineOfSight(aggrorange))
             {
+                sinceAggro = 0;
                 ChasePlayer();
                 ShootPlayer(); 
                 
@@ -49,6 +54,16 @@ namespace RemixGame
             {
                 _enemyAi.Patrolmove();
             }
+
+
+           
+
+
+        }
+
+        private void FixedUpdate()
+        {
+            sinceAggro += Time.deltaTime;
         }
 
         private void ShootPlayer()
@@ -69,11 +84,14 @@ namespace RemixGame
 
         private void ChasePlayer()
         {
+            Vector3 unitScale = transform.localScale;
+            
+            
             if (transform.position.x < target.position.x)
             {
                 //player on right side
                 rb2d.velocity = new Vector2(speed, 0);
-                transform.localScale = new Vector2(1,1);
+                unitScale.x = Mathf.Abs(unitScale.x) * -1 * (flip ? -1 : 1);
                 isFacingLeft = false;
                 Debug.Log("Miniboss is facing right");
             }
@@ -81,27 +99,23 @@ namespace RemixGame
             {
                 //Player on left side
                 rb2d.velocity = new Vector2(speed, 0);
-                transform.localScale = new Vector2(-1,1);
+                unitScale.x = Mathf.Abs(unitScale.x) * (flip ? -1 : 1);
                 isFacingLeft = true;
                 Debug.Log("Miniboss is facing left");
             }
         }
 
-        private void StopChasingPlayer()
-        {
-            rb2d.velocity = new Vector2(0, 0);
-            
-        }
-
+      
+        // Raycast function to spot the player 
         private bool LineOfSight(float distance)
         {
             bool val = false;
-            float castDist = distance;
+            float castDist = -distance;
             Vector2 endPos = Castpoint.position + Vector3.right * castDist ;
 
             if (isFacingLeft)
             {
-                castDist = -distance;
+                castDist = distance;
             }
 
             RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endPos, 1 << LayerMask.NameToLayer("Player"));

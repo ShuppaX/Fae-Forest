@@ -67,7 +67,6 @@ namespace RemixGame
             }
             else
             {
-                //TODO PATROL
                 Patrolmove();
                 rb.AddForce(patrolmovement * patrolmaxSpeed);
             }

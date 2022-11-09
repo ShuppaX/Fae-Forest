@@ -295,7 +295,7 @@ MonoBehaviour:
   target: {fileID: 0}
   aggrorange: 5
   Castpoint: {fileID: 5467312464933008843}
-  projectile: {fileID: 0}
+  projectile: {fileID: 6008311789515221232, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
   timeBetweenShots: 0.25
 --- !u!222 &3008770989953751993
 CanvasRenderer:
