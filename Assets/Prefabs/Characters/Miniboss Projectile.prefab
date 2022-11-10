@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1338402908090837413}
   - component: {fileID: 4704883166760237947}
   m_Layer: 10
-  m_Name: Miniboss projectile
+  m_Name: Miniboss Projectile
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,3 +170,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4
   miniboss: {fileID: 8280545886267945377, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+  player1: {fileID: 6200283782297569841, guid: 280ab06b6b1733147890179781aab120, type: 3}

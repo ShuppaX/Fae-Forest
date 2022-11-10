@@ -21,10 +21,7 @@ namespace RemixGame
         private EnemyAi _enemyAi;
 
         private float aggroTimeCap = 10;
-        private float sinceAggro;
         private Rigidbody2D rb2d;
-        public bool flip;
-        private Vector2 CharacterScale;
 
         private bool isFacingLeft;
         private bool actionsStopped;
@@ -43,7 +40,6 @@ namespace RemixGame
         {
             _enemyAi = GetComponent<EnemyAi>();
             rb2d = GetComponent<Rigidbody2D>();
-            CharacterScale = transform.localScale;
             isFacingLeft = true;
         }
 
@@ -53,7 +49,7 @@ namespace RemixGame
 
             if (LineOfSight(aggrorange))
             {
-                sinceAggro = 0;
+                
 
                 if (!actionsStopped)
                 {
@@ -69,18 +65,19 @@ namespace RemixGame
 
         private void FixedUpdate()
         {
-            sinceAggro += Time.deltaTime;
+            
         }
 
         private void ShootPlayer()
         {
+            //shot timer + spawning
             if(Time.time > nextShotTime)
             {
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 nextShotTime = Time.time + timeBetweenShots;
             }
 
-
+            //kiting the player at set distance
             if(Vector2.Distance(transform.position, target.position) < minDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
@@ -96,9 +93,8 @@ namespace RemixGame
             {
                 //player on right side
                 isFacingLeft = false;
-                rb2d.velocity = new Vector2(-speed, 0);
-                CharacterScale.x *= -1;
-                transform.localScale = CharacterScale;
+              //  GetComponent<SpriteRenderer>().flipX = true;
+                
                 
                 Debug.Log("Miniboss is facing right");
             }
@@ -107,8 +103,8 @@ namespace RemixGame
                 //Player on left side
                 isFacingLeft = true;
                 rb2d.velocity = new Vector2(speed, 0);
-                CharacterScale.x *= -1;
-                transform.localScale = CharacterScale;
+               // GetComponent<SpriteRenderer>().flipX = false;
+
                 
                 Debug.Log("Miniboss is facing left");
             }

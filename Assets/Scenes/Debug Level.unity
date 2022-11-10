@@ -1707,8 +1707,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239233158}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.98, y: -4.06, z: -0.057401173}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.9799995, y: -4.06, z: -0.057401177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3838,11 +3838,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008770989953751995, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.56
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 3008770989953751995, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.65
+      value: -4.47
       objectReference: {fileID: 0}
     - target: {fileID: 3008770989953751995, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3865,6 +3865,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2129523745}
     - target: {fileID: 3008770989953751998, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008770989953751998, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: followEnabled
       value: 1
       objectReference: {fileID: 0}
@@ -3886,7 +3890,7 @@ PrefabInstance:
       objectReference: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 5467312464933008843, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -1.93
       objectReference: {fileID: 0}
     - target: {fileID: 5467312464933008843, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3900,9 +3904,17 @@ PrefabInstance:
       propertyPath: aggrorange
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6946871248202751847, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8280545886267945377, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_Name
       value: Miniboss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280545886267945378, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}

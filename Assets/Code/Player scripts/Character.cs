@@ -49,6 +49,8 @@ namespace RemixGame
             get { return facingRight; }
         }
 
+        public Transform getPosition { get; }
+
         private void Awake()
         {
             rbOne = characterOne.GetComponent<Rigidbody2D>();
