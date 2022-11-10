@@ -24,6 +24,7 @@ namespace RemixGame
         private float sinceAggro;
         private Rigidbody2D rb2d;
         public bool flip;
+        private Vector2 CharacterScale;
 
         private bool isFacingLeft;
         private bool actionsStopped;
@@ -42,6 +43,8 @@ namespace RemixGame
         {
             _enemyAi = GetComponent<EnemyAi>();
             rb2d = GetComponent<Rigidbody2D>();
+            CharacterScale = transform.localScale;
+            isFacingLeft = true;
         }
 
         private void Update()
@@ -92,17 +95,21 @@ namespace RemixGame
             if (transform.position.x < target.position.x)
             {
                 //player on right side
-                rb2d.velocity = new Vector2(speed, 0);
-                unitScale.x = Mathf.Abs(unitScale.x) * -1 * (flip ? -1 : 1);
                 isFacingLeft = false;
+                rb2d.velocity = new Vector2(-speed, 0);
+                CharacterScale.x *= -1;
+                transform.localScale = CharacterScale;
+                
                 Debug.Log("Miniboss is facing right");
             }
             else
             {
                 //Player on left side
-                rb2d.velocity = new Vector2(speed, 0);
-                unitScale.x = Mathf.Abs(unitScale.x) * (flip ? -1 : 1);
                 isFacingLeft = true;
+                rb2d.velocity = new Vector2(speed, 0);
+                CharacterScale.x *= 1;
+                transform.localScale = CharacterScale;
+                
                 Debug.Log("Miniboss is facing left");
             }
         }
@@ -112,15 +119,16 @@ namespace RemixGame
         private bool LineOfSight(float distance)
         {
             bool val = false;
-            float castDist = -distance;
-            Vector2 endPos = Castpoint.position + Vector3.right * castDist ;
-
+            float castDist = distance;
+            Vector2 endPos = Castpoint.position - Vector3.right * castDist ;
+            Vector2 startPos = Castpoint.position + Vector3.right * castDist ;
+            
             if (isFacingLeft)
             {
-                castDist = distance;
+                castDist = -distance;
             }
-
-            RaycastHit2D hit = Physics2D.Linecast(Castpoint.position, endPos, 1 << LayerMask.NameToLayer("Player"));
+           
+            RaycastHit2D hit = Physics2D.Linecast(startPos, endPos, 1 << LayerMask.NameToLayer("Player"));
 
             if (hit.collider !=null)
             {

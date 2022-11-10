@@ -14,6 +14,8 @@ namespace RemixGame
 
         private bool mbFacingLeft;
 
+       
+
         private void Awake()
         {
             projectileRb = gameObject.GetComponent<Rigidbody2D>();
@@ -34,11 +36,14 @@ namespace RemixGame
             if (!mbFacingLeft)
             {
                 projectileRb.velocity = transform.right * Speed;
+                Debug.Log(projectileRb.velocity);
             }
 
             if (mbFacingLeft)
             {
                 projectileRb.velocity = -transform.right * Speed;
+                Debug.Log(projectileRb.velocity);
+
             }
         }
 
