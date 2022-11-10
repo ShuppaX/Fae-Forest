@@ -92,7 +92,7 @@ namespace RemixGame
         {
             Vector3 unitScale = transform.localScale;
             
-            if (transform.position.x < target.position.x)
+            if (transform.position.x < target.position.x && isFacingLeft)
             {
                 //player on right side
                 isFacingLeft = false;
@@ -102,12 +102,12 @@ namespace RemixGame
                 
                 Debug.Log("Miniboss is facing right");
             }
-            else
+            else if (!isFacingLeft)
             {
                 //Player on left side
                 isFacingLeft = true;
                 rb2d.velocity = new Vector2(speed, 0);
-                CharacterScale.x *= 1;
+                CharacterScale.x *= -1;
                 transform.localScale = CharacterScale;
                 
                 Debug.Log("Miniboss is facing left");
