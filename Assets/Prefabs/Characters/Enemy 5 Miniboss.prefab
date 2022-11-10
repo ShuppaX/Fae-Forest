@@ -278,6 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compositeTag: CompositeProjectile
+  magicTag: MagicProjectile
 --- !u!114 &5467312464138423745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +295,7 @@ MonoBehaviour:
   speed: 5
   minDistance: 2
   target: {fileID: 0}
-  aggrorange: 5
+  aggrorange: 4
   Castpoint: {fileID: 5467312464933008843}
   projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
   timeBetweenShots: 0.25

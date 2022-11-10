@@ -396,8 +396,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   projectileLaunchOffset: {fileID: 9187681200146730428}
-  projectilePrefabOne: {fileID: 1088176623263173541, guid: 8b240899616d4e24e9de1b657a85fc6e, type: 3}
-  projectilePrefabTwo: {fileID: -2880422429338552057, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
+  compositeProjectile: {fileID: 1088176623263173541, guid: 8b240899616d4e24e9de1b657a85fc6e, type: 3}
+  magicProjectile: {fileID: -2880422429338552057, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
   characterOne: {fileID: 0}
   characterTwo: {fileID: 7147695549753841090}
   speed: 5.5

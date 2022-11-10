@@ -12,6 +12,8 @@ namespace RemixGame
 
         [SerializeField] private Magicblock magicblock;
 
+        [SerializeField] private string enemyTag = "Enemy";
+
         private Rigidbody2D projectileRb;
 
         private GameObject player;
@@ -74,6 +76,15 @@ namespace RemixGame
         // that it can collide with.
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            if (collision.gameObject.CompareTag(enemyTag))
+            {
+                //TO-DO: Enemy should freeze when this happens
+                Debug.Log("The magicprojectile collided with an enemy!");
+            } else if (!collision.gameObject.CompareTag(enemyTag))
+            {
+                Debug.Log("The magicprojectile collided with " + collision.gameObject.name);
+            }
+
             Destroy(gameObject);
         }
 

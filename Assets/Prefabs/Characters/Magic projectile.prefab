@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 256716919613686284}
   m_Layer: 9
   m_Name: Magic projectile
-  m_TagString: PlayerProjectile
+  m_TagString: MagicProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +190,7 @@ MonoBehaviour:
   Speed: 10
   projectileDespawnTime: 0.5
   magicblock: {fileID: 5527748475205286425, guid: dd4e5ae2ba38e794aabe1ee3ee422be0, type: 3}
+  enemyTag: Enemy
 --- !u!198 &472901218694930144
 ParticleSystem:
   m_ObjectHideFlags: 0
