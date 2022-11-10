@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97fff4f4253f6df4e8ea2f03232aab7c
+guid: e593eb208bfeeec43a5859cb9b2363d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Explosion2_0
+      name: settings_menu_sliders_knobs_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
+        x: 122
+        y: 790
+        width: 616
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c00b40c72f3c4d4883a1a0bc6890048
-      internalID: -1095533736
+      spriteID: 57eb93716ee491f4eab4ea55ed534c0f
+      internalID: -1980560481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion2_1
+      name: settings_menu_sliders_knobs_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
+        x: 305
+        y: 585
+        width: 79
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a7a621d6a92e234da4613f9601bac32
-      internalID: 783168971
+      spriteID: 9850878caf64df841b08bb13ef937e4e
+      internalID: 348065076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion2_2
+      name: settings_menu_sliders_knobs_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 487
+        y: 584
+        width: 78
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 065a0e8e6df9d8b469cb7d5d10d10485
-      internalID: -1654936055
+      spriteID: b3a479ac2eb2de04f8d559b58de70561
+      internalID: -993720410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion2_3
+      name: settings_menu_sliders_knobs_3
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
+        x: 123
+        y: 453
+        width: 616
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a4b93dea32e61a4badefda9225a3765
-      internalID: 2043895183
+      spriteID: 9f67bae6af174b8488c90ec693a98d18
+      internalID: -862710490
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Explosion2_1: 783168971
-      Explosion2_3: 2043895183
-      Explosion2_0: -1095533736
-      Explosion2_2: -1654936055
+      settings_menu_sliders_knobs_2: -993720410
+      settings_menu_sliders_knobs_3: -862710490
+      settings_menu_sliders_knobs_1: 348065076
+      settings_menu_sliders_knobs_0: -1980560481
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

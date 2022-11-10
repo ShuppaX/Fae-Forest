@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97fff4f4253f6df4e8ea2f03232aab7c
+guid: b9ab9ff483b47f94eac33da7f3ed9fe9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Explosion2_0
+      name: menu_blank_buttons_hearts_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
+        x: 117
+        y: 755
+        width: 616
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c00b40c72f3c4d4883a1a0bc6890048
-      internalID: -1095533736
+      spriteID: 155a563cdd75ba0489fb16cbec6e4fbf
+      internalID: -774869194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion2_1
+      name: menu_blank_buttons_hearts_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
+        x: 62
+        y: 340
+        width: 347
+        height: 357
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a7a621d6a92e234da4613f9601bac32
-      internalID: 783168971
+      spriteID: 2ee35329fc4ec0e4c83a1661dd076122
+      internalID: 992546116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion2_2
+      name: menu_blank_buttons_hearts_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 463
+        y: 350
+        width: 333
+        height: 342
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 065a0e8e6df9d8b469cb7d5d10d10485
-      internalID: -1654936055
+      spriteID: bb5d34199b8f55343ba3d3fc021a09f8
+      internalID: 1856897977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion2_3
+      name: menu_blank_buttons_hearts_3
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
+        x: 117
+        y: 119
+        width: 616
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a4b93dea32e61a4badefda9225a3765
-      internalID: 2043895183
+      spriteID: f441b08d842114749b8040faf1249a4d
+      internalID: -1081925919
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Explosion2_1: 783168971
-      Explosion2_3: 2043895183
-      Explosion2_0: -1095533736
-      Explosion2_2: -1654936055
+      menu_blank_buttons_hearts_2: 1856897977
+      menu_blank_buttons_hearts_1: 992546116
+      menu_blank_buttons_hearts_0: -774869194
+      menu_blank_buttons_hearts_3: -1081925919
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
