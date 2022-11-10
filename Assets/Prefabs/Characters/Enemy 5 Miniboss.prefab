@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 8280545886267945378}
   - component: {fileID: 8280545886267945383}
   - component: {fileID: 3008770989953751994}
+  - component: {fileID: 6946871248202751847}
   - component: {fileID: 8280545886267945381}
   - component: {fileID: 3008770989953751993}
   - component: {fileID: 3008770989953751999}
@@ -265,6 +266,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0.016347017, y: -0.0040620943}
   m_Size: {x: 0.754, y: 0.857}
   m_Direction: 0
+--- !u!114 &6946871248202751847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280545886267945377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc02cfd3854bcc4b8f370e802eb0d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  minDistance: 3
+  target: {fileID: 0}
+  aggrorange: 3.5
+  Castpoint: {fileID: 5467312464933008843}
+  projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+  timeBetweenShots: 0.25
+  flip: 0
 --- !u!114 &8280545886267945381
 MonoBehaviour:
   m_ObjectHideFlags: 0

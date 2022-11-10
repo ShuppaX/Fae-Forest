@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7584408034605775030}
   - component: {fileID: 7584408034605775027}
   - component: {fileID: 3632750369935233710}
+  - component: {fileID: 1165319364045844991}
   - component: {fileID: 7584408034605775025}
   m_Layer: 8
   m_Name: Enemy 4 Miniboss
@@ -156,6 +157,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0.016347017, y: -0.0040620943}
   m_Size: {x: 0.754, y: 0.857}
   m_Direction: 0
+--- !u!114 &1165319364045844991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584408034605775029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc02cfd3854bcc4b8f370e802eb0d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  minDistance: 0
+  target: {fileID: 0}
+  aggrorange: 0
+  Castpoint: {fileID: 0}
+  projectile: {fileID: 0}
+  timeBetweenShots: 0
+  flip: 0
 --- !u!114 &7584408034605775025
 MonoBehaviour:
   m_ObjectHideFlags: 0
