@@ -26,6 +26,12 @@ namespace RemixGame
         public bool flip;
 
         private bool isFacingLeft;
+        private bool actionsStopped;
+
+        public bool ActionsStopped
+        {
+            get { return actionsStopped; }
+        }
 
         public bool IsFacingLeft
         {
@@ -40,11 +46,13 @@ namespace RemixGame
 
         private void Update()
         {
+            actionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
 
             if (LineOfSight(aggrorange))
             {
                 sinceAggro = 0;
-                if (!gameObject.GetComponent<PlayerProjectileActions>().StopActions)
+
+                if (!actionsStopped)
                 {
                     ChasePlayer();
                     ShootPlayer();
