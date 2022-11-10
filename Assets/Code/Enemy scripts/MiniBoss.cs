@@ -16,7 +16,7 @@ namespace RemixGame
         [SerializeField] private Transform Castpoint;
         
 
-        public GameObject projectile;
+        [SerializeField] private MinibossProjectile projectile;
         public float timeBetweenShots;
         private float nextShotTime;
 

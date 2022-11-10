@@ -8,6 +8,9 @@ TagManager:
   - PlayerProjectile
   - Enemy
   - Miniboss
+  - MagicBlock
+  - CompositeProjectile
+  - MagicProjectile
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - Enemy
   - PlayerProjectile
   - EnemyProjectile
-  - 
+  - MagicBlock
   - 
   - 
   - 

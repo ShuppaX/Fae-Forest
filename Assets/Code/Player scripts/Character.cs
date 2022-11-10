@@ -12,11 +12,13 @@ namespace RemixGame
     {
         [SerializeField] private Transform groundCheck;
 
-        [SerializeField] private LayerMask groundlayer;
+        [SerializeField] private LayerMask groundLayer, magicblockLayer;
 
         [SerializeField] private Transform projectileLaunchOffset;
 
-        [SerializeField] private PlayerProjectile projectilePrefab;
+        [SerializeField] private CompositeProjectile compositeProjectile;
+
+        [SerializeField] private MagicProjectile magicProjectile;
 
         [SerializeField] private GameObject characterOne;
 
@@ -27,6 +29,7 @@ namespace RemixGame
         [SerializeField] private float jumpingPower = 10f;
 
         [SerializeField] double jumpCd = 0.6;
+
         private float sinceJump = 0f;
 
         private Rigidbody2D rbOne;
@@ -74,10 +77,16 @@ namespace RemixGame
         
 
         // Groundcheck using empty object under characters feet. Checks overlaps within a circle
-        //testing with cd to avoid moon launch
+        // testing with cd to avoid moon launch
         private bool IsGrounded()
         {
-            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
+            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        }
+
+        // Groundcheck to magicblocks, works the same as above
+        private bool IsOnMagicblock()
+        {
+            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, magicblockLayer);
         }
 
         // jump action with rigidbody velocity applying force directly
@@ -90,11 +99,21 @@ namespace RemixGame
                     sinceJump = 0;
                     rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 }
+                else if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
+                {
+                    sinceJump = 0;
+                    rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                }
 
                
             } else if (characterTwo.activeSelf)
             {
                 if (context.performed && sinceJump > jumpCd && IsGrounded())
+                {
+                    sinceJump = 0;
+                    rbTwo.AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                }
+                else if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
                 {
                     sinceJump = 0;
                     rbTwo.AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
@@ -112,12 +131,18 @@ namespace RemixGame
             Flip();
         }
 
-        // Method to fire projectiles when the set button is pressed.
-        public void Fire(InputAction.CallbackContext context)
+        // Method to fire a projectile when the set button is pressed.
+        public void FireComposite(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                Instantiate(projectilePrefab, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
+                if (characterOne.activeSelf)
+                {
+                    Instantiate(compositeProjectile, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
+                } else if (characterTwo.activeSelf)
+                {
+                    Instantiate(magicProjectile, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
+                }
             }
         }
 

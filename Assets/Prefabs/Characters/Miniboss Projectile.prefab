@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1338402908090837413}
   - component: {fileID: 4704883166760237947}
   m_Layer: 10
-  m_Name: Miniboss Projectile
+  m_Name: Miniboss projectile
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

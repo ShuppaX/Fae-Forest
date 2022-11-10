@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RemixGame
 {
-    public class PlayerProjectile : MonoBehaviour
+    public class CompositeProjectile : MonoBehaviour
     {
         [SerializeField] private float Speed = 4f;
 
@@ -26,6 +26,7 @@ namespace RemixGame
         {
             projectileRb = gameObject.GetComponent<Rigidbody2D>();
             player = GameObject.FindGameObjectWithTag("Player");
+
             if (player == null)
             {
                 Debug.LogError("Object with the tag 'Player' was not found for the projectile.");

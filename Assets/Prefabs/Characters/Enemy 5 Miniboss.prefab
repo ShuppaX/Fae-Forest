@@ -295,8 +295,9 @@ MonoBehaviour:
   target: {fileID: 0}
   aggrorange: 5
   Castpoint: {fileID: 5467312464933008843}
-  projectile: {fileID: 6008311789515221232, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
+  projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
   timeBetweenShots: 0.25
+  flip: 0
 --- !u!222 &3008770989953751993
 CanvasRenderer:
   m_ObjectHideFlags: 0
