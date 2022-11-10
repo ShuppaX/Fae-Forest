@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 7584408034605775027}
   - component: {fileID: 3632750369935233710}
   - component: {fileID: 7584408034605775025}
-  - component: {fileID: 5797427708800550101}
   m_Layer: 8
   m_Name: Enemy 4 Miniboss
   m_TagString: Enemy
@@ -169,23 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5797427708800550101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7584408034605775029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc02cfd3854bcc4b8f370e802eb0d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  minDistance: 2
-  target: {fileID: 0}
-  aggrorange: 5
-  Castpoint: {fileID: 5797427707482258655}
-  projectile: {fileID: 0}
-  timeBetweenShots: 0.25
-  flip: 0
+  compositeTag: CompositeProjectile
+  magicTag: MagicProjectile
+  timeForStoppedActions: 2.5

@@ -8,9 +8,14 @@ namespace RemixGame
     public class PlayerProjectileActions : MonoBehaviour
     {
         [SerializeField] private string compositeTag = "CompositeProjectile";
+
         [SerializeField] private string magicTag = "MagicProjectile";
 
+        [SerializeField] private float timeForStoppedActions = 2.5f;
+
         private bool stopActions = false;
+
+        private bool actionTimerActive = false;
 
         public bool StopActions
         {
@@ -26,8 +31,27 @@ namespace RemixGame
                 Destroy(gameObject);
             } else if (collision.gameObject.tag.Equals(magicTag))
             {
-                stopActions = true;
+                if (!stopActions)
+                {
+                    stopActions = true;
+                    Debug.Log("Actions are stopped now!");
+                }
+                
+                if (actionTimerActive)
+                {
+                    StartCoroutine(ContinueActions());
+                }
+                actionTimerActive = true;
             }
+        }
+
+        // IEnumerator to turn the actions back on after a set period of time.
+        IEnumerator ContinueActions()
+        {
+            yield return new WaitForSeconds(timeForStoppedActions);
+            stopActions = false;
+            Debug.Log("Actions are active again!");
+            actionTimerActive = false;
         }
     }
 }

@@ -14,6 +14,10 @@ namespace RemixGame
 
         [SerializeField] private string enemyTag = "Enemy";
 
+        [SerializeField] private string levelWallsParentName = "Walls";
+
+        [SerializeField] private string levelPlatformsParentName = "Platforms";
+
         private Rigidbody2D projectileRb;
 
         private GameObject player;
@@ -53,7 +57,7 @@ namespace RemixGame
         {
             if (timerPassed)
             {
-                Instantiate(magicblock, transform.position, Quaternion.identity);
+                SpawnMagicblock();
                 Destroy(gameObject);
             }
         }
@@ -80,9 +84,9 @@ namespace RemixGame
             {
                 //TO-DO: Enemy should freeze when this happens
                 Debug.Log("The magicprojectile collided with an enemy!");
-            } else if (!collision.gameObject.CompareTag(enemyTag))
+            } else if (collision.gameObject.name == levelWallsParentName || collision.gameObject.name == levelPlatformsParentName)
             {
-                Debug.Log("The magicprojectile collided with " + collision.gameObject.name);
+                SpawnMagicblock();
             }
 
             Destroy(gameObject);
@@ -97,6 +101,12 @@ namespace RemixGame
                 yield return new WaitForSeconds(projectileDespawnTime);
                 timerPassed = true;
             }
+        }
+
+        // Method to spawn the magicblock(s)
+        private void SpawnMagicblock()
+        {
+            Instantiate(magicblock, transform.position, Quaternion.identity);
         }
     }
 }

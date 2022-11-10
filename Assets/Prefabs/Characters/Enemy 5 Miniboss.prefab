@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 8280545886267945383}
   - component: {fileID: 3008770989953751994}
   - component: {fileID: 8280545886267945381}
-  - component: {fileID: 5467312464138423745}
   - component: {fileID: 3008770989953751993}
   - component: {fileID: 3008770989953751999}
   - component: {fileID: 3008770989953751998}
@@ -280,26 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   compositeTag: CompositeProjectile
   magicTag: MagicProjectile
---- !u!114 &5467312464138423745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8280545886267945377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc02cfd3854bcc4b8f370e802eb0d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  minDistance: 2
-  target: {fileID: 0}
-  aggrorange: 4
-  Castpoint: {fileID: 5467312464933008843}
-  projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
-  timeBetweenShots: 0.25
-  flip: 0
+  timeForStoppedActions: 2.5
 --- !u!222 &3008770989953751993
 CanvasRenderer:
   m_ObjectHideFlags: 0
