@@ -39,12 +39,18 @@ namespace RemixGame
         {
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
 
+            
+        }
+
+        private void FixedUpdate()
+        {
             if (LineOfSight(aggrorange))
             {
                 
 
                 if (!ActionsStopped)
                 {
+                   
                     ChasePlayer();
                     ShootPlayer();
                 }
@@ -56,11 +62,6 @@ namespace RemixGame
                     _enemyAi.Patrolmove();
                 }
             }
-        }
-
-        private void FixedUpdate()
-        {
-            
         }
 
         private void ShootPlayer()
