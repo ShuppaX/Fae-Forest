@@ -22,13 +22,7 @@ namespace RemixGame
 
         private Rigidbody2D rb2d;
         private bool isFacingLeft;
-        private bool stunned;
-
-        public bool Stunned
-        {
-            get { return stunned; }
-        }
-
+        private bool ActionsStopped;
         public bool IsFacingLeft
         {
             get { return isFacingLeft; }
@@ -43,13 +37,13 @@ namespace RemixGame
 
         private void Update()
         {
-            stunned = GetComponent<PlayerProjectileActions>().StopActions;
+            ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
 
             if (LineOfSight(aggrorange))
             {
                 
 
-                if (!stunned)
+                if (!ActionsStopped)
                 {
                     ChasePlayer();
                     ShootPlayer();
@@ -57,7 +51,7 @@ namespace RemixGame
             }
             else
             {
-                if (!stunned)
+                if (!ActionsStopped)
                 {
                     _enemyAi.Patrolmove();
                 }

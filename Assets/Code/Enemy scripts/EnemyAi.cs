@@ -40,7 +40,7 @@ namespace RemixGame
         RaycastHit2D isGrounded;
         Seeker seeker;
         Rigidbody2D rb;
-        private bool stunned;
+        private bool ActionsStopped;
 
         public void Start()
         {
@@ -53,7 +53,7 @@ namespace RemixGame
 
         private void FixedUpdate()
         {
-            stunned = GetComponent<PlayerProjectileActions>().StopActions;
+            ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
 
             
             if (chara1.activeSelf)
@@ -65,7 +65,7 @@ namespace RemixGame
                 target = character2coord;
             }
 
-            if (!stunned)
+            if (!ActionsStopped)
             {
                 if (TargetInDistance() && followEnabled)
                 {
