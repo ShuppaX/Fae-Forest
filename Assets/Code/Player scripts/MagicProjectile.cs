@@ -14,9 +14,9 @@ namespace RemixGame
 
         [SerializeField] private string enemyTag = "Enemy";
 
-        [SerializeField] private string levelWallsParentName = "Walls";
+        [SerializeField] private string levelWallsParentTag = "Walls";
 
-        [SerializeField] private string levelPlatformsParentName = "Platforms";
+        [SerializeField] private string levelPlatformsParentTag = "Platforms";
 
         private Rigidbody2D projectileRb;
 
@@ -84,7 +84,7 @@ namespace RemixGame
             {
                 //TO-DO: Enemy should freeze when this happens
                 Debug.Log("The magicprojectile collided with an enemy!");
-            } else if (collision.gameObject.name == levelWallsParentName || collision.gameObject.name == levelPlatformsParentName)
+            } else if (collision.gameObject.CompareTag(levelWallsParentTag) || collision.gameObject.CompareTag(levelPlatformsParentTag))
             {
                 SpawnMagicblock();
             }
