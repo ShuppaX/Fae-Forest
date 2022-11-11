@@ -10,6 +10,8 @@ TagManager:
   - MagicBlock
   - CompositeProjectile
   - MagicProjectile
+  - Walls
+  - Platforms
   layers:
   - Default
   - TransparentFX

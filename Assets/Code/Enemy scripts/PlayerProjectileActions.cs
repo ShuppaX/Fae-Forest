@@ -15,7 +15,7 @@ namespace RemixGame
 
         private bool stopActions = false;
 
-        private bool actionTimerActive = false;
+        private bool stopActionsActive = false;
 
         public bool StopActions
         {
@@ -37,11 +37,11 @@ namespace RemixGame
                     Debug.Log("Actions are stopped now!");
                 }
                 
-                if (actionTimerActive)
+                if (!stopActionsActive)
                 {
                     StartCoroutine(ContinueActions());
                 }
-                actionTimerActive = true;
+                stopActionsActive = true;
             }
         }
 
@@ -51,7 +51,7 @@ namespace RemixGame
             yield return new WaitForSeconds(timeForStoppedActions);
             stopActions = false;
             Debug.Log("Actions are active again!");
-            actionTimerActive = false;
+            stopActionsActive = false;
         }
     }
 }
