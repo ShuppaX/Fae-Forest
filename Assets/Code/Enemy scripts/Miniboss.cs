@@ -18,17 +18,15 @@ namespace RemixGame
         public float timeBetweenShots;
         private float nextShotTime;
 
-        private EnemyAi _enemyAi;
+        private EnemyAi _enemyAi; //access the chase script from enemy ai
 
-        private float aggroTimeCap = 10;
         private Rigidbody2D rb2d;
-
         private bool isFacingLeft;
-        private bool actionsStopped;
+        private bool stunned;
 
-        public bool ActionsStopped
+        public bool Stunned
         {
-            get { return actionsStopped; }
+            get { return stunned; }
         }
 
         public bool IsFacingLeft
@@ -45,13 +43,13 @@ namespace RemixGame
 
         private void Update()
         {
-            actionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
+            stunned = GetComponent<PlayerProjectileActions>().StopActions;
 
             if (LineOfSight(aggrorange))
             {
                 
 
-                if (!actionsStopped)
+                if (!stunned)
                 {
                     ChasePlayer();
                     ShootPlayer();
@@ -59,7 +57,10 @@ namespace RemixGame
             }
             else
             {
-                _enemyAi.Patrolmove();
+                if (!stunned)
+                {
+                    _enemyAi.Patrolmove();
+                }
             }
         }
 
@@ -77,7 +78,7 @@ namespace RemixGame
                 nextShotTime = Time.time + timeBetweenShots;
             }
 
-            //kiting the player at set distance
+            //keeping the player at set distance TODO: FIX
             if(Vector2.Distance(transform.position, target.position) < minDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);

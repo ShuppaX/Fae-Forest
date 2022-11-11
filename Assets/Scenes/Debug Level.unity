@@ -3902,6 +3902,10 @@ PrefabInstance:
       objectReference: {fileID: 370541846}
     - target: {fileID: 6946871248202751847, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: aggrorange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946871248202751847, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: minDistance
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6946871248202751847, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}

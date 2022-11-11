@@ -33,13 +33,14 @@ namespace RemixGame
         [Header("Custom Behavior")] public bool followEnabled = true;
         public bool jumpEnabled = true;
         public bool directionLookEnabled = true;
-
+        
         //Other variables
         private Path path;
         private int currentWaypoint = 0;
         RaycastHit2D isGrounded;
         Seeker seeker;
         Rigidbody2D rb;
+        private bool stunned;
 
         public void Start()
         {
@@ -52,6 +53,9 @@ namespace RemixGame
 
         private void FixedUpdate()
         {
+            stunned = GetComponent<PlayerProjectileActions>().StopActions;
+
+            
             if (chara1.activeSelf)
             {
                 target = character1coord;
@@ -61,15 +65,19 @@ namespace RemixGame
                 target = character2coord;
             }
 
-            if (TargetInDistance() && followEnabled)
+            if (!stunned)
             {
-                PathFollow();
+                if (TargetInDistance() && followEnabled)
+                {
+                    PathFollow();
+                }
+                else
+                {
+                    Patrolmove();
+                    rb.AddForce(patrolmovement * patrolmaxSpeed);
+                }  
             }
-            else
-            {
-                Patrolmove();
-                rb.AddForce(patrolmovement * patrolmaxSpeed);
-            }
+            
         }
 
         private void UpdatePath()
