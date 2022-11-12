@@ -234,6 +234,22 @@ PrefabInstance:
       propertyPath: character2coord
       value: 
       objectReference: {fileID: 2129523746}
+    - target: {fileID: 4027556773401565281, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: chara1
+      value: 
+      objectReference: {fileID: 370541844}
+    - target: {fileID: 4027556773401565281, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: chara2
+      value: 
+      objectReference: {fileID: 2129523745}
+    - target: {fileID: 4027556773401565281, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: character1coord
+      value: 
+      objectReference: {fileID: 370541846}
+    - target: {fileID: 4027556773401565281, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: character2coord
+      value: 
+      objectReference: {fileID: 2129523746}
     - target: {fileID: 6946871248202751847, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: target
       value: 

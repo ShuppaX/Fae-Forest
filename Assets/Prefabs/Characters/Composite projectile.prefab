@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02ed32f77877bd4faa49229f579847b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 7
   projectileDespawnTime: 0.6
 --- !u!198 &21433799839881002
 ParticleSystem:
