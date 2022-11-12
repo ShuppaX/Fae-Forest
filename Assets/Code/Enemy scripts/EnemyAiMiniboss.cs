@@ -6,7 +6,7 @@ using Pathfinding;
 
 namespace RemixGame
 {
-    public class EnemyAi : MonoBehaviour
+    public class EnemyAiMiniboss : MonoBehaviour
     {
 
         //headers to improve editor readability
@@ -36,9 +36,9 @@ namespace RemixGame
         public bool followEnabled = true;
         public bool jumpEnabled = true;
         public bool directionLookEnabled = true;
-        
-       
+
         //Other variables
+        private Miniboss _miniboss;
         private Path path;
         private int currentWaypoint = 0;
         private bool ActionsStopped;
@@ -52,7 +52,8 @@ namespace RemixGame
         {
             seeker = GetComponent<Seeker>();
             rb = GetComponent<Rigidbody2D>();
-            
+            _miniboss = GetComponent<Miniboss>();
+
             InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
         }
 
@@ -71,7 +72,7 @@ namespace RemixGame
             }
 
             
-            if (!ActionsStopped)
+            if (!ActionsStopped && !_miniboss.MinibossAggro)
             {
                 if (TargetInDistance() && followEnabled)
                 {

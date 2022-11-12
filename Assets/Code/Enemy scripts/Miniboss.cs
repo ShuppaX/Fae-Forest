@@ -11,31 +11,35 @@ namespace RemixGame
     {
         [SerializeField] float speed;
         [SerializeField] float minDistance;
-        [SerializeField] Transform target;
+         
         [SerializeField] float aggrorange;
         [SerializeField] private Transform Castpoint;
         [SerializeField] private MinibossProjectile projectile;
+        
         public float timeBetweenShots;
         private float nextShotTime;
-        
-        
-        private Rigidbody2D rb2d;
         private bool isFacingLeft;
         private bool ActionsStopped;
         private float SocialDistancing;
+        
         public bool MinibossAggro; // tells enemyAI when to do things
+        private Transform target;
+        private Rigidbody2D rb2d;
+
         
 
         private void Awake()
         {
+            target = FindObjectOfType<Character>().gameObject.transform;
             rb2d = GetComponent<Rigidbody2D>();
             isFacingLeft = true;
         }
 
         private void Update()
         {
+            
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
-            SocialDistancing = Vector2.Distance(transform.position, target.position);
+            SocialDistancing = Mathf.Abs(Vector2.Distance(transform.position, target.position));
         }
 
         private void FixedUpdate()
@@ -54,7 +58,6 @@ namespace RemixGame
                     else
                     {
                         ChasePlayer();
-
                     }
                 }
             }
@@ -117,8 +120,9 @@ namespace RemixGame
         {
             bool val = false;
             float castDist = distance;
-            Vector2 endPos = Castpoint.position - Vector3.right * castDist ;
-            Vector2 startPos = Castpoint.position + Vector3.right * castDist ;
+            var position = Castpoint.position;
+            Vector2 endPos = position - Vector3.right * castDist ;
+            Vector2 startPos = position + Vector3.right * castDist ;
             
             if (isFacingLeft)
             {

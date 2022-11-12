@@ -145,9 +145,9 @@ GameObject:
   - component: {fileID: 3008770989953751994}
   - component: {fileID: 6946871248202751847}
   - component: {fileID: 8280545886267945381}
+  - component: {fileID: 4027556773401565281}
   - component: {fileID: 3008770989953751993}
   - component: {fileID: 3008770989953751999}
-  - component: {fileID: 3008770989953751998}
   m_Layer: 8
   m_Name: Enemy 4 Miniboss
   m_TagString: Enemy
@@ -280,7 +280,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   minDistance: 20
-  target: {fileID: 0}
   aggrorange: 8
   Castpoint: {fileID: 5467312464933008843}
   projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
@@ -301,6 +300,36 @@ MonoBehaviour:
   compositeTag: CompositeProjectile
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
+--- !u!114 &4027556773401565281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280545886267945377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d5faab9e3212b44925e3db635c1b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chara1: {fileID: 0}
+  character1coord: {fileID: 0}
+  chara2: {fileID: 0}
+  character2coord: {fileID: 0}
+  target: {fileID: 0}
+  activateDistance: 50
+  pathUpdateSeconds: 0.5
+  patrolAcceleration: 2
+  patrolmaxSpeed: 5
+  speed: 200
+  nextWaypointDistance: 3
+  jumpNodeHeightRequirement: 0.8
+  jumpModifier: 0.3
+  jumpCheckOffset: 0.1
+  followEnabled: 1
+  jumpEnabled: 1
+  directionLookEnabled: 1
+  MinibossEnabled: 0
 --- !u!222 &3008770989953751993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -337,33 +366,3 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &3008770989953751998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8280545886267945377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b32ec78c61a264d8d31899b9868701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chara1: {fileID: 0}
-  character1coord: {fileID: 0}
-  chara2: {fileID: 0}
-  character2coord: {fileID: 0}
-  target: {fileID: 0}
-  activateDistance: 50
-  pathUpdateSeconds: 1
-  patrolAcceleration: 2
-  patrolmaxSpeed: 5
-  speed: 200
-  nextWaypointDistance: 3
-  jumpNodeHeightRequirement: 0.8
-  jumpModifier: 0.3
-  jumpCheckOffset: 0.1
-  followEnabled: 1
-  jumpEnabled: 1
-  directionLookEnabled: 1
-  MinibossEnabled: 1

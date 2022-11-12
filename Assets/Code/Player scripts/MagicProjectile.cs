@@ -6,7 +6,7 @@ namespace RemixGame
 {
     public class MagicProjectile : MonoBehaviour
     {
-        [SerializeField] private float Speed = 4f;
+        [SerializeField] private float Speed = 3f;
 
         [SerializeField] private float projectileDespawnTime = 0.5f;
 
