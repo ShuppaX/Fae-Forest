@@ -17,20 +17,17 @@ namespace RemixGame
         [SerializeField] private MinibossProjectile projectile;
         public float timeBetweenShots;
         private float nextShotTime;
-
-        private EnemyAi _enemyAi; //access the chase script from enemy ai
-
+        
+        
         private Rigidbody2D rb2d;
         private bool isFacingLeft;
         private bool ActionsStopped;
-        public bool IsFacingLeft
-        {
-            get { return isFacingLeft; }
-        }
+        private float SocialDistancing;
+        public bool MinibossAggro; // tells enemyAI when to do things
+        
 
         private void Awake()
         {
-            _enemyAi = GetComponent<EnemyAi>();
             rb2d = GetComponent<Rigidbody2D>();
             isFacingLeft = true;
         }
@@ -38,48 +35,56 @@ namespace RemixGame
         private void Update()
         {
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
-
-            
+            SocialDistancing = Vector2.Distance(transform.position, target.position);
         }
 
         private void FixedUpdate()
         {
             if (LineOfSight(aggrorange))
             {
-                
+                MinibossAggro = true;
 
                 if (!ActionsStopped)
                 {
-                   
-                    ChasePlayer();
-                    ShootPlayer();
+                    if (SocialDistancing < minDistance)
+                    {
+                        ShootPlayer();
+
+                    }
+                    else
+                    {
+                        ChasePlayer();
+
+                    }
                 }
             }
             else
             {
-                if (!ActionsStopped)
-                {
-                    _enemyAi.Patrolmove();
-                }
+                MinibossAggro = false;
+                //Let enemy AI script handle
             }
         }
+    
+
 
         private void ShootPlayer()
         {
             //shot timer + spawning
-            if(Time.time > nextShotTime)
+            if (Time.time > nextShotTime)
             {
+                //Create projectile
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 nextShotTime = Time.time + timeBetweenShots;
             }
 
             //keeping the player at set distance TODO: FIX
-            if(Vector2.Distance(transform.position, target.position) < minDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
-            }
-            
+            transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
+
+                
         }
+
+            
+        
 
         private void ChasePlayer()
         {
@@ -126,7 +131,7 @@ namespace RemixGame
             {
                 if (hit.collider.gameObject.GetComponent<Character>())
                 {
-                    Debug.Log("Hit "+ hit.collider.gameObject.name);
+                    //Debug.Log("Hit "+ hit.collider.gameObject.name);
                     val = true;
                 }
                 else 

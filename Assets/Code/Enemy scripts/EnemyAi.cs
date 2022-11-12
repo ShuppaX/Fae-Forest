@@ -33,7 +33,10 @@ namespace RemixGame
         [Header("Custom Behavior")] public bool followEnabled = true;
         public bool jumpEnabled = true;
         public bool directionLookEnabled = true;
+        public bool MinibossEnabled = false;
         
+        [Header("Miniboss")]
+        private Miniboss _miniboss;
         //Other variables
         private Path path;
         private int currentWaypoint = 0;
@@ -46,7 +49,13 @@ namespace RemixGame
         {
             seeker = GetComponent<Seeker>();
             rb = GetComponent<Rigidbody2D>();
-            
+            _miniboss = GetComponent<Miniboss>();
+
+            if (!MinibossEnabled)
+            {
+                _miniboss.MinibossAggro = false;
+            }
+
 
             InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
         }
@@ -67,7 +76,7 @@ namespace RemixGame
 
             if (!ActionsStopped)
             {
-                if (TargetInDistance() && followEnabled)
+                if (TargetInDistance() && followEnabled && !_miniboss.MinibossAggro)
                 {
                     PathFollow();
                 }
@@ -88,7 +97,7 @@ namespace RemixGame
             }
         }
 
-        private void PathFollow()
+        public void PathFollow()
         {
             if (path == null)
             {
@@ -162,8 +171,7 @@ namespace RemixGame
         /// <summary>
         /// Patrol methods
         /// </summary>
-
-       public void Patrolmove()
+        private void Patrolmove()
         {
             patroltimeLeft -= Time.deltaTime;
             if (patroltimeLeft <= 0)
