@@ -38,6 +38,11 @@ namespace RemixGame
                 firstLevelStarting = true;
             }
 
+            if (!firstLevelStarting)
+            {
+                playerCurrentHealth = PlayerPrefs.GetInt(storedHealth, 0);
+            }
+
             if (healthIndicators == null)
             {
                 healthIndicators = GameObject.FindGameObjectsWithTag(healthIndicatorTag);
