@@ -39,7 +39,7 @@ namespace RemixGame
 
             if (!firstLevelStarting)
             {
-                playerCurrentHealth = PlayerPrefs.GetInt(storedHealth, 0);
+                playerCurrentHealth = PlayerPrefs.GetInt(storedHealth, 3);
             }
 
             if (healthIndicators == null)
