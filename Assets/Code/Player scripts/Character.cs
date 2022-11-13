@@ -10,38 +10,40 @@ namespace RemixGame
 
     public class Character : MonoBehaviour
     {
+        [Header("Ground checks")]
         [SerializeField] private Transform groundCheck;
-
         [SerializeField] private LayerMask groundLayer, magicblockLayer;
 
+        [Header("Projectile offset and projectiles")]
         [SerializeField] private Transform projectileLaunchOffset;
-
         [SerializeField] private CompositeProjectile compositeProjectile;
-
         [SerializeField] private MagicProjectile magicProjectile;
 
+        [Header("Player characters")]
         [SerializeField] private GameObject characterOne;
-
         [SerializeField] private GameObject characterTwo;
 
-        [SerializeField] private float speed = 8f;
-
+        [Header("Player variables")]
+        [SerializeField] private float movementSpeed = 8f;
         [SerializeField] private float jumpingPower = 10f;
-
         [SerializeField] double jumpCd = 0.6;
+
+        [Header("Enemy tags")]
+        [SerializeField] private string enemyTag = "Enemy";
+        [SerializeField] private string enemyProjectileTag = "EnemyProjectile";
+
+        [Header("Health manager")]
+        [SerializeField] private GameObject healthManager;
 
         private float sinceJump = 0f;
 
         private Rigidbody2D rbOne;
-
         private Rigidbody2D rbTwo;
 
         private float horizontal;
 
         private Vector2 currentScale;
-
         private bool goingRight;
-
         private bool facingRight = true;
 
         public bool FacingRight
@@ -66,18 +68,17 @@ namespace RemixGame
         {
             if (characterOne.activeSelf)
             {
-                rbOne.velocity = new Vector2(horizontal * speed, rbOne.velocity.y);
+                rbOne.velocity = new Vector2(horizontal * movementSpeed, rbOne.velocity.y);
             }
             else if (characterTwo.activeSelf)
             {
-                rbTwo.velocity = new Vector2(horizontal * speed, rbTwo.velocity.y);
+                rbTwo.velocity = new Vector2(horizontal * movementSpeed, rbTwo.velocity.y);
             }
             
             sinceJump += Time.deltaTime;
 
         }
         
-
         // Groundcheck using empty object under characters feet. Checks overlaps within a circle
         // testing with cd to avoid moon launch
         private bool IsGrounded()
@@ -230,6 +231,16 @@ namespace RemixGame
             {
                 currentScale.x *= -1;
                 transform.localScale = currentScale;
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag(enemyTag) || collision.gameObject.CompareTag(enemyProjectileTag))
+            {
+                //TODO: Trigger possible invincibility?
+
+                healthManager.GetComponent<PlayerHealthSystem>().ReduceHealth();
             }
         }
     }

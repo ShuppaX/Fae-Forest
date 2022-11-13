@@ -9,29 +9,29 @@ namespace RemixGame
         [SerializeField] private Transform projectileLaunchOffset;
         [SerializeField] private RangedEnemyProjectile enemyProjectilePrefab;
         [SerializeField] private float[] fireRates = { 1.30f, 1.15f, 1f };
-        [SerializeField] private string playerTag = "Player";
+        [SerializeField] private string healthManagerTag = "HealthManager";
 
         private bool allowFiring = true;
-        private GameObject player;
+        private GameObject healthManager;
         private int playersCurrentHealth;
         private int difficultyIndex;
         private float currentFireRate;
 
         private void Awake()
         {
-            player = GameObject.FindWithTag(playerTag);
+            healthManager = GameObject.FindWithTag(healthManagerTag);
         }
 
         // The players current health is checked for the right firerate for the character
         // the lower the players health, the slower the firerate.
         private void Start()
         {
-            if (player == null)
+            if (healthManager == null)
             {
-                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + playerTag + "!");
+                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + healthManagerTag + "!");
             }
 
-            playersCurrentHealth = player.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
+            playersCurrentHealth = healthManager.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
 
             if (playersCurrentHealth != 0)
             {

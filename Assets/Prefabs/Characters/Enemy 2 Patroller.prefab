@@ -160,4 +160,4 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  playerTag: Player
+  playerTag: HealthManager

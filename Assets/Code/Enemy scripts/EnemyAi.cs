@@ -8,7 +8,6 @@ namespace RemixGame
 {
     public class EnemyAi : MonoBehaviour
     {
-
         //headers to improve editor readability
         [Header("Pathfinding")] 
         public GameObject chara1;
@@ -37,7 +36,6 @@ namespace RemixGame
         public bool jumpEnabled = true;
         public bool directionLookEnabled = true;
         
-       
         //Other variables
         private Path path;
         private int currentWaypoint = 0;
@@ -60,7 +58,6 @@ namespace RemixGame
         {
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
 
-            
             if (chara1.activeSelf)
             {
                 target = character1coord;
@@ -83,7 +80,6 @@ namespace RemixGame
                     rb.AddForce(patrolmovement * patrolmaxSpeed);
                 }  
             }
-            
         }
 
         private void UpdatePath()

@@ -2796,11 +2796,11 @@ GameObject:
   - component: {fileID: 986826085}
   m_Layer: 0
   m_Name: Health Manager
-  m_TagString: Untagged
+  m_TagString: HealthManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &986826084
 Transform:
   m_ObjectHideFlags: 0
@@ -2831,9 +2831,7 @@ MonoBehaviour:
   playerMaxHealth: 3
   firstLevelsIndex: 1
   healthIndicatorTag: HealthIndicator
-  enemyTag: Enemy
-  enemyProjectileTag: EnemyProjectile
-  deathIndicator: {fileID: 0}
+  deathIndicator: {fileID: 1594243446}
 --- !u!1 &1137442988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,7 +3102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4122380411766175664, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4122380411766175665, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_RootOrder
@@ -4786,6 +4784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 2 Patroller
       objectReference: {fileID: 0}
+    - target: {fileID: 1912987629897357810, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1912987629897357811, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4838,22 +4840,6 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 884636222}
-    - target: {fileID: 3102996587627062789, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
-      propertyPath: movementSpeeds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3102996587627062789, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
-      propertyPath: movementSpeeds.Array.data[0]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3102996587627062789, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
-      propertyPath: movementSpeeds.Array.data[1]
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3102996587627062789, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
-      propertyPath: movementSpeeds.Array.data[2]
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
 --- !u!1001 &4166964768641691936
@@ -5112,18 +5098,6 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.61
       objectReference: {fileID: 0}
-    - target: {fileID: 3856978162642658793, guid: 280ab06b6b1733147890179781aab120, type: 3}
-      propertyPath: playerHealth
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856978162642658793, guid: 280ab06b6b1733147890179781aab120, type: 3}
-      propertyPath: deathIndicator
-      value: 
-      objectReference: {fileID: 1594243446}
-    - target: {fileID: 3856978162642658793, guid: 280ab06b6b1733147890179781aab120, type: 3}
-      propertyPath: playerMaxHealth
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6200283782264780951, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -5212,6 +5186,10 @@ PrefabInstance:
       propertyPath: characterTwo
       value: 
       objectReference: {fileID: 2129523745}
+    - target: {fileID: 6200283782297569852, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: healthManager
+      value: 
+      objectReference: {fileID: 986826083}
     - target: {fileID: 6200283782297569853, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Mass
       value: 0.85
@@ -5229,10 +5207,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 239233159}
     m_Modifications:
-    - target: {fileID: -329478627085465318, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
-      propertyPath: deathIndicator
-      value: 
-      objectReference: {fileID: 1594243446}
     - target: {fileID: 6500152638205772937, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_Size.y
       value: 0.61
@@ -5245,6 +5219,10 @@ PrefabInstance:
       propertyPath: characterOne
       value: 
       objectReference: {fileID: 370541844}
+    - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: healthManager
+      value: 
+      objectReference: {fileID: 986826083}
     - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: parentGameobject
       value: 

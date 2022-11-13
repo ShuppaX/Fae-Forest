@@ -7,11 +7,14 @@ namespace RemixGame
 {
     public class PlayerHealthSystem : MonoBehaviour
     {
+        [Header("Variables")]
         [SerializeField] private int playerMaxHealth = 3;
         [SerializeField] private int firstLevelsIndex = 1;
+
+        [Header("Tags")]
         [SerializeField] private string healthIndicatorTag = "HealthIndicator";
-        [SerializeField] private string enemyTag = "Enemy";
-        [SerializeField] private string enemyProjectileTag = "EnemyProjectile";
+
+        [Header("Death menu / indicator")]
         [SerializeField] private GameObject deathIndicator;
 
         private string storedHealth = "StoredHealth";
@@ -48,7 +51,6 @@ namespace RemixGame
             CheckAmountOfHealth();
         }
 
-
         // This method is used to check if the current scene is the first level
         // just to make sure that the health indicators are set active.
         private void CheckIfFirstLevel()
@@ -71,7 +73,7 @@ namespace RemixGame
         }
 
         // Method to reduce the players health and to store it to be used in other levels
-        private void ReduceHealth()
+        public void ReduceHealth()
         {
             healthIndicators[playerCurrentHealth - 1].SetActive(false);
 
@@ -115,17 +117,6 @@ namespace RemixGame
                 Time.timeScale = 0;
 
                 deathIndicator.SetActive(true);
-            }
-        }
-
-        // The player will take collision damage if it collides with either an enemy or an enemys projectile.
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag(enemyTag) || collision.gameObject.CompareTag(enemyProjectileTag))
-            {
-                //TODO: Trigger possible invincibility?
-
-                ReduceHealth();
             }
         }
     }
