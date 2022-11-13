@@ -1973,6 +1973,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7523183124245000185, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7523183124636377496, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
       propertyPath: m_text
       value: Level 1
@@ -2065,11 +2069,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 7523183125443966942, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
 --- !u!1 &373233372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7523183124872109160, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
+  m_PrefabInstance: {fileID: 373233371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &373233373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7523183125313977539, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
+  m_PrefabInstance: {fileID: 373233371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &373233374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7523183124245000185, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
+  m_PrefabInstance: {fileID: 373233371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &373233375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7523183125443966942, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
   m_PrefabInstance: {fileID: 373233371}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &430364274
@@ -2571,6 +2594,22 @@ PrefabInstance:
       propertyPath: deathIndicator
       value: 
       objectReference: {fileID: 373233372}
+    - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
+      propertyPath: healthIndicators.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
+      propertyPath: healthIndicators.Array.data[0]
+      value: 
+      objectReference: {fileID: 373233375}
+    - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
+      propertyPath: healthIndicators.Array.data[1]
+      value: 
+      objectReference: {fileID: 373233374}
+    - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
+      propertyPath: healthIndicators.Array.data[2]
+      value: 
+      objectReference: {fileID: 373233373}
     - target: {fileID: 6775145596214450749, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
       propertyPath: m_RootOrder
       value: 3

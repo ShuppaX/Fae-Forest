@@ -46,5 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHealth: 3
   firstLevelsIndex: 0
-  healthIndicatorTag: HealthIndicator
+  healthIndicators:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   deathIndicator: {fileID: 0}

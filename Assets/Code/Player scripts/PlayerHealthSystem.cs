@@ -11,14 +11,13 @@ namespace RemixGame
         [SerializeField] private int playerMaxHealth = 3;
         [SerializeField] private int firstLevelsIndex = 1;
 
-        [Header("Tags")]
-        [SerializeField] private string healthIndicatorTag = "HealthIndicator";
+        [Header("Health indicators")]
+        [SerializeField] private GameObject[] healthIndicators;
 
         [Header("Death menu / indicator")]
         [SerializeField] private GameObject deathIndicator;
 
         private string storedHealth = "StoredHealth";
-        private GameObject[] healthIndicators;
         private bool firstLevelStarting;
         private Scene currentScene;
         private int damageToTake = 1;
@@ -45,7 +44,7 @@ namespace RemixGame
 
             if (healthIndicators == null)
             {
-                healthIndicators = GameObject.FindGameObjectsWithTag(healthIndicatorTag);
+                Debug.LogError("Health indicators are missing!");
             }
 
             CheckIfFirstLevel();
