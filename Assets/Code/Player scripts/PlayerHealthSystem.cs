@@ -33,7 +33,7 @@ namespace RemixGame
         {
             currentScene = SceneManager.GetActiveScene();
 
-            if (currentScene.buildIndex == /*firstLevelsIndex*/ currentScene.buildIndex)
+            if (currentScene.buildIndex == firstLevelsIndex /*currentScene.buildIndex*/)
             {
                 firstLevelStarting = true;
             }
