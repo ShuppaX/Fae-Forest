@@ -9,12 +9,14 @@ namespace RemixGame
 {
     public class Miniboss : MonoBehaviour
     {
-        [SerializeField] float speed;
+        [SerializeField] float[] speeds = { 6f, 7f, 8f };
         [SerializeField] float minDistance;
          
         [SerializeField] float aggrorange;
         [SerializeField] private Transform Castpoint;
         [SerializeField] private MinibossProjectile projectile;
+
+        [SerializeField] private string playerTag = "Player";
         
         public float timeBetweenShots;
         private float nextShotTime;
@@ -26,18 +28,38 @@ namespace RemixGame
         private Transform target;
         private Rigidbody2D rb2d;
 
-        
+        private GameObject player;
+        private int playersCurrentHealth;
+        private int difficultyIndex;
+        private float currentMovementSpeed;
 
         private void Awake()
         {
             target = FindObjectOfType<Character>().gameObject.transform;
             rb2d = GetComponent<Rigidbody2D>();
             isFacingLeft = true;
+            player = GameObject.FindWithTag(playerTag);
+        }
+
+        private void Start()
+        {
+            if (player == null)
+            {
+                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + playerTag + "!");
+            }
+
+            playersCurrentHealth = player.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
+
+            if (playersCurrentHealth != 0)
+            {
+                difficultyIndex = playersCurrentHealth - 1;
+            }
+
+            currentMovementSpeed = speeds[difficultyIndex];
         }
 
         private void Update()
         {
-            
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
             SocialDistancing = Mathf.Abs(Vector2.Distance(transform.position, target.position));
         }
@@ -68,8 +90,6 @@ namespace RemixGame
             }
         }
     
-
-
         private void ShootPlayer()
         {
             //shot timer + spawning
@@ -81,13 +101,8 @@ namespace RemixGame
             }
 
             //keeping the player at set distance TODO: FIX
-            transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
-
-                
+            transform.position = Vector2.MoveTowards(transform.position, target.position, -currentMovementSpeed * Time.deltaTime);
         }
-
-            
-        
 
         private void ChasePlayer()
         {
@@ -97,7 +112,7 @@ namespace RemixGame
             {
                 //player on right side
                 isFacingLeft = false;
-              //  GetComponent<SpriteRenderer>().flipX = true;
+                //GetComponent<SpriteRenderer>().flipX = true;
                 
                 
                 Debug.Log("Miniboss is facing right");
@@ -106,15 +121,12 @@ namespace RemixGame
             {
                 //Player on left side
                 isFacingLeft = true;
-                rb2d.velocity = new Vector2(speed, 0);
-               // GetComponent<SpriteRenderer>().flipX = false;
-
-                
+                rb2d.velocity = new Vector2(currentMovementSpeed, 0);
+                //GetComponent<SpriteRenderer>().flipX = false;
                 Debug.Log("Miniboss is facing left");
             }
         }
 
-      
         // Raycast function to spot the player 
         private bool LineOfSight(float distance)
         {
@@ -143,8 +155,6 @@ namespace RemixGame
                     val = false;
                 }
                 Debug.DrawLine(Castpoint.position, hit.point, Color.yellow);
-
-
             }
             else
             {
@@ -154,9 +164,8 @@ namespace RemixGame
 
             return val;
         }
-
     }
-    }
+}
 
 
 

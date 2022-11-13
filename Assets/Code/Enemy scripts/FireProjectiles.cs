@@ -7,20 +7,15 @@ namespace RemixGame
     public class FireProjectiles : MonoBehaviour
     {
         [SerializeField] private Transform projectileLaunchOffset;
-
         [SerializeField] private RangedEnemyProjectile enemyProjectilePrefab;
-
         [SerializeField] private float[] fireRates = { 1.30f, 1.15f, 1f };
-
         [SerializeField] private string playerTag = "Player";
 
         private bool allowFiring = true;
-
         private GameObject player;
-
         private int playersCurrentHealth;
-
         private int difficultyIndex;
+        private float currentFireRate;
 
         private void Awake()
         {
@@ -33,7 +28,7 @@ namespace RemixGame
         {
             if (player == null)
             {
-                Debug.LogError("The shooter couldn't find an object with the tag " + playerTag + "!");
+                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + playerTag + "!");
             }
 
             playersCurrentHealth = player.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
@@ -42,6 +37,8 @@ namespace RemixGame
             {
                 difficultyIndex = playersCurrentHealth - 1;
             }
+
+            currentFireRate = fireRates[difficultyIndex];
         }
 
         // If firing is allowed the character will instantiate a projectile that is launched from the
@@ -61,7 +58,7 @@ namespace RemixGame
         {
             if (!allowFiring)
             {
-                yield return new WaitForSeconds(fireRates[difficultyIndex]);
+                yield return new WaitForSeconds(currentFireRate);
                 allowFiring = true;
             }
         }

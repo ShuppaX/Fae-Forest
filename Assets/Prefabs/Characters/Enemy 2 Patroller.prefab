@@ -137,6 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compositeTag: CompositeProjectile
+  magicTag: MagicProjectile
+  timeForStoppedActions: 2.5
 --- !u!114 &3102996587627062789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,8 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b5baa98ed8b554e88c247acf2232fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  movementSpeeds:
+  - 5
+  - 6
+  - 7
   offsetToDestination: 0.25
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
+  playerTag: Player

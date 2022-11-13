@@ -8,27 +8,17 @@ namespace RemixGame
     public class PlayerHealthSystem : MonoBehaviour
     {
         [SerializeField] private int playerMaxHealth = 3;
-
         [SerializeField] private int firstLevelsIndex = 1;
-
         [SerializeField] private string healthIndicatorTag = "HealthIndicator";
-
         [SerializeField] private string enemyTag = "Enemy";
-
         [SerializeField] private string enemyProjectileTag = "EnemyProjectile";
-
         [SerializeField] private GameObject deathIndicator;
 
         private string storedHealth = "StoredHealth";
-
         private GameObject[] healthIndicators;
-
         private bool firstLevelStarting;
-
         private Scene currentScene;
-
         private int damageToTake = 1;
-
         private int playerCurrentHealth;
 
         public int PlayerCurrentHealth 
@@ -48,11 +38,6 @@ namespace RemixGame
             if (healthIndicators == null)
             {
                 healthIndicators = GameObject.FindGameObjectsWithTag(healthIndicatorTag);
-            }
-
-            foreach (GameObject go in healthIndicators)
-            {
-                Debug.Log(go.name + " found !");
             }
 
             CheckIfFirstLevel();

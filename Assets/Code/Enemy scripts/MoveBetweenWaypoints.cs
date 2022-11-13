@@ -7,23 +7,25 @@ namespace RemixGame
 {
     public class MoveBetweenWaypoints : MonoBehaviour
     {
-        [SerializeField] private float movementSpeed;
-
+        [SerializeField] private float[] movementSpeeds = { 5f, 6f, 7f };
         [SerializeField] private float offsetToDestination = 0.0001f;
-
         [SerializeField] private Transform[] waypoints;
+        [SerializeField] private string playerTag = "Player";
 
         private Transform destination;
-
         private Vector2 currentPosition;
-
         private Vector2 destinationPos;
-
         private Rigidbody2D rb;
+
+        private GameObject player;
+        private int playersCurrentHealth;
+        private int difficultyIndex;
+        private float currentMovementSpeed;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            player = GameObject.FindWithTag(playerTag);
         }
 
         private void Start()
@@ -31,6 +33,20 @@ namespace RemixGame
             destination = waypoints[1];
             destinationPos = destination.position;
             transform.position = waypoints[0].position;
+
+            if (player == null)
+            {
+                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + playerTag + "!");
+            }
+
+            playersCurrentHealth = player.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
+
+            if (playersCurrentHealth != 0)
+            {
+                difficultyIndex = playersCurrentHealth - 1;
+            }
+
+            currentMovementSpeed = movementSpeeds[difficultyIndex];
         }
 
         private void FixedUpdate()
@@ -40,7 +56,7 @@ namespace RemixGame
 
         private void Move(Vector2 destination, float deltaTime)
         {
-            rb.MovePosition(Vector2.MoveTowards(transform.position, destination, movementSpeed * deltaTime));
+            rb.MovePosition(Vector2.MoveTowards(transform.position, destination, currentMovementSpeed * deltaTime));
             currentPosition = transform.position;
 
             if ((currentPosition - destinationPos).magnitude < offsetToDestination)
