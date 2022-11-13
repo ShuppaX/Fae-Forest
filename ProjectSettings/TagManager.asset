@@ -12,6 +12,7 @@ TagManager:
   - MagicProjectile
   - Walls
   - Platforms
+  - HealthIndicator
   layers:
   - Default
   - TransparentFX
