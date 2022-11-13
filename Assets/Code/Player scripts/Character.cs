@@ -28,12 +28,12 @@ namespace RemixGame
         [SerializeField] private float jumpingPower = 10f;
         [SerializeField] double jumpCd = 0.6;
 
-        [Header("Enemy tags")]
+        [Header("Tags")]
         [SerializeField] private string enemyTag = "Enemy";
         [SerializeField] private string enemyProjectileTag = "EnemyProjectile";
+        [SerializeField] private string healthManagerTag = "HealthManager";
 
-        [Header("Health manager")]
-        [SerializeField] private GameObject healthManager;
+        private GameObject healthManager;
 
         private float sinceJump = 0f;
 
@@ -58,6 +58,7 @@ namespace RemixGame
             rbOne = characterOne.GetComponent<Rigidbody2D>();
             rbTwo = characterTwo.GetComponent<Rigidbody2D>();
             currentScale = transform.localScale;
+            healthManager = GameObject.FindWithTag(healthManagerTag);
 
             characterOne.SetActive(true);
             characterTwo.SetActive(false);
