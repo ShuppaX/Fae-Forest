@@ -25,7 +25,7 @@ namespace RemixGame
         private float patroltimeLeft;
         
         [Header("Physics")] 
-        public float speed = 200f;
+        public float[] movementSpeeds = { 150f, 175f, 200f };
         public float nextWaypointDistance = 3f;
         public float jumpNodeHeightRequirement = 0.8f;
         public float jumpModifier = 0.3f;
@@ -35,23 +35,49 @@ namespace RemixGame
         public bool followEnabled = true;
         public bool jumpEnabled = true;
         public bool directionLookEnabled = true;
+
+        [Header("Health Manager tag")]
+        [SerializeField] private string healthManagerTag = "HealthManager";
         
         //Other variables
         private Path path;
         private int currentWaypoint = 0;
         private bool ActionsStopped;
 
+        private GameObject healthManager;
+        private int playersCurrentHealth;
+        private int difficultyIndex;
+        private float currentMovementSpeed;
+
         Seeker seeker;
         Rigidbody2D rb;
         RaycastHit2D isGrounded;
-        
-        
+
+        private void Awake()
+        {
+            healthManager = GameObject.FindWithTag(healthManagerTag);
+        }
+
         public void Start()
         {
             seeker = GetComponent<Seeker>();
             rb = GetComponent<Rigidbody2D>();
             
             InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
+
+            if (healthManager == null)
+            {
+                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + healthManagerTag + "!");
+            }
+
+            playersCurrentHealth = healthManager.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
+
+            if (playersCurrentHealth != 0)
+            {
+                difficultyIndex = playersCurrentHealth - 1;
+            }
+
+            currentMovementSpeed = movementSpeeds[difficultyIndex];
         }
 
         private void FixedUpdate()
@@ -110,14 +136,14 @@ namespace RemixGame
 
             // Direction Calculation
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-            Vector2 force = direction * (speed * Time.deltaTime);
+            Vector2 force = direction * (currentMovementSpeed * Time.deltaTime);
 
             // Jump
             if (jumpEnabled && isGrounded)
             {
                 if (direction.y > jumpNodeHeightRequirement)
                 {
-                    rb.AddForce(Vector2.up * (speed * jumpModifier));
+                    rb.AddForce(Vector2.up * (currentMovementSpeed * jumpModifier));
                 }
             }
 
