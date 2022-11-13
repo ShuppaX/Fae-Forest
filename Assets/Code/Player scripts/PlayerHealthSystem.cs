@@ -7,7 +7,7 @@ namespace RemixGame
 {
     public class PlayerHealthSystem : MonoBehaviour
     {
-        [SerializeField] private int playerHealth = 3;
+        [SerializeField] private int playerMaxHealth = 3;
 
         [SerializeField] private int firstLevelsIndex = 1;
 
@@ -31,6 +31,11 @@ namespace RemixGame
 
         private int playerCurrentHealth;
 
+        public int PlayerCurrentHealth 
+        {
+            get { return playerCurrentHealth; }
+        }
+
         private void Awake()
         {
             currentScene = SceneManager.GetActiveScene();
@@ -49,10 +54,7 @@ namespace RemixGame
             {
                 Debug.Log(go.name + " found !");
             }
-        }
 
-        private void Start()
-        {
             CheckIfFirstLevel();
         }
 
@@ -73,7 +75,7 @@ namespace RemixGame
                     gameObject.SetActive(true);
                 }
 
-                playerCurrentHealth = playerHealth;
+                playerCurrentHealth = playerMaxHealth;
 
                 PlayerPrefs.SetInt(storedHealth, playerCurrentHealth);
 
@@ -131,6 +133,7 @@ namespace RemixGame
             }
         }
 
+        // The player will take collision damage if it collides with either an enemy or an enemys projectile.
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag(enemyTag) || collision.gameObject.CompareTag(enemyProjectileTag))
