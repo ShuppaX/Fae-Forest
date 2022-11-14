@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 114761e37304e7d4b981fa6248207590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 602149acb6c0bde49b13cdc2257b1bed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -160,4 +160,4 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  playerTag: HealthManager
+  healthManagerTag: HealthManager
