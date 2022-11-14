@@ -186,7 +186,7 @@ MonoBehaviour:
   Castpoint: {fileID: 5467312464933008843}
   projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
   healthManagerTag: HealthManager
-  timeBetweenShots: 1
+  timeBetweenShots: 0.75
   MinibossAggro: 0
 --- !u!114 &8280545886267945381
 MonoBehaviour:
@@ -224,10 +224,10 @@ MonoBehaviour:
   pathUpdateSeconds: 0.5
   patrolAcceleration: 2
   patrolmaxSpeed: 5
-  speed: 200
+  speed: 220
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8
-  jumpModifier: 0.3
+  jumpModifier: 0.51
   jumpCheckOffset: 0.1
   followEnabled: 1
   jumpEnabled: 1
