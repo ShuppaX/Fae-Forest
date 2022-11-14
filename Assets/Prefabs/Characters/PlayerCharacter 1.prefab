@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2065826107496112973}
   - component: {fileID: 6200283782297569855}
   - component: {fileID: 6200283782297569852}
+  - component: {fileID: 5552181169664051123}
   m_Layer: 0
   m_Name: PlayerCharacter 1
   m_TagString: Player
@@ -110,9 +111,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: c869d1ba4f321fb4299402b8c9873979, type: 3}
+  m_Sprite: {fileID: -917610488, guid: 7ccfbfe2207cc84419a7556daeece3a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -316,9 +317,32 @@ MonoBehaviour:
   magicProjectile: {fileID: -2880422429338552057, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
   characterOne: {fileID: 6200283782297569841}
   characterTwo: {fileID: 0}
-  speed: 5.5
+  movementSpeed: 8
   jumpingPower: 6
   jumpCd: 0.6
+  enemyTag: Enemy
+  enemyProjectileTag: EnemyProjectile
+  healthManagerTag: HealthManager
+--- !u!95 &5552181169664051123
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200283782297569841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a798ab63148349b44ae50f5c341af59a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6647628754065225566
 GameObject:
   m_ObjectHideFlags: 0
