@@ -10,6 +10,7 @@ namespace RemixGame
         [Header("Variables")]
         [SerializeField] private int playerMaxHealth = 3;
         [SerializeField] private int firstLevelsIndex = 1;
+        [SerializeField] private int healthDefaultValue = 3;
 
         [Header("Health indicators")]
         [SerializeField] private GameObject[] healthIndicators;
@@ -32,14 +33,14 @@ namespace RemixGame
         {
             currentScene = SceneManager.GetActiveScene();
 
-            if (currentScene.buildIndex == /*firstLevelsIndex*/ currentScene.buildIndex)
+            if (currentScene.buildIndex == firstLevelsIndex)
             {
                 firstLevelStarting = true;
             }
 
             if (!firstLevelStarting)
             {
-                playerCurrentHealth = PlayerPrefs.GetInt(storedHealth, 3);
+                playerCurrentHealth = PlayerPrefs.GetInt(storedHealth, healthDefaultValue);
             }
 
             if (healthIndicators == null)
