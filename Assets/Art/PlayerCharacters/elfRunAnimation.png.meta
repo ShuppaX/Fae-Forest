@@ -1,0 +1,408 @@
+fileFormatVersion: 2
+guid: 7ccfbfe2207cc84419a7556daeece3a5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1080
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: elfRunAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 10011
+        y: 32
+        width: 576
+        height: 1048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12a7d4e4ad62a2469427f51758d24ec
+      internalID: 1201117122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 10992
+        y: 38
+        width: 658
+        height: 1042
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce966b988cd8ae446823bdc97cbd6084
+      internalID: -1184466307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 12030
+        y: 107
+        width: 734
+        height: 973
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fe424edd5635b4fa30ecfaca9fb3db
+      internalID: 1852425396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 25
+        width: 658
+        height: 1023
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88091721807a0654fba99bbe629c6517
+      internalID: -248418571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 0
+        width: 645
+        height: 1055
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a645cb6c0b11a094397a8b6b64e0df83
+      internalID: -260288733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 13
+        width: 608
+        height: 1054
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc521f85838a7da4daa3c1182a0e0b69
+      internalID: -917610488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 19
+        width: 588
+        height: 1048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e590149500cf9ec47aacfb94819382d0
+      internalID: 590565389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 4537
+        y: 25
+        width: 589
+        height: 1036
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701fb01559510614d854e31351e26596
+      internalID: -27109462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 5581
+        y: 76
+        width: 640
+        height: 998
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c5bbc661ab11d459e51f9847c10681
+      internalID: 139290239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 6607
+        y: 133
+        width: 759
+        height: 934
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef734ab0a9e4d44abe83b494f3deeab
+      internalID: -811311980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 7727
+        y: 51
+        width: 658
+        height: 1004
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b696a8e40c5dcfc43935d43e4a034a67
+      internalID: 623015188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfRunAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 8853
+        y: 0
+        width: 601
+        height: 1048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a869bf55be72943932f9b7bb106511
+      internalID: -678723643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      elfRunAnimation_0: 1307469034
+      elfRunAnimation_33: 1099579894
+      elfRunAnimation_4: -1611170208
+      elfRunAnimation_21: -1970688575
+      elfRunAnimation_30: 1365838720
+      elfRunAnimation_1: 1201117122
+      elfRunAnimation_10: 139290239
+      elfRunAnimation_29: 1715287714
+      elfRunAnimation_14: 1049511889
+      elfRunAnimation_22: -491451721
+      elfRunAnimation_15: -1804683568
+      elfRunAnimation_26: 526228102
+      elfRunAnimation_5: -248418571
+      elfRunAnimation_6: -260288733
+      elfRunAnimation_25: -1016773300
+      elfRunAnimation_31: -870420035
+      elfRunAnimation_32: -1691824560
+      elfRunAnimation_7: -917610488
+      elfRunAnimation_27: 715887551
+      elfRunAnimation_24: 588497445
+      elfRunAnimation_2: -1184466307
+      elfRunAnimation_9: -27109462
+      elfRunAnimation_13: -678723643
+      elfRunAnimation_16: 1311964730
+      elfRunAnimation_8: 590565389
+      elfRunAnimation_20: 720272670
+      elfRunAnimation_17: -536235484
+      elfRunAnimation_11: -811311980
+      elfRunAnimation_12: 623015188
+      elfRunAnimation_18: 418053896
+      elfRunAnimation_28: 1328103693
+      elfRunAnimation_23: 2018193578
+      elfRunAnimation_19: 1675154502
+      elfRunAnimation_3: 1852425396
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
