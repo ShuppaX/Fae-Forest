@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 114761e37304e7d4b981fa6248207590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32229dc9a500bd44a81015a6f60af108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,6 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compositeTag: CompositeProjectile
+  magicTag: MagicProjectile
+  timeForStoppedActions: 2.5
 --- !u!114 &1931326862096827321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +162,10 @@ MonoBehaviour:
   pathUpdateSeconds: 0.5
   patrolAcceleration: 3
   patrolmaxSpeed: 6
-  speed: 200
+  movementSpeeds:
+  - 150
+  - 175
+  - 200
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8
   jumpModifier: 1
@@ -167,6 +173,7 @@ MonoBehaviour:
   followEnabled: 1
   jumpEnabled: 1
   directionLookEnabled: 1
+  healthManagerTag: HealthManager
 --- !u!114 &7202364970778703297
 MonoBehaviour:
   m_ObjectHideFlags: 0
