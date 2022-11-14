@@ -32,14 +32,14 @@ namespace RemixGame
         {
             currentScene = SceneManager.GetActiveScene();
 
-            if (currentScene.buildIndex == firstLevelsIndex /*currentScene.buildIndex*/)
+            if (currentScene.buildIndex == /*firstLevelsIndex*/ currentScene.buildIndex)
             {
                 firstLevelStarting = true;
             }
 
             if (!firstLevelStarting)
             {
-                playerCurrentHealth = PlayerPrefs.GetInt(storedHealth, 0);
+                playerCurrentHealth = PlayerPrefs.GetInt(storedHealth, 3);
             }
 
             if (healthIndicators == null)
