@@ -129,9 +129,8 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -270, y: 270}
-        - {x: -270, y: -62}
-        - {x: -180, y: -256}
-        - {x: -120, y: -270}
+        - {x: -270, y: -123}
+        - {x: -101, y: -270}
         - {x: 270, y: -270}
         - {x: 270, y: 270}
       tessellationDetail: 0
