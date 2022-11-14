@@ -317,7 +317,7 @@ MonoBehaviour:
   magicProjectile: {fileID: -2880422429338552057, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
   characterOne: {fileID: 6200283782297569841}
   characterTwo: {fileID: 0}
-  movementSpeed: 8
+  movementSpeed: 6
   jumpingPower: 6
   jumpCd: 0.6
   enemyTag: Enemy

@@ -400,6 +400,9 @@ MonoBehaviour:
   magicProjectile: {fileID: -2880422429338552057, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
   characterOne: {fileID: 0}
   characterTwo: {fileID: 7147695549753841090}
-  speed: 5.5
+  movementSpeed: 6
   jumpingPower: 6
   jumpCd: 0.6
+  enemyTag: Enemy
+  enemyProjectileTag: EnemyProjectile
+  healthManagerTag: HealthManager
