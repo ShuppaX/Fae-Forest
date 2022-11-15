@@ -36,6 +36,7 @@ namespace RemixGame
         private GameObject healthManager;
 
         private float sinceJump = 0f;
+        private Vector2 groundbox = new(0.6f, 0.1f);
 
         private Rigidbody2D rbOne;
         private Rigidbody2D rbTwo;
@@ -84,13 +85,13 @@ namespace RemixGame
         // testing with cd to avoid moon launch
         private bool IsGrounded()
         {
-            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+            return Physics2D.OverlapBox(groundCheck.position, groundbox, 0f, groundLayer);
         }
 
         // Groundcheck to magicblocks, works the same as above
         private bool IsOnMagicblock()
         {
-            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, magicblockLayer);
+            return Physics2D.OverlapBox(groundCheck.position, groundbox, 0f, magicblockLayer);
         }
 
         // jump action with rigidbody velocity applying force directly
@@ -243,6 +244,12 @@ namespace RemixGame
 
                 healthManager.GetComponent<PlayerHealthSystem>().ReduceHealth();
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(groundCheck.position,groundbox);
         }
     }
 }
