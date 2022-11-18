@@ -114,7 +114,7 @@ namespace RemixGame
                 if (context.canceled && rbOne.velocity.y > 0f)
                 {
                     var velocity = rbOne.velocity;
-                    velocity = new Vector2(velocity.x, velocity.y * 0.5f);
+                    velocity = new Vector2(velocity.x, velocity.y * 0.66f);
                     rbOne.velocity = velocity;
                 }
 
@@ -136,7 +136,7 @@ namespace RemixGame
                 if (context.canceled && rbTwo.velocity.y > 0f)
                 {
                     var velocity = rbTwo.velocity;
-                    velocity = new Vector2(velocity.x, velocity.y * 0.5f);
+                    velocity = new Vector2(velocity.x, velocity.y * 0.66f);
                     rbTwo.velocity = velocity;
                 }
             }
