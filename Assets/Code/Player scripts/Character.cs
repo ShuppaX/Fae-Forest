@@ -109,6 +109,14 @@ namespace RemixGame
                     sinceJump = 0;
                     rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 }
+                
+                //Lower jump from releasing the key mid flight
+                if (context.canceled && rbOne.velocity.y > 0f)
+                {
+                    var velocity = rbOne.velocity;
+                    velocity = new Vector2(velocity.x, velocity.y * 0.5f);
+                    rbOne.velocity = velocity;
+                }
 
                
             } else if (characterTwo.activeSelf)
@@ -122,6 +130,14 @@ namespace RemixGame
                 {
                     sinceJump = 0;
                     rbTwo.AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                }
+                
+                //Lower jump from releasing the key mid flight
+                if (context.canceled && rbTwo.velocity.y > 0f)
+                {
+                    var velocity = rbTwo.velocity;
+                    velocity = new Vector2(velocity.x, velocity.y * 0.5f);
+                    rbTwo.velocity = velocity;
                 }
             }
             
