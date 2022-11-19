@@ -12,7 +12,7 @@ namespace RemixGame
         [SerializeField] private int firstLevelsIndex = 1;
         [SerializeField] private int mainMenuIndex = 0;
         [SerializeField] private int healthDefaultValue = 3;
-        [SerializeField] private int deathScreenTime = 5;
+        [SerializeField] private float deathScreenTime = 5f;
 
         [Header("Health indicators")]
         [SerializeField] private GameObject[] healthIndicators;
