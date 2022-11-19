@@ -17,8 +17,9 @@ namespace RemixGame
         //public static AudioManager instance;
 
         [Header("Variables")]
-        [Range(0f, 100f)] public float SFXVolume = 100f;
-        [Range(0f, 100f)] public float MusicVolume = 100f;
+        [Range(0f, 1f)] public float SFXVolume = 1f;
+        [Range(0f, 1f)] public float MusicVolume = 1f;
+        [SerializeField] private float volumeDisplayMultiplier = 100f;
 
         [Header("Slider game objects")]
         [SerializeField] private Slider sfxSlider;
@@ -34,11 +35,11 @@ namespace RemixGame
         {
             SFXVolume = PlayerPrefs.GetFloat("SFXVol", 100);
             sfxSlider.value = SFXVolume;
-            sfxText.text = sfxTextFirstPart + SFXVolume;
+            sfxText.text = sfxTextFirstPart + Mathf.Round(SFXVolume * volumeDisplayMultiplier);
 
             MusicVolume = PlayerPrefs.GetFloat("MusicVol", 100);
             musicSlider.value = MusicVolume;
-            musicText.text = musicTextFirstPart + MusicVolume;
+            musicText.text = musicTextFirstPart + Mathf.Round(MusicVolume * volumeDisplayMultiplier);
 
             foreach (Sound s in sfx)
             {
@@ -67,7 +68,7 @@ namespace RemixGame
         private void UpdateSFXVolume()
         {
             SFXVolume = sfxSlider.value;
-            sfxText.text = sfxTextFirstPart + SFXVolume;
+            sfxText.text = sfxTextFirstPart + Mathf.Round(SFXVolume * volumeDisplayMultiplier);
 
             foreach (Sound s in sfx)
             {
@@ -79,7 +80,7 @@ namespace RemixGame
         private void UpdateMusicVolume()
         {
             MusicVolume = musicSlider.value;
-            musicText.text = musicTextFirstPart + MusicVolume;
+            musicText.text = musicTextFirstPart + Mathf.Round(MusicVolume * volumeDisplayMultiplier);
 
             foreach (Sound s in songs)
             {
@@ -117,15 +118,15 @@ namespace RemixGame
         // Function to save and change the SFX volume
         public void ChangeSFXOptions()
         {
-            PlayerPrefs.SetFloat("SFXVol", SFXVolume);
             SFXVolume = sfxSlider.value;
+            PlayerPrefs.SetFloat("SFXVol", SFXVolume);
         }
 
         // Function to save and change the music volume
         public void ChangeMusicOptions()
         {
-            PlayerPrefs.SetFloat("MusicVol", MusicVolume);
             MusicVolume = musicSlider.value;
+            PlayerPrefs.SetFloat("MusicVol", MusicVolume);
         }
     }
 }

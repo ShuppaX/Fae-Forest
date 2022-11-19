@@ -213,10 +213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 455475012}
+    m_SelectOnDown: {fileID: 2122118177}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -528,9 +528,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.75686276, g: 0.75686276, b: 0.75686276, a: 1}
+    m_PressedColor: {r: 0.6117647, g: 0.6117647, b: 0.6117647, a: 1}
+    m_SelectedColor: {r: 0.75686276, g: 0.75686276, b: 0.75686276, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -551,12 +551,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1400537682}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 1
+  m_MaxValue: 1
+  m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1702721828}
+        m_TargetAssemblyTypeName: RemixGame.AudioManager, Assembly-CSharp
+        m_MethodName: ChangeSFXOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &169650871
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,8 +693,8 @@ MonoBehaviour:
   mainMenuButtons: {fileID: 903389771}
   mainMenuOptionsButton: {fileID: 2122118175}
   options: {fileID: 595748768}
-  optionsFirstButton: {fileID: 0}
-  songName: Menumusic
+  optionsFirstButton: {fileID: 2069718456}
+  songName: Menu music
 --- !u!1 &455475010
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,10 +748,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 2122118177}
+    m_SelectOnDown: {fileID: 110381506}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -934,15 +946,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4527539405403699455, guid: d0f5369ab7a948242b9841a7dff7fb33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6807263
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4527539405403699455, guid: d0f5369ab7a948242b9841a7dff7fb33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2354424
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4527539405403699455, guid: d0f5369ab7a948242b9841a7dff7fb33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.7040439
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4527539405403699455, guid: d0f5369ab7a948242b9841a7dff7fb33, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1002,8 +1014,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 866904006}
   - {fileID: 2086283091}
+  - {fileID: 866904006}
   - {fileID: 1380882095}
   m_Father: {fileID: 1234267877}
   m_RootOrder: 1
@@ -1044,7 +1056,7 @@ RectTransform:
   - {fileID: 123948413}
   - {fileID: 159530855}
   m_Father: {fileID: 595748769}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2285,6 +2297,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693133311}
   m_CullTransparentMesh: 1
+--- !u!114 &1702721828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4527539405403699454, guid: d0f5369ab7a948242b9841a7dff7fb33, type: 3}
+  m_PrefabInstance: {fileID: 552463618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec1303ee05ab654e8baad13617e7393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910972953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,9 +2483,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.75686276, g: 0.75686276, b: 0.75686276, a: 1}
+    m_PressedColor: {r: 0.6117647, g: 0.6117647, b: 0.6117647, a: 1}
+    m_SelectedColor: {r: 0.75686276, g: 0.75686276, b: 0.75686276, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2483,12 +2506,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1228418426}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 1
+  m_MaxValue: 1
+  m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1702721828}
+        m_TargetAssemblyTypeName: RemixGame.AudioManager, Assembly-CSharp
+        m_MethodName: ChangeMusicOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2086283090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,7 +2555,7 @@ RectTransform:
   - {fileID: 1187254270}
   - {fileID: 2069718457}
   m_Father: {fileID: 595748769}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -2715,10 +2750,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 110381506}
+    m_SelectOnDown: {fileID: 455475012}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1

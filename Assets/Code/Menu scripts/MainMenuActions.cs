@@ -37,7 +37,6 @@ namespace RemixGame
             }
 
             audioManager.PlaySong(songName);
-            Debug.Log("Playing song with the name: " + songName);
         }
 
         // Method to open options in main menu, turns off the main buttons from the
