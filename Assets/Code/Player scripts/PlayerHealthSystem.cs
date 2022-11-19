@@ -129,11 +129,14 @@ namespace RemixGame
             }
         }
 
+        // Death screen with a delay that sends the player back to the main menu and sets timescale back to 1.
         IEnumerator SendToMainMenu()
         {
             yield return new WaitForSecondsRealtime(deathScreenTime);
 
             SceneManager.LoadScene(mainMenuIndex);
+
+            Time.timeScale = 1;
         }
     }
 }
