@@ -1662,10 +1662,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 4527539405403699454, guid: d0f5369ab7a948242b9841a7dff7fb33, type: 3}
-      propertyPath: songs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4527539405403699455, guid: d0f5369ab7a948242b9841a7dff7fb33, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3780,6 +3776,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2608217712464204267, guid: db7d13dbfd01cfc48b744ecd6b743a55, type: 3}
+      propertyPath: songName
+      value: Boss level music
+      objectReference: {fileID: 0}
     - target: {fileID: 7076369533353251232, guid: db7d13dbfd01cfc48b744ecd6b743a55, type: 3}
       propertyPath: m_Name
       value: Gamestate Manager
