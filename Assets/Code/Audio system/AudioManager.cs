@@ -31,15 +31,26 @@ namespace RemixGame
         [SerializeField] private TextMeshProUGUI musicText;
         [SerializeField] private TextMeshProUGUI sfxText;
 
+        private bool ignoreSliders = false;
+        private bool ignoreTexts = false;
+
         private void Awake()
         {
-            SFXVolume = PlayerPrefs.GetFloat("SFXVol", 100);
-            sfxSlider.value = SFXVolume;
-            sfxText.text = sfxTextFirstPart + Mathf.Round(SFXVolume * volumeDisplayMultiplier);
+            if (sfxSlider == null && musicSlider == null)
+            {
+                ignoreSliders = true;
+            }
 
+            if (musicText == null && sfxText == null)
+            {
+                ignoreTexts = true;
+            }
+
+            SFXVolume = PlayerPrefs.GetFloat("SFXVol", 100);
             MusicVolume = PlayerPrefs.GetFloat("MusicVol", 100);
-            musicSlider.value = MusicVolume;
-            musicText.text = musicTextFirstPart + Mathf.Round(MusicVolume * volumeDisplayMultiplier);
+
+            UpdateTexts();
+            UpdateSliders();
 
             foreach (Sound s in sfx)
             {
@@ -60,8 +71,11 @@ namespace RemixGame
 
         private void Update()
         {
-            UpdateSFXVolume();
-            UpdateMusicVolume();
+            if (!ignoreSliders && !ignoreTexts)
+            {
+                UpdateSFXVolume();
+                UpdateMusicVolume();
+            }
         }
         
         // Function to update SFX volume
@@ -127,6 +141,24 @@ namespace RemixGame
         {
             MusicVolume = musicSlider.value;
             PlayerPrefs.SetFloat("MusicVol", MusicVolume);
+        }
+
+        private void UpdateSliders()
+        {
+            if (!ignoreSliders)
+            {
+                sfxSlider.value = SFXVolume;
+                musicSlider.value = MusicVolume;
+            }
+        }
+
+        private void UpdateTexts()
+        {
+            if (!ignoreTexts)
+            {
+                sfxText.text = sfxTextFirstPart + Mathf.Round(SFXVolume * volumeDisplayMultiplier);
+                musicText.text = musicTextFirstPart + Mathf.Round(MusicVolume * volumeDisplayMultiplier);
+            }
         }
     }
 }
