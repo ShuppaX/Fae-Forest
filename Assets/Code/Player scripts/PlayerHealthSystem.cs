@@ -10,7 +10,9 @@ namespace RemixGame
         [Header("Variables")]
         [SerializeField] private int playerMaxHealth = 3;
         [SerializeField] private int firstLevelsIndex = 1;
+        [SerializeField] private int mainMenuIndex = 0;
         [SerializeField] private int healthDefaultValue = 3;
+        [SerializeField] private float deathScreenTime = 5f;
 
         [Header("Health indicators")]
         [SerializeField] private GameObject[] healthIndicators;
@@ -122,7 +124,16 @@ namespace RemixGame
                 Time.timeScale = 0;
 
                 deathIndicator.SetActive(true);
+
+                StartCoroutine(SendToMainMenu());
             }
+        }
+
+        IEnumerator SendToMainMenu()
+        {
+            yield return new WaitForSecondsRealtime(deathScreenTime);
+
+            SceneManager.LoadScene(mainMenuIndex);
         }
     }
 }

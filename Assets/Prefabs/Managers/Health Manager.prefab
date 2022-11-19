@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHealth: 3
   firstLevelsIndex: 1
+  mainMenuIndex: 0
   healthDefaultValue: 3
+  deathScreenTime: 3
   healthIndicators:
   - {fileID: 0}
   - {fileID: 0}
