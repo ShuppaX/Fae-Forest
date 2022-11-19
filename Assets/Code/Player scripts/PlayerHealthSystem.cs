@@ -131,7 +131,7 @@ namespace RemixGame
 
         IEnumerator SendToMainMenu()
         {
-            yield return new WaitForSeconds(deathScreenTime);
+            yield return new WaitForSecondsRealtime(deathScreenTime);
 
             SceneManager.LoadScene(mainMenuIndex);
         }
