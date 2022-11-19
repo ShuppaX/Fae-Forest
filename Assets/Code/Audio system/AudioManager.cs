@@ -5,6 +5,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using TMPro;
 
 namespace RemixGame
 {
@@ -15,19 +16,30 @@ namespace RemixGame
 
         //public static AudioManager instance;
 
-        [Range(0f, 1f)] public float SFXVolume = 1f;
-        [Range(0f, 1f)] public float MusicVolume = 1f;
+        [Header("Variables")]
+        [Range(0f, 100f)] public float SFXVolume = 100f;
+        [Range(0f, 100f)] public float MusicVolume = 100f;
 
-        [SerializeField] private Slider sfxSlider, musicSlider;
-        
+        [Header("Slider game objects")]
+        [SerializeField] private Slider sfxSlider;
+        [SerializeField] private Slider musicSlider;
+
+        [Header("Music and SFX texts")]
+        [SerializeField] private string musicTextFirstPart = "MUSIC: ";
+        [SerializeField] private string sfxTextFirstPart = "SFX: ";
+        [SerializeField] private TextMeshProUGUI musicText;
+        [SerializeField] private TextMeshProUGUI sfxText;
+
         private void Awake()
         {
-            SFXVolume = PlayerPrefs.GetFloat("SFXVol", 1);
+            SFXVolume = PlayerPrefs.GetFloat("SFXVol", 100);
             sfxSlider.value = SFXVolume;
-            MusicVolume = PlayerPrefs.GetFloat("MusicVol", 1);
+            sfxText.text = sfxTextFirstPart + SFXVolume;
+
+            MusicVolume = PlayerPrefs.GetFloat("MusicVol", 100);
             musicSlider.value = MusicVolume;
-            
-            
+            musicText.text = musicTextFirstPart + MusicVolume;
+
             foreach (Sound s in sfx)
             {
                 s.source = gameObject.AddComponent<AudioSource>();
@@ -55,7 +67,8 @@ namespace RemixGame
         private void UpdateSFXVolume()
         {
             SFXVolume = sfxSlider.value;
-            
+            sfxText.text = sfxTextFirstPart + SFXVolume;
+
             foreach (Sound s in sfx)
             {
                 s.source.volume = SFXVolume;
@@ -66,7 +79,8 @@ namespace RemixGame
         private void UpdateMusicVolume()
         {
             MusicVolume = musicSlider.value;
-            
+            musicText.text = musicTextFirstPart + MusicVolume;
+
             foreach (Sound s in songs)
             {
                 s.source.volume = MusicVolume;
@@ -91,6 +105,7 @@ namespace RemixGame
             m.source.Play();
         }
 
+        // Function to stop playing music
         public void StopPlayingSong(string name)
         {
             Sound m = Array.Find(songs, sound => sound.name == name);

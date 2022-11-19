@@ -45,103 +45,107 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songs:
-  - name: Menu music
+  - name: Menumusic
     clip: {fileID: 8300000, guid: d9e280ca0b9d3ad4f83da6d4defd2c91, type: 3}
-    volume: 0.225
+    volume: 100
     loop: 1
     source: {fileID: 0}
   - name: Basic level music
     clip: {fileID: 8300000, guid: 5b59cce20f4d42a48b3069957f936fe4, type: 3}
-    volume: 0.225
+    volume: 100
     loop: 1
     source: {fileID: 0}
   - name: Boss level music
     clip: {fileID: 8300000, guid: 14a1cf915de1c2448b200ab123c01445, type: 3}
-    volume: 0.225
+    volume: 100
     loop: 1
     source: {fileID: 0}
   sfx:
   - name: Elf attack 1
     clip: {fileID: 8300000, guid: 5674990cfb8d36444ba33ba763efa7e4, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
   - name: Elf jump 1
     clip: {fileID: 8300000, guid: e03c401494466364885549a06b42778a, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
   - name: Elf jump 2
     clip: {fileID: 8300000, guid: 291b56b0a85ad104f873f5638f54fc4d, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
   - name: Elf lose hp 1
     clip: {fileID: 8300000, guid: 5d5f587ae155eb94f867257211a96f5e, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
   - name: Elf death 1
     clip: {fileID: 8300000, guid: d30c820ff550c794a86e903ad647e4ee, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
   - name: Composite projectile 1
     clip: {fileID: 8300000, guid: 83829ff414f47a048b5387e4ab33571c, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
-  - name: Damage projectile 1
+  - name: Magic projectile 1
     clip: {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
-  - name: Fairy attack 1
+  - name: CharTwo attack 1
     clip: {fileID: 8300000, guid: de8a42ca76abf9143ba7617145de5af0, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
-  - name: Fairy jump 1
+  - name: CharTwo jump 1
     clip: {fileID: 8300000, guid: ed92598bd0905564892d587530a65342, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
-  - name: Fairy jump 2
+  - name: CharTwo jump 2
     clip: {fileID: 8300000, guid: 4f1d2b4c55bf8bb4d9558c32624de410, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
-  - name: Fairy lose hp 1
+  - name: CharTwo lose hp 1
     clip: {fileID: 8300000, guid: c5b5f9d1e2023fa4e9ac7fb1d3600a4c, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
-  - name: Fairy death 1
+  - name: CharTwo death 1
     clip: {fileID: 8300000, guid: 77007d005277598499ebbff61b13679e, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
   - name: Footstep 1
     clip: {fileID: 8300000, guid: 2352822feb4caa14ebdbc0c713289f8d, type: 3}
-    volume: 0.2
+    volume: 100
     loop: 1
     source: {fileID: 0}
-  - name: Damage projectile hit 1
+  - name: Magic projectile hit 1
     clip: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
   - name: Composite projectile hit 1
     clip: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
-  - name: Damage projectile hit 1
+  - name: Magic projectile hit 1
     clip: {fileID: 8300000, guid: 5c7b6d4002009e842bd2621585546d19, type: 3}
-    volume: 0.3
+    volume: 100
     loop: 0
     source: {fileID: 0}
-  SFXVolume: 1
-  MusicVolume: 1
+  SFXVolume: 100
+  MusicVolume: 100
   sfxSlider: {fileID: 0}
   musicSlider: {fileID: 0}
+  musicTextFirstPart: 'MUSIC: '
+  sfxTextFirstPart: 'SFX: '
+  musicText: {fileID: 0}
+  sfxText: {fileID: 0}

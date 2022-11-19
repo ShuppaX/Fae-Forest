@@ -15,7 +15,7 @@ namespace RemixGame
         public AudioClip clip;
 
         // Volume for the sound
-        [Range(0f, 1f)]public float volume;
+        [Range(0f, 100f)]public float volume;
 
         public bool loop;
 
