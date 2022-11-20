@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ccfbfe2207cc84419a7556daeece3a5
+guid: 0bb4668e7660ec64789f82e4f14fc471
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,217 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: elfRunAnimation_1
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b12a7d4e4ad62a2469427f51758d24ec
-      internalID: 1201117122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_2
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce966b988cd8ae446823bdc97cbd6084
-      internalID: -1184466307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_3
-      rect:
-        serializedVersion: 2
-        x: 3240
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66fe424edd5635b4fa30ecfaca9fb3db
-      internalID: 1852425396
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_5
-      rect:
-        serializedVersion: 2
-        x: 5400
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88091721807a0654fba99bbe629c6517
-      internalID: -248418571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_6
-      rect:
-        serializedVersion: 2
-        x: 6480
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a645cb6c0b11a094397a8b6b64e0df83
-      internalID: -260288733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_7
-      rect:
-        serializedVersion: 2
-        x: 7560
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc521f85838a7da4daa3c1182a0e0b69
-      internalID: -917610488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_8
-      rect:
-        serializedVersion: 2
-        x: 8640
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e590149500cf9ec47aacfb94819382d0
-      internalID: 590565389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_9
-      rect:
-        serializedVersion: 2
-        x: 9720
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 701fb01559510614d854e31351e26596
-      internalID: -27109462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_10
-      rect:
-        serializedVersion: 2
-        x: 10800
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6c5bbc661ab11d459e51f9847c10681
-      internalID: 139290239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_11
-      rect:
-        serializedVersion: 2
-        x: 11880
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aef734ab0a9e4d44abe83b494f3deeab
-      internalID: -811311980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elfRunAnimation_0
+      name: elfJumpAnimation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -328,14 +118,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbf9199a9af832447a3be24158208565
-      internalID: 1307469034
+      spriteID: 59fb1b0e2c3ec2f45ae1f59382c57b7f
+      internalID: -1821052862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elfRunAnimation_4
+      name: elfJumpAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 1080
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3f0cd9ab4a3374681b5460f1e23078
+      internalID: -1725156857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfJumpAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 0
+        width: 1080
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c58e6a4b662cb42a3ba2a144ef8ba8
+      internalID: 1222357155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfJumpAnimation_4
       rect:
         serializedVersion: 2
         x: 4320
@@ -349,8 +181,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c10ca21c91833884ca075d0e6f91f827
-      internalID: -1611170208
+      spriteID: 0d6954abe66766442816856813cd31c8
+      internalID: 1528886565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elfJumpAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 1080
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc392264d2e92148904e750f58f7eea
+      internalID: -818466351
       vertices: []
       indices: 
       edges: []
@@ -366,18 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      elfRunAnimation_0: 1307469034
-      elfRunAnimation_4: -1611170208
-      elfRunAnimation_1: 1201117122
-      elfRunAnimation_10: 139290239
-      elfRunAnimation_5: -248418571
-      elfRunAnimation_6: -260288733
-      elfRunAnimation_7: -917610488
-      elfRunAnimation_2: -1184466307
-      elfRunAnimation_9: -27109462
-      elfRunAnimation_8: 590565389
-      elfRunAnimation_11: -811311980
-      elfRunAnimation_3: 1852425396
+      elfJumpAnimation_4: 1528886565
+      elfJumpAnimation_2: -818466351
+      elfJumpAnimation_1: -1725156857
+      elfJumpAnimation_0: -1821052862
+      elfJumpAnimation_3: 1222357155
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

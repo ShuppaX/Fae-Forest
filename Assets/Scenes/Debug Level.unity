@@ -4212,12 +4212,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6200283782297569840, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0019531
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200283782297569840, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_SortingLayer
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6200283782297569840, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_SortingLayerID
       value: 440215873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200283782297569840, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6200283782297569841, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Name
