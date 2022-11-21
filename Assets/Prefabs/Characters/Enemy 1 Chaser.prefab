@@ -163,8 +163,8 @@ MonoBehaviour:
   patrolAcceleration: 3
   patrolmaxSpeed: 6
   movementSpeeds:
+  - 125
   - 150
-  - 175
   - 200
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8

@@ -178,8 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speeds:
+  - 4
   - 6
-  - 7
   - 8
   minDistance: 20
   aggrorange: 8
