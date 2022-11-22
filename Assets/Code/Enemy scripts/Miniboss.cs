@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.Serialization;
 
 namespace RemixGame
 {
@@ -12,8 +8,8 @@ namespace RemixGame
         [SerializeField] float[] speeds = { 6f, 7f, 8f };
         [SerializeField] float minDistance;
          
-        [SerializeField] float aggrorange;
-        [SerializeField] private Transform Castpoint;
+        [FormerlySerializedAs("aggrorange")] [SerializeField] float aggroRange;
+        [FormerlySerializedAs("castpoint")] [SerializeField] private Transform castPoint;
         [SerializeField] private MinibossProjectile projectile;
 
         [SerializeField] private string healthManagerTag = "HealthManager";
@@ -24,7 +20,7 @@ namespace RemixGame
         private bool ActionsStopped;
         private float SocialDistancing;
         
-        public bool MinibossAggro; // tells enemyAI when to do things
+        public bool MinibossAggro; // tells enemyAI when to do take over
         private Transform target;
         private Rigidbody2D rb2d;
 
@@ -66,7 +62,7 @@ namespace RemixGame
 
         private void FixedUpdate()
         {
-            if (LineOfSight(aggrorange))
+            if (LineOfSight(aggroRange))
             {
                 MinibossAggro = true;
 
@@ -100,7 +96,8 @@ namespace RemixGame
                 nextShotTime = Time.time + timeBetweenShots;
             }
 
-            //keeping the player at set distance TODO: FIX
+            rb2d.velocity *= 0.5f;
+            //keeping the player at set distance
             transform.position = Vector2.MoveTowards(transform.position, target.position, -currentMovementSpeed * Time.deltaTime);
         }
 
@@ -132,7 +129,7 @@ namespace RemixGame
         {
             bool val = false;
             float castDist = distance;
-            var position = Castpoint.position;
+            var position = castPoint.position;
             Vector2 endPos = position - Vector3.right * castDist ;
             Vector2 startPos = position + Vector3.right * castDist ;
             
@@ -147,18 +144,17 @@ namespace RemixGame
             {
                 if (hit.collider.gameObject.GetComponent<Character>())
                 {
-                    //Debug.Log("Hit "+ hit.collider.gameObject.name);
                     val = true;
                 }
                 else 
                 {
                     val = false;
                 }
-                Debug.DrawLine(Castpoint.position, hit.point, Color.yellow);
+                Debug.DrawLine(castPoint.position, hit.point, Color.yellow);
             }
             else
             {
-                Debug.DrawLine(Castpoint.position, endPos, Color.cyan);
+                Debug.DrawLine(castPoint.position, endPos, Color.cyan);
 
             }
 

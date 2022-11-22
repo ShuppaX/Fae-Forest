@@ -144,7 +144,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8740b75881539d947a7f48ba47b202cd, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -182,8 +182,8 @@ MonoBehaviour:
   - 6
   - 8
   minDistance: 20
-  aggrorange: 8
-  Castpoint: {fileID: 5467312464933008843}
+  aggroRange: 6
+  castPoint: {fileID: 0}
   projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
   healthManagerTag: HealthManager
   timeBetweenShots: 0.75
