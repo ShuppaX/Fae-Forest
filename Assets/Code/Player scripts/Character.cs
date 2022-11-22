@@ -46,10 +46,8 @@ namespace RemixGame
         private SpriteRenderer spriteRenderer;
 
         //Variables
-        private Vector2 currentScale;
         private Vector2 groundbox = new(0.6f, 0.1f);
         private float horizontal;
-        private bool goingRight;
         private bool facingRight = true;
         private float sinceJump = 0f;
         private bool isJumping = false;
@@ -67,7 +65,6 @@ namespace RemixGame
         {
             rb = GetComponent<Rigidbody2D>();
 
-            currentScale = transform.localScale;
             healthManager = GameObject.FindWithTag(healthManagerTag);
 
             animator = GetComponent<Animator>();
@@ -175,6 +172,7 @@ namespace RemixGame
         public void Move(InputAction.CallbackContext context)
         {
             horizontal = context.ReadValue<Vector2>().x;
+            Debug.Log(horizontal);
         }
 
         // Method to fire a projectile when the set button is pressed.
@@ -191,7 +189,7 @@ namespace RemixGame
         {
             otherCharacter.transform.position = transform.position;
             otherCharacter.GetComponent<Character>().facingRight = facingRight;
-            otherCharacter.GetComponent<Character>().FlipOnSwap();
+            //otherCharacter.GetComponent<Character>().FlipOnSwap();
 
             otherCharacter.GetComponent<Rigidbody2D>().velocity = rb.velocity;
 
