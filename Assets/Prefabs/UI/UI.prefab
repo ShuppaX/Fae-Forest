@@ -31,12 +31,12 @@ RectTransform:
   - {fileID: 7523183125443966943}
   - {fileID: 7523183124245000182}
   - {fileID: 7523183125313977536}
-  m_Father: {fileID: 7523183123971124574}
+  m_Father: {fileID: 4440628195401420432}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -667.153, y: 294.1371}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7523183123971124513
@@ -47,7 +47,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7523183123971124574}
+  - component: {fileID: 4440628195401420432}
   m_Layer: 0
   m_Name: Health Indicators
   m_TagString: Untagged
@@ -55,23 +55,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7523183123971124574
-Transform:
+--- !u!224 &4440628195401420432
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7523183123971124513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -333, y: 250, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7523183123847105326}
   - {fileID: 7523183125707371855}
   m_Father: {fileID: 7523183125180992507}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &7523183124157957909
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +645,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7523183124636377499}
-  - {fileID: 7523183123971124574}
+  - {fileID: 4440628195401420432}
   - {fileID: 7523183124872109161}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1046,11 +1051,11 @@ RectTransform:
   - {fileID: 7523183125451968902}
   - {fileID: 7523183124664822722}
   - {fileID: 7523183125123015909}
-  m_Father: {fileID: 7523183123971124574}
+  m_Father: {fileID: 4440628195401420432}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -667.153, y: 294.1371}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
