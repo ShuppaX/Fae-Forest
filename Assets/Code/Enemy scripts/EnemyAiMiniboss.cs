@@ -36,8 +36,6 @@ namespace RemixGame
 
         //Other variables
         private Transform target;
-        private Transform character1coord;
-        private Transform character2coord;
         private Miniboss _miniboss;
         private Path path;
         private int currentWaypoint = 0;
@@ -46,12 +44,6 @@ namespace RemixGame
         Seeker seeker;
         Rigidbody2D rb;
         RaycastHit2D isGrounded;
-
-        private void Awake()
-        {
-            character1coord = chara1.transform;
-            character2coord = chara2.transform;
-        }
 
         public void Start()
         {
@@ -69,11 +61,11 @@ namespace RemixGame
             
             if (chara1.activeSelf)
             {
-                target = character1coord;
+                target = chara1.transform;
             }
             else
             {
-                target = character2coord;
+                target = chara2.transform;
             }
 
             
