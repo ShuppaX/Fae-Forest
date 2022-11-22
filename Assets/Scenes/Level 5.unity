@@ -2267,7 +2267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
       propertyPath: deathIndicator
@@ -4203,6 +4203,10 @@ PrefabInstance:
       propertyPath: castpoint
       value: 
       objectReference: {fileID: 141728045}
+    - target: {fileID: 6946871248202751847, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: aggroRange
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8280545886267945377, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_Name
       value: Enemy 5 Miniboss
