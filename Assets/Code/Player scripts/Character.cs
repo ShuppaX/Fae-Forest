@@ -40,9 +40,10 @@ namespace RemixGame
         
         private static readonly int Speed = Animator.StringToHash("speed");
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
+        private static readonly int JumpSpeed = Animator.StringToHash("jumpSpeed");
         private static readonly int GroundCheck = Animator.StringToHash("GroundCheck");
         private static readonly int MagicBlockCheck = Animator.StringToHash("MagicBlockCheck");
-        private static readonly int JumpSpeed = Animator.StringToHash("jumpSpeed");
+       
 
 
 
@@ -89,8 +90,9 @@ namespace RemixGame
                 //TODO shooting animation
                 chara1Animation.SetFloat(Speed, Mathf.Abs(rbOne.velocity.x));
                 chara1Animation.SetFloat(JumpSpeed, Mathf.Abs(rbOne.velocity.y));
-                chara1Animation.SetBool(GroundCheck, IsGrounded());
-                chara1Animation.SetBool(MagicBlockCheck, IsOnMagicblock());
+                
+                //chara1Animation.SetBool(GroundCheck, IsGrounded());
+                //chara1Animation.SetBool(MagicBlockCheck, IsOnMagicblock());
             }
             else if (characterTwo.activeSelf)
             {
