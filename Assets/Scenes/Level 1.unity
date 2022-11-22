@@ -4508,6 +4508,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.61
       objectReference: {fileID: 0}
+    - target: {fileID: 5552181169664051123, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6200283782264780950, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.44

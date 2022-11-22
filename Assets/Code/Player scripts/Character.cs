@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements.Experimental;
@@ -34,26 +35,30 @@ namespace RemixGame
         [SerializeField] private string healthManagerTag = "HealthManager";
 
         [Header("Animator")]
-        private Animator chara1Animation;
+        private Animator chara1Animation; 
+        //private Animator chara2Animation;
+        
+        private static readonly int Speed = Animator.StringToHash("speed");
+        private static readonly int IsJumping = Animator.StringToHash("isJumping");
+        private static readonly int GroundCheck = Animator.StringToHash("GroundCheck");
+        private static readonly int MagicBlockCheck = Animator.StringToHash("MagicBlockCheck");
+        private static readonly int JumpSpeed = Animator.StringToHash("jumpSpeed");
 
 
-        private GameObject healthManager;
 
-        private float sinceJump = 0f;
-        private Vector2 groundbox = new(0.6f, 0.1f);
-
+        //Objects
         private Rigidbody2D rbOne;
         private Rigidbody2D rbTwo;
-
-        private float horizontal;
-
+        private GameObject healthManager;
+        
+        //Variables
         private Vector2 currentScale;
+        private Vector2 groundbox = new(0.6f, 0.1f);
+        private float horizontal;
         private bool goingRight;
         private bool facingRight = true;
-        private static readonly int Speed = Animator.StringToHash("Speed");
-        private static readonly int GroundCheck = Animator.StringToHash("GroundCheck");
-        private static readonly int Speed1 = Animator.StringToHash("speed");
-        private static readonly int MagicBlockCheck = Animator.StringToHash("MagicBlockCheck");
+        private float sinceJump = 0f;
+
 
         public bool FacingRight
         {
@@ -61,7 +66,8 @@ namespace RemixGame
         }
 
         public Transform getPosition { get; }
-
+        
+        
         private void Awake()
         {
             rbOne = characterOne.GetComponent<Rigidbody2D>();
@@ -79,9 +85,10 @@ namespace RemixGame
         {
             if (characterOne.activeSelf)
             {
-                //Animations
+                //Animations no idea if update or fixed better seems to have no difference
                 //TODO shooting animation
-                chara1Animation.SetFloat(Speed1, Mathf.Abs(rbOne.velocity.x));
+                chara1Animation.SetFloat(Speed, Mathf.Abs(rbOne.velocity.x));
+                chara1Animation.SetFloat(JumpSpeed, Mathf.Abs(rbOne.velocity.y));
                 chara1Animation.SetBool(GroundCheck, IsGrounded());
                 chara1Animation.SetBool(MagicBlockCheck, IsOnMagicblock());
             }
@@ -109,8 +116,7 @@ namespace RemixGame
             
         }
         
-        // Groundcheck using empty object under characters feet. Checks overlaps within a circle
-        // testing with cd to avoid moon launch
+        // Groundcheck using empty object under characters feet. Checks overlaps within a box
         private bool IsGrounded()
         {
             return Physics2D.OverlapBox(groundCheck.position, groundbox, 0f, groundLayer);
@@ -131,11 +137,14 @@ namespace RemixGame
                 {
                     sinceJump = 0;
                     rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                    chara1Animation.SetTrigger(IsJumping);
                 }
                 else if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
                 {
                     sinceJump = 0;
                     rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                    chara1Animation.SetTrigger(IsJumping);
+
                 }
                 
                 //Lower jump from releasing the key mid flight
@@ -147,7 +156,8 @@ namespace RemixGame
                 }
 
                
-            } else if (characterTwo.activeSelf)
+            } 
+            else if (characterTwo.activeSelf)
             {
                 if (context.performed && sinceJump > jumpCd && IsGrounded())
                 {
