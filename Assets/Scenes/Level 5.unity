@@ -207,6 +207,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &141728045 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5467312464933008843, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+  m_PrefabInstance: {fileID: 1988373490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &185519012
 GameObject:
   m_ObjectHideFlags: 0
@@ -4190,6 +4195,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 239233159}
+    - target: {fileID: 6946871248202751847, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: castPoint
+      value: 
+      objectReference: {fileID: 141728045}
+    - target: {fileID: 6946871248202751847, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
+      propertyPath: castpoint
+      value: 
+      objectReference: {fileID: 141728045}
     - target: {fileID: 8280545886267945377, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_Name
       value: Enemy 5 Miniboss
