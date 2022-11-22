@@ -12,10 +12,7 @@ namespace RemixGame
         //headers to improve editor readability
         [Header("Pathfinding")] 
         public GameObject chara1;
-        public Transform character1coord;
         public GameObject chara2;
-        public Transform character2coord;
-        public Transform target;
         public float activateDistance = 50f;
         public float pathUpdateSeconds = 0.5f;
 
@@ -38,6 +35,9 @@ namespace RemixGame
         public bool directionLookEnabled = true;
 
         //Other variables
+        private Transform target;
+        private Transform character1coord;
+        private Transform character2coord;
         private Miniboss _miniboss;
         private Path path;
         private int currentWaypoint = 0;
@@ -46,8 +46,13 @@ namespace RemixGame
         Seeker seeker;
         Rigidbody2D rb;
         RaycastHit2D isGrounded;
-        
-        
+
+        private void Awake()
+        {
+            character1coord = chara1.transform;
+            character2coord = chara2.transform;
+        }
+
         public void Start()
         {
             seeker = GetComponent<Seeker>();
