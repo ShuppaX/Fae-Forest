@@ -188,6 +188,7 @@ namespace RemixGame
             if (context.performed)
             {
                 isAttacking = true;
+                InstantiateProjectile();
             }
         }
 

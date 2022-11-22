@@ -360,8 +360,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7147695549753841088}
         m_TargetAssemblyTypeName: RemixGame.Character, Assembly-CSharp
-        m_MethodName: InstantiateProjectile
-        m_Mode: 1
+        m_MethodName: Fire
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
