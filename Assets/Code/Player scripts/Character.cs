@@ -60,7 +60,6 @@ namespace RemixGame
 
         public Transform getPosition { get; }
         
-        
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -172,7 +171,6 @@ namespace RemixGame
         public void Move(InputAction.CallbackContext context)
         {
             horizontal = context.ReadValue<Vector2>().x;
-            Debug.Log(horizontal);
         }
 
         // Method to fire a projectile when the set button is pressed.

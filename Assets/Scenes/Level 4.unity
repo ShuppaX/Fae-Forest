@@ -2532,6 +2532,14 @@ PrefabInstance:
       propertyPath: songName
       value: Basic level music
       objectReference: {fileID: 0}
+    - target: {fileID: 5301146526725500669, guid: db7d13dbfd01cfc48b744ecd6b743a55, type: 3}
+      propertyPath: characterOne
+      value: 
+      objectReference: {fileID: 370541844}
+    - target: {fileID: 5301146526725500669, guid: db7d13dbfd01cfc48b744ecd6b743a55, type: 3}
+      propertyPath: characterTwo
+      value: 
+      objectReference: {fileID: 2129523745}
     - target: {fileID: 7076369533353251232, guid: db7d13dbfd01cfc48b744ecd6b743a55, type: 3}
       propertyPath: m_Name
       value: Gamestate Manager

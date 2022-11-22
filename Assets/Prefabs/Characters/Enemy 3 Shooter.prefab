@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7070236890963303851}
   - component: {fileID: 4122380411766175668}
   - component: {fileID: 6119545113657412629}
+  - component: {fileID: 1002947624735439973}
   m_Layer: 8
   m_Name: Enemy 3 Shooter
   m_TagString: Enemy
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compositeTag: CompositeProjectile
+  damageTag: CompositeProjectile
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
 --- !u!114 &6119545113657412629
@@ -160,6 +161,26 @@ MonoBehaviour:
   - 1.15
   - 1
   healthManagerTag: HealthManager
+--- !u!95 &1002947624735439973
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122380411766175664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21527720ce4c48441a32c8bd285a071e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6573326483807990888
 GameObject:
   m_ObjectHideFlags: 0
