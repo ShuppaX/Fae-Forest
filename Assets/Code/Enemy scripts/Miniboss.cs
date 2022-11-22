@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 
 namespace RemixGame
 {
@@ -101,6 +96,7 @@ namespace RemixGame
                 nextShotTime = Time.time + timeBetweenShots;
             }
 
+            rb2d.velocity *= 0.5f;
             //keeping the player at set distance
             transform.position = Vector2.MoveTowards(transform.position, target.position, -currentMovementSpeed * Time.deltaTime);
         }
@@ -148,7 +144,6 @@ namespace RemixGame
             {
                 if (hit.collider.gameObject.GetComponent<Character>())
                 {
-                    //Debug.Log("Hit "+ hit.collider.gameObject.name);
                     val = true;
                 }
                 else 
