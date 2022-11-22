@@ -183,7 +183,7 @@ MonoBehaviour:
   - 8
   minDistance: 20
   aggroRange: 6
-  castPoint: {fileID: 0}
+  castPoint: {fileID: 5467312464933008843}
   projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
   healthManagerTag: HealthManager
   timeBetweenShots: 0.75
@@ -216,10 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chara1: {fileID: 0}
-  character1coord: {fileID: 0}
   chara2: {fileID: 0}
-  character2coord: {fileID: 0}
-  target: {fileID: 0}
   activateDistance: 50
   pathUpdateSeconds: 0.5
   patrolAcceleration: 2

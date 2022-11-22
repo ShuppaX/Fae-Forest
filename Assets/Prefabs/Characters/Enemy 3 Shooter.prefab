@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTag: CompositeProjectile
+  damageTag: DamageProjectile
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
 --- !u!114 &6119545113657412629
