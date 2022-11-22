@@ -11,10 +11,7 @@ namespace RemixGame
         //headers to improve editor readability
         [Header("Pathfinding")] 
         public GameObject chara1;
-        public Transform character1coord;
         public GameObject chara2;
-        public Transform character2coord;
-        public Transform target;
         public float activateDistance = 50f;
         public float pathUpdateSeconds = 0.5f;
 
@@ -38,8 +35,12 @@ namespace RemixGame
 
         [Header("Health Manager tag")]
         [SerializeField] private string healthManagerTag = "HealthManager";
-        
+
         //Other variables
+        private Transform target;
+        private Transform character1coord;
+        private Transform character2coord;
+
         private Path path;
         private int currentWaypoint = 0;
         private bool ActionsStopped;
@@ -56,6 +57,9 @@ namespace RemixGame
         private void Awake()
         {
             healthManager = GameObject.FindWithTag(healthManagerTag);
+
+            character1coord = chara1.transform;
+            character2coord = chara2.transform;
         }
 
         public void Start()

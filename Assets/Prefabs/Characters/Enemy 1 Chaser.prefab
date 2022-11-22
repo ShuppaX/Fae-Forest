@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9de6b9b82f1294d8843ad9eaf4f70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compositeTag: CompositeProjectile
+  damageTag: CompositeProjectile
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
 --- !u!114 &1931326862096827321
@@ -154,11 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chara1: {fileID: 0}
-  character1coord: {fileID: 0}
   chara2: {fileID: 0}
-  character2coord: {fileID: 0}
-  target: {fileID: 0}
-  activateDistance: 8.03
+  activateDistance: 6.62
   pathUpdateSeconds: 0.5
   patrolAcceleration: 3
   patrolmaxSpeed: 6
@@ -168,7 +165,7 @@ MonoBehaviour:
   - 200
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8
-  jumpModifier: 1
+  jumpModifier: 0.66
   jumpCheckOffset: 0.1
   followEnabled: 1
   jumpEnabled: 1

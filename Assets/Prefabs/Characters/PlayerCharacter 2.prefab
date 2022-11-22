@@ -197,7 +197,7 @@ SpriteRenderer:
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 67ee7983b9996b34b88206e2d4aba934, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -218,10 +218,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.85
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -241,7 +241,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.09539497, y: 0.026869625}
-  m_Size: {x: 0.46710467, y: 0.6567866}
+  m_Size: {x: 0.46710467, y: 0.61}
   m_Direction: 0
 --- !u!114 &7147695549753841095
 MonoBehaviour:
@@ -271,7 +271,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7147695549753841088}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_TargetAssemblyTypeName: RemixGame.Character, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -327,7 +327,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7147695549753841088}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_TargetAssemblyTypeName: RemixGame.Character, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -343,7 +343,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7147695549753841088}
-        m_TargetAssemblyTypeName: RemixGame.Code.Character, Assembly-CSharp
+        m_TargetAssemblyTypeName: RemixGame.Character, Assembly-CSharp
         m_MethodName: Swap
         m_Mode: 0
         m_Arguments:
@@ -360,8 +360,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7147695549753841088}
         m_TargetAssemblyTypeName: RemixGame.Character, Assembly-CSharp
-        m_MethodName: FireComposite
-        m_Mode: 0
+        m_MethodName: InstantiateProjectile
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
