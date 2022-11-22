@@ -37,6 +37,7 @@ namespace RemixGame
         public const string JumpParam = "Jump";
         public const string GroundCheckParam = "GroundCheck";
         public const string MagicBlockCheckParam = "MagicBlockCheck";
+        public const string AirSpeedParam = "AirSpeedY";
 
         //Objects
         private Rigidbody2D rb;
@@ -111,9 +112,13 @@ namespace RemixGame
             // Jump
             if (isJumping)
             {
+                Debug.Log("Jump animation triggered!");
                 animator.SetTrigger(JumpParam);
                 isJumping = false;
             }
+
+            // For jumping and falling
+            animator.SetFloat(AirSpeedParam, rb.velocity.y);
 
             // Attack
             if (isAttacking)
@@ -150,13 +155,17 @@ namespace RemixGame
         {
             if (context.performed && sinceJump > jumpCd && IsGrounded())
             {
+                Debug.Log("Jump triggered!");
                 sinceJump = 0;
                 rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                isJumping = true;
             }
             else if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
             {
+                Debug.Log("Jump triggered!");
                 sinceJump = 0;
                 rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Force);
+                isJumping = true;
             }
 
             if (context.canceled && rb.velocity.y > 0f)
