@@ -4,18 +4,14 @@ using UnityEngine;
 
 namespace RemixGame
 {
-    public class CompositeProjectile : MonoBehaviour
+    public class DamageProjectile : MonoBehaviour
     {
         [SerializeField] private float Speed = 4f;
-
         [SerializeField] private float projectileDespawnTime = 0.5f;
 
         private Rigidbody2D projectileRb;
-
         private GameObject player;
-
         private bool playerFacingRight;
-
         private bool timerPassed = false;
 
         // Initializing the projectileRb with the gameobjects rigidbody

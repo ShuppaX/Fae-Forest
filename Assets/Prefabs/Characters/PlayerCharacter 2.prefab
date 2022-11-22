@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 6500152638205772937}
   - component: {fileID: 7147695549753841095}
   - component: {fileID: 7147695549753841088}
+  - component: {fileID: 4938821656987620073}
   m_Layer: 7
   m_Name: PlayerCharacter 2
   m_TagString: Player
@@ -144,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7147695549753841090}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5139995, y: -4.6816964, z: 0}
+  m_LocalPosition: {x: 1.8217268, y: -4.623222, z: -0.0000000037252903}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -396,13 +397,31 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   projectileLaunchOffset: {fileID: 9187681200146730428}
-  compositeProjectile: {fileID: 1088176623263173541, guid: 8b240899616d4e24e9de1b657a85fc6e, type: 3}
-  magicProjectile: {fileID: -2880422429338552057, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
-  characterOne: {fileID: 0}
-  characterTwo: {fileID: 7147695549753841090}
+  projectile: {fileID: 5823844965593964360, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
+  otherCharacter: {fileID: 0}
   movementSpeed: 6
   jumpingPower: 6
   jumpCd: 0.6
   enemyTag: Enemy
   enemyProjectileTag: EnemyProjectile
   healthManagerTag: HealthManager
+--- !u!95 &4938821656987620073
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147695549753841090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5958e40966094f47bf4dda60d97c4cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements.Experimental;
 
 namespace RemixGame
 {
@@ -17,12 +16,10 @@ namespace RemixGame
 
         [Header("Projectile offset and projectiles")]
         [SerializeField] private Transform projectileLaunchOffset;
-        [SerializeField] private CompositeProjectile compositeProjectile;
-        [SerializeField] private MagicProjectile magicProjectile;
+        [SerializeField] private GameObject projectile;
 
         [Header("Player characters")]
-        [SerializeField] private GameObject characterOne;
-        [SerializeField] private GameObject characterTwo;
+        [SerializeField] private GameObject otherCharacter;
 
         [Header("Player variables")]
         [SerializeField] private float movementSpeed = 8f;
@@ -34,24 +31,20 @@ namespace RemixGame
         [SerializeField] private string enemyProjectileTag = "EnemyProjectile";
         [SerializeField] private string healthManagerTag = "HealthManager";
 
-        [Header("Animator")]
-        private Animator chara1Animation; 
-        //private Animator chara2Animation;
-        
-        private static readonly int Speed = Animator.StringToHash("speed");
-        private static readonly int IsJumping = Animator.StringToHash("isJumping");
-        private static readonly int JumpSpeed = Animator.StringToHash("jumpSpeed");
-        private static readonly int GroundCheck = Animator.StringToHash("GroundCheck");
-        private static readonly int MagicBlockCheck = Animator.StringToHash("MagicBlockCheck");
-       
-
-
+        [Header("Animator parameters")]
+        public const string AttackParam = "Attack";
+        public const string AnimStateParam = "AnimState";
+        public const string JumpParam = "Jump";
+        public const string GroundCheckParam = "GroundCheck";
+        public const string MagicBlockCheckParam = "MagicBlockCheck";
 
         //Objects
-        private Rigidbody2D rbOne;
-        private Rigidbody2D rbTwo;
+        private Rigidbody2D rb;
+
         private GameObject healthManager;
-        
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
+
         //Variables
         private Vector2 currentScale;
         private Vector2 groundbox = new(0.6f, 0.1f);
@@ -59,7 +52,8 @@ namespace RemixGame
         private bool goingRight;
         private bool facingRight = true;
         private float sinceJump = 0f;
-
+        private bool isJumping = false;
+        private bool isAttacking = false;
 
         public bool FacingRight
         {
@@ -71,51 +65,76 @@ namespace RemixGame
         
         private void Awake()
         {
-            rbOne = characterOne.GetComponent<Rigidbody2D>();
-            rbTwo = characterTwo.GetComponent<Rigidbody2D>();
+            rb = GetComponent<Rigidbody2D>();
+
             currentScale = transform.localScale;
             healthManager = GameObject.FindWithTag(healthManagerTag);
-            
-            chara1Animation = GetComponent<Animator>();
 
-            characterOne.SetActive(true);
-            characterTwo.SetActive(false);
+            animator = GetComponent<Animator>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         private void Update()
         {
-            if (characterOne.activeSelf)
-            {
-                //Animations no idea if update or fixed better seems to have no difference
-                //TODO shooting animation
-                chara1Animation.SetFloat(Speed, Mathf.Abs(rbOne.velocity.x));
-                chara1Animation.SetFloat(JumpSpeed, Mathf.Abs(rbOne.velocity.y));
-                
-                //chara1Animation.SetBool(GroundCheck, IsGrounded());
-                //chara1Animation.SetBool(MagicBlockCheck, IsOnMagicblock());
-            }
-            else if (characterTwo.activeSelf)
-            {
-                //TODO art pls
-                
-            }
+            UpdateAnimator();
         }
 
         // Update is called once per frame
         private void FixedUpdate()
         {
-            if (characterOne.activeSelf)
-            {
-                rbOne.velocity = new Vector2(horizontal * movementSpeed, rbOne.velocity.y);
-                
-            }
-            else if (characterTwo.activeSelf)
-            {
-                rbTwo.velocity = new Vector2(horizontal * movementSpeed, rbTwo.velocity.y);
-            }
+            rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
             
             sinceJump += Time.deltaTime;
-            
+        }
+
+        private void UpdateAnimator()
+        {
+            if (rb.velocity.x < -Mathf.Epsilon)
+            {
+                spriteRenderer.flipX = true;
+                CheckWayOfFacing();
+                if (projectileLaunchOffset.transform.localPosition.x > 0)
+                {
+                    FlipProjectileOffset();
+                }
+            }
+            else if (rb.velocity.x > Mathf.Epsilon)
+            {
+                spriteRenderer.flipX = false;
+                CheckWayOfFacing();
+                if (projectileLaunchOffset.transform.localPosition.x < 0)
+                {
+                    FlipProjectileOffset();
+                }
+            }
+
+            // Is the character on ground or a magicblock?
+            animator.SetBool(GroundCheckParam, IsGrounded());
+            animator.SetBool(MagicBlockCheckParam, IsOnMagicblock());
+
+            // Jump
+            if (isJumping)
+            {
+                animator.SetTrigger(JumpParam);
+                isJumping = false;
+            }
+
+            // Attack
+            if (isAttacking)
+            {
+                animator.SetTrigger(AttackParam);
+                isAttacking = false;
+            }
+
+            // Run
+            if (Mathf.Abs(rb.velocity.x) > Mathf.Epsilon)
+            {
+                animator.SetInteger(AnimStateParam, 1);
+            }
+            else // Idle
+            {
+                animator.SetInteger(AnimStateParam, 0);
+            }
         }
         
         // Groundcheck using empty object under characters feet. Checks overlaps within a box
@@ -133,128 +152,57 @@ namespace RemixGame
         // jump action with rigidbody velocity applying force directly
         public void Jump(InputAction.CallbackContext context)
         {
-            if (characterOne.activeSelf)
+            if (context.performed && sinceJump > jumpCd && IsGrounded())
             {
-                if (context.performed && sinceJump > jumpCd && IsGrounded())
-                {
-                    sinceJump = 0;
-                    rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
-                    chara1Animation.SetTrigger(IsJumping);
-                }
-                else if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
-                {
-                    sinceJump = 0;
-                    rbOne.AddForce(new Vector2(rbOne.velocity.x, jumpingPower), ForceMode2D.Impulse);
-                    chara1Animation.SetTrigger(IsJumping);
-
-                }
-                
-                //Lower jump from releasing the key mid flight
-                if (context.canceled && rbOne.velocity.y > 0f)
-                {
-                    var velocity = rbOne.velocity;
-                    velocity = new Vector2(velocity.x, velocity.y * 0.66f);
-                    rbOne.velocity = velocity;
-                }
-
-               
-            } 
-            else if (characterTwo.activeSelf)
-            {
-                if (context.performed && sinceJump > jumpCd && IsGrounded())
-                {
-                    sinceJump = 0;
-                    rbTwo.AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
-                }
-                else if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
-                {
-                    sinceJump = 0;
-                    rbTwo.AddForce(new Vector2(rbTwo.velocity.x, jumpingPower), ForceMode2D.Impulse);
-                }
-                
-                //Lower jump from releasing the key mid flight
-                if (context.canceled && rbTwo.velocity.y > 0f)
-                {
-                    var velocity = rbTwo.velocity;
-                    velocity = new Vector2(velocity.x, velocity.y * 0.66f);
-                    rbTwo.velocity = velocity;
-                }
+                sinceJump = 0;
+                rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
             }
-            
+            else if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
+            {
+                sinceJump = 0;
+                rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Force);
+            }
+
+            if (context.canceled && rb.velocity.y > 0f)
+            {
+                var velocity = rb.velocity;
+                velocity = new Vector2(velocity.x, velocity.y * 0.66f);
+                rb.velocity = velocity;
+            }
         }
 
         // Method to move the character
         public void Move(InputAction.CallbackContext context)
         {
             horizontal = context.ReadValue<Vector2>().x;
-            CheckDirectionOfMovement();
-            CheckWayOfFacing();
-            Flip();
         }
 
-        
-        //NOTE TO SELF THIS IS THE BASIC PROJECTILE
         // Method to fire a projectile when the set button is pressed.
-        public void FireComposite(InputAction.CallbackContext context)
+        public void Fire(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                if (characterOne.activeSelf)
-                {
-                    Instantiate(compositeProjectile, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
-                } else if (characterTwo.activeSelf)
-                {
-                    Instantiate(magicProjectile, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
-                }
+                isAttacking = true;
             }
         }
 
         // Method to swap between characters
         public void Swap(InputAction.CallbackContext context)
         {
-            if (characterOne.activeSelf)
-            {
-                characterTwo.transform.position = characterOne.transform.position;
+            otherCharacter.transform.position = transform.position;
+            otherCharacter.GetComponent<Character>().facingRight = facingRight;
+            otherCharacter.GetComponent<Character>().FlipOnSwap();
 
-                characterTwo.GetComponent<Character>().facingRight = characterOne.GetComponent<Character>().facingRight;
-                characterTwo.GetComponent<Character>().FlipOnSwap();
+            otherCharacter.GetComponent<Rigidbody2D>().velocity = rb.velocity;
 
-                rbTwo.velocity = rbOne.velocity;
-
-                characterOne.SetActive(false);
-                characterTwo.SetActive(true);
-            }
-            else if (characterTwo.activeSelf)
-            {
-                characterOne.transform.position = characterTwo.transform.position;
-
-                characterOne.GetComponent<Character>().facingRight = characterTwo.GetComponent<Character>().facingRight;
-                characterOne.GetComponent<Character>().FlipOnSwap();
-
-                rbOne.velocity = rbTwo.velocity;
-
-                characterTwo.SetActive(false);
-                characterOne.SetActive(true);
-            }
-        }
-
-        // Method to check which way the character is moving
-        private void CheckDirectionOfMovement()
-        {
-            if (horizontal > 0)
-            {
-                goingRight = true;
-            }
-            else if (horizontal < 0)
-            {
-                goingRight = false;
-            }
+            gameObject.SetActive(false);
+            otherCharacter.SetActive(true);
         }
 
         // Method to check which way the character is already facing
         private void CheckWayOfFacing()
         {
-            if (currentScale.x > 0)
+            if (!spriteRenderer.flipX)
             {
                 facingRight = true;
             }
@@ -264,34 +212,24 @@ namespace RemixGame
             }
         }
 
-        // Method to make the character face the other way
-        private void Flip()
-        {
-            if (!goingRight && facingRight)
-            {
-                currentScale.x *= -1;
-                transform.localScale = currentScale;
-            }
-            else if (goingRight && !facingRight)
-            {
-                currentScale.x *= -1;
-                transform.localScale = currentScale;
-            }
-        }
-
         // Methos used to flip the character face the same way than the other character was facing
         private void FlipOnSwap()
         {
-            if (facingRight && currentScale.x < 0)
+            if (facingRight && !spriteRenderer.flipX)
             {
-                currentScale.x *= -1;
-                transform.localScale = currentScale;
+                spriteRenderer.flipX = true;
             }
-            else if (!facingRight && currentScale.x > 0)
+            else if (!facingRight && spriteRenderer.flipX)
             {
-                currentScale.x *= -1;
-                transform.localScale = currentScale;
+                spriteRenderer.flipX = false;
             }
+        }
+
+        private void FlipProjectileOffset()
+        {
+            Vector3 position = projectileLaunchOffset.transform.localPosition;
+            position.x *= -1;
+            projectileLaunchOffset.transform.localPosition = position;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -308,6 +246,11 @@ namespace RemixGame
         {
             Gizmos.color = Color.red;
             Gizmos.DrawCube(groundCheck.position,groundbox);
+        }
+
+        public void InstantiateProjectile()
+        {
+            Instantiate(projectile, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
         }
     }
 }

@@ -4,24 +4,30 @@ using UnityEngine;
 
 namespace RemixGame
 {
-    public class MagicProjectile : MonoBehaviour
+    public class ProjectileBase : MonoBehaviour
     {
         [SerializeField] private float Speed = 4f;
+
         [SerializeField] private float projectileDespawnTime = 0.5f;
-        [SerializeField] private Magicblock magicblock;
-        [SerializeField] private string levelWallsParentTag = "Walls";
-        [SerializeField] private string levelPlatformsParentTag = "Platforms";
 
         private Rigidbody2D projectileRb;
+
         private GameObject player;
+
         private bool playerFacingRight;
+
         private bool timerPassed = false;
+
+        public bool TimerPassed
+        {
+            get { return timerPassed; }
+        }
 
         // Initializing the projectileRb with the gameobjects rigidbody
         // also used to check if the player character is facing left or right
         // which is used to determine the direction of movement for the
         // projectile
-        private void Awake()
+        protected virtual void Awake()
         {
             projectileRb = gameObject.GetComponent<Rigidbody2D>();
             player = GameObject.FindGameObjectWithTag("Player");
@@ -43,18 +49,18 @@ namespace RemixGame
             StartCoroutine(DespawnTimer());
         }
 
-        // A magicblock is spawned and the projectile is destroyed if the timercoroutine has passed.
-        private void Update()
+        // The projectile is destroyed if the timercoroutine has passed.
+        protected virtual void Update()
         {
             if (timerPassed)
             {
-                SpawnMagicblock();
+                Destroy(gameObject);
             }
         }
 
         // This is used for the movement of the projectile
         // The if statement determines the direction of movement for the projectile
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             if (playerFacingRight)
             {
@@ -68,20 +74,9 @@ namespace RemixGame
 
         // This is used to destroy the projectile if it collides with something
         // that it can collide with.
-        private void OnCollisionEnter2D(Collision2D collision)
+        protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag(levelWallsParentTag) || collision.gameObject.CompareTag(levelPlatformsParentTag))
-            {
-                SpawnMagicblock();
-            }
-
             Destroy(gameObject);
-        }
-
-        // Method to spawn the magicblock(s)
-        private void SpawnMagicblock()
-        {
-            Instantiate(magicblock, transform.position, Quaternion.identity);
         }
 
         // Simple despawn timer coroutine to track determine if the projectile has been instantiated

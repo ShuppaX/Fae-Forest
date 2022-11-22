@@ -3946,7 +3946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1924944864
 Transform:
   m_ObjectHideFlags: 0
@@ -4382,6 +4382,10 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 986826083}
+    - target: {fileID: 6200283782297569852, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: otherCharacter
+      value: 
+      objectReference: {fileID: 2129523745}
     - target: {fileID: 6200283782297569853, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Mass
       value: 0.85
@@ -4389,6 +4393,10 @@ PrefabInstance:
     - target: {fileID: 6200283782297569853, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_GravityScale
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200283782297569855, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 280ab06b6b1733147890179781aab120, type: 3}
@@ -4493,6 +4501,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 986826083}
     - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: otherCharacter
+      value: 
+      objectReference: {fileID: 370541844}
+    - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: parentGameobject
       value: 
       objectReference: {fileID: 239233158}
@@ -4562,7 +4574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147695549753841090, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7147695549753841090, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_TagString
@@ -4583,6 +4595,10 @@ PrefabInstance:
     - target: {fileID: 7147695549753841093, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_GravityScale
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147695549753841095, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}

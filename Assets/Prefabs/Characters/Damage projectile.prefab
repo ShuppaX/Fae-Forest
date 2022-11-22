@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 21433799839881002}
   - component: {fileID: 2034863367332413896}
   m_Layer: 9
-  m_Name: Composite projectile
-  m_TagString: CompositeProjectile
+  m_Name: Damage projectile
+  m_TagString: DamageProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

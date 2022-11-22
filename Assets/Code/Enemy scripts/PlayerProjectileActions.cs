@@ -7,7 +7,7 @@ namespace RemixGame
 {
     public class PlayerProjectileActions : MonoBehaviour
     {
-        [SerializeField] private string compositeTag = "CompositeProjectile";
+        [SerializeField] private string damageTag = "DamageProjectile";
 
         [SerializeField] private string magicTag = "MagicProjectile";
 
@@ -26,7 +26,7 @@ namespace RemixGame
         // to destroy the gameobject or freeze the object
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.tag.Equals(compositeTag))
+            if (collision.gameObject.tag.Equals(damageTag))
             {
                 Destroy(gameObject);
             } else if (collision.gameObject.tag.Equals(magicTag))

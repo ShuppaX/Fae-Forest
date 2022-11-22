@@ -8,12 +8,12 @@ TagManager:
   - Enemy
   - Miniboss
   - MagicBlock
-  - CompositeProjectile
   - MagicProjectile
   - Walls
   - Platforms
   - HealthIndicator
   - HealthManager
+  - DamageProjectile
   layers:
   - Default
   - TransparentFX
