@@ -33,6 +33,10 @@ namespace RemixGame
         [SerializeField] private string enemyProjectileTag = "EnemyProjectile";
         [SerializeField] private string healthManagerTag = "HealthManager";
 
+        [Header("Animator")]
+        private Animator chara1Animation;
+
+
         private GameObject healthManager;
 
         private float sinceJump = 0f;
@@ -46,6 +50,10 @@ namespace RemixGame
         private Vector2 currentScale;
         private bool goingRight;
         private bool facingRight = true;
+        private static readonly int Speed = Animator.StringToHash("Speed");
+        private static readonly int GroundCheck = Animator.StringToHash("GroundCheck");
+        private static readonly int Speed1 = Animator.StringToHash("speed");
+        private static readonly int MagicBlockCheck = Animator.StringToHash("MagicBlockCheck");
 
         public bool FacingRight
         {
@@ -60,9 +68,28 @@ namespace RemixGame
             rbTwo = characterTwo.GetComponent<Rigidbody2D>();
             currentScale = transform.localScale;
             healthManager = GameObject.FindWithTag(healthManagerTag);
+            
+            chara1Animation = GetComponent<Animator>();
 
             characterOne.SetActive(true);
             characterTwo.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if (characterOne.activeSelf)
+            {
+                //Animations
+                //TODO shooting animation
+                chara1Animation.SetFloat(Speed1, Mathf.Abs(rbOne.velocity.x));
+                chara1Animation.SetBool(GroundCheck, IsGrounded());
+                chara1Animation.SetBool(MagicBlockCheck, IsOnMagicblock());
+            }
+            else if (characterTwo.activeSelf)
+            {
+                //TODO art pls
+                
+            }
         }
 
         // Update is called once per frame
@@ -71,6 +98,7 @@ namespace RemixGame
             if (characterOne.activeSelf)
             {
                 rbOne.velocity = new Vector2(horizontal * movementSpeed, rbOne.velocity.y);
+                
             }
             else if (characterTwo.activeSelf)
             {
@@ -78,7 +106,7 @@ namespace RemixGame
             }
             
             sinceJump += Time.deltaTime;
-
+            
         }
         
         // Groundcheck using empty object under characters feet. Checks overlaps within a circle
@@ -152,6 +180,8 @@ namespace RemixGame
             Flip();
         }
 
+        
+        //NOTE TO SELF THIS IS THE BASIC PROJECTILE
         // Method to fire a projectile when the set button is pressed.
         public void FireComposite(InputAction.CallbackContext context)
         {
