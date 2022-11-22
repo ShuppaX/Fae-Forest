@@ -4404,6 +4404,10 @@ PrefabInstance:
       value: Health Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
       propertyPath: deathIndicator
       value: 
       objectReference: {fileID: 1594243446}
@@ -4558,7 +4562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147695549753841090, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7147695549753841090, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_TagString
