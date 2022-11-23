@@ -143,6 +143,7 @@ MonoBehaviour:
     source: {fileID: 0}
   SFXVolume: 1
   MusicVolume: 1
+  volumeDisplayMultiplier: 100
   sfxSlider: {fileID: 0}
   musicSlider: {fileID: 0}
   musicTextFirstPart: 'MUSIC: '
