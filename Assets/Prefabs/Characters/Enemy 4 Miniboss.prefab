@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 4027556773401565281}
   - component: {fileID: 3008770989953751993}
   - component: {fileID: 3008770989953751999}
+  - component: {fileID: 1550730258285071607}
   m_Layer: 8
   m_Name: Enemy 4 Miniboss
   m_TagString: Enemy
@@ -64,8 +65,8 @@ RectTransform:
   m_GameObject: {fileID: 8280545886267945377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5467312464933008843}
   m_Father: {fileID: 0}
@@ -117,8 +118,8 @@ SpriteRenderer:
   m_SortingLayerID: 440215873
   m_SortingLayer: 4
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 114761e37304e7d4b981fa6248207590, type: 3}
-  m_Color: {r: 1, g: 0.41037738, b: 0.41037738, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a16f770998cf0d649b7b2b685dbc0c8f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -265,3 +266,23 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!95 &1550730258285071607
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280545886267945377}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a48495cd78b0664f82cf1a34d17a5af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
