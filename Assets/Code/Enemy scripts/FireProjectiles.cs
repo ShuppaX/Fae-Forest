@@ -11,15 +11,22 @@ namespace RemixGame
         [SerializeField] private float[] fireRates = { 1.30f, 1.15f, 1f };
         [SerializeField] private string healthManagerTag = "HealthManager";
 
+        [Header("Animator parameters")]
+        public const string ShootParam = "Shoot";
+
         private bool allowFiring = true;
         private GameObject healthManager;
         private int playersCurrentHealth;
         private int difficultyIndex;
         private float currentFireRate;
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
 
         private void Awake()
         {
             healthManager = GameObject.FindWithTag(healthManagerTag);
+            animator = GetComponent<Animator>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         // The players current health is checked for the right firerate for the character
@@ -29,6 +36,29 @@ namespace RemixGame
             if (healthManager == null)
             {
                 Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + healthManagerTag + "!");
+            }
+
+            if (transform.localPosition.x > 0)
+            {
+                spriteRenderer.flipX = true;
+
+                if (projectileLaunchOffset.transform.localPosition.x > 0)
+                {
+                    Vector3 position = projectileLaunchOffset.transform.localPosition;
+                    position.x *= -1;
+                    projectileLaunchOffset.transform.localPosition = position;
+                }
+            }
+            else if (transform.localPosition.x < 0)
+            {
+                spriteRenderer.flipX = false;
+
+                if (projectileLaunchOffset.transform.localPosition.x < 0)
+                {
+                    Vector3 position = projectileLaunchOffset.transform.localPosition;
+                    position.x *= -1;
+                    projectileLaunchOffset.transform.localPosition = position;
+                }
             }
 
             playersCurrentHealth = healthManager.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
@@ -47,6 +77,7 @@ namespace RemixGame
         {
             if (allowFiring)
             {
+                animator.SetTrigger(ShootParam);
                 Instantiate(enemyProjectilePrefab, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
                 allowFiring = false;
                 StartCoroutine(FireRate());

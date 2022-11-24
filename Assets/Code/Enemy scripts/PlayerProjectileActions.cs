@@ -8,18 +8,25 @@ namespace RemixGame
     public class PlayerProjectileActions : MonoBehaviour
     {
         [SerializeField] private string damageTag = "DamageProjectile";
-
         [SerializeField] private string magicTag = "MagicProjectile";
-
         [SerializeField] private float timeForStoppedActions = 2.5f;
 
-        private bool stopActions = false;
+        [Header("Animation parameters")]
+        public const string DeathParam = "Death";
 
+        private bool stopActions = false;
         private bool stopActionsActive = false;
+
+        private Animator animator;
 
         public bool StopActions
         {
             get { return stopActions; }
+        }
+
+        private void Awake()
+        {
+            animator = GetComponent<Animator>();
         }
 
         // Simple OnCollision detection for objects with tags
@@ -28,7 +35,8 @@ namespace RemixGame
         {
             if (collision.gameObject.tag.Equals(damageTag))
             {
-                Destroy(gameObject);
+                stopActions = true;
+                animator.SetTrigger(DeathParam);
             } else if (collision.gameObject.tag.Equals(magicTag))
             {
                 if (!stopActions)
@@ -52,6 +60,11 @@ namespace RemixGame
             stopActions = false;
             Debug.Log("Actions are active again!");
             stopActionsActive = false;
+        }
+
+        public void DestroyObject()
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8280545886267945377, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79e8495c7190cc34d849a6ac0096a299, type: 3}
@@ -2369,7 +2369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998512, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998513, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_RootOrder
@@ -2497,7 +2497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4122380411766175664, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4122380411766175665, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_RootOrder
@@ -2505,7 +2505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4122380411766175665, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.4
+      value: 8.21
       objectReference: {fileID: 0}
     - target: {fileID: 4122380411766175665, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2530,6 +2530,18 @@ PrefabInstance:
     - target: {fileID: 4122380411766175667, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_FlipX
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122380411766175667, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122380411766175667, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122380411766175667, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
@@ -3800,7 +3812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1924944864
 Transform:
   m_ObjectHideFlags: 0
@@ -3877,7 +3889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1912987629897357810, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1912987629897357811, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
       propertyPath: m_RootOrder
@@ -4325,6 +4337,10 @@ PrefabInstance:
     - target: {fileID: 7147695549753841090, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147695549753841092, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}

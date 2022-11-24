@@ -69,6 +69,25 @@ namespace RemixGame
 
             animator = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+
+            if (facingRight)
+            {
+                spriteRenderer.flipX = false;
+
+                if (projectileLaunchOffset.transform.localPosition.x > 0)
+                {
+                    FlipProjectileOffset();
+                }
+            }
+            else if (!facingRight)
+            {
+                spriteRenderer.flipX = true;
+
+                if (projectileLaunchOffset.transform.localPosition.x < 0)
+                {
+                    FlipProjectileOffset();
+                }
+            }
         }
 
         private void Update()
@@ -89,7 +108,6 @@ namespace RemixGame
             if (rb.velocity.x < -Mathf.Epsilon)
             {
                 spriteRenderer.flipX = true;
-                CheckWayOfFacing();
                 if (projectileLaunchOffset.transform.localPosition.x > 0)
                 {
                     FlipProjectileOffset();
@@ -98,7 +116,6 @@ namespace RemixGame
             else if (rb.velocity.x > Mathf.Epsilon)
             {
                 spriteRenderer.flipX = false;
-                CheckWayOfFacing();
                 if (projectileLaunchOffset.transform.localPosition.x < 0)
                 {
                     FlipProjectileOffset();
@@ -128,7 +145,7 @@ namespace RemixGame
             }
 
             // Run
-            if (Mathf.Abs(rb.velocity.x) > Mathf.Epsilon)
+            if (Mathf.Abs(rb.velocity.x) > 0.01)
             {
                 animator.SetInteger(AnimStateParam, 1);
             }
@@ -160,7 +177,8 @@ namespace RemixGame
                 rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 isJumping = true;
             }
-            else if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
+            
+            if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
             {
                 Debug.Log("Jump triggered!");
                 sinceJump = 0;
@@ -197,7 +215,7 @@ namespace RemixGame
         {
             otherCharacter.transform.position = transform.position;
             otherCharacter.GetComponent<Character>().facingRight = facingRight;
-            //otherCharacter.GetComponent<Character>().FlipOnSwap();
+            otherCharacter.GetComponent<Character>().FlipOnSwap();
 
             otherCharacter.GetComponent<Rigidbody2D>().velocity = rb.velocity;
 
