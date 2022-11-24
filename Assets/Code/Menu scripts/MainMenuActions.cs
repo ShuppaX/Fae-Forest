@@ -9,7 +9,8 @@ namespace RemixGame
     public class MainMenuActions : MonoBehaviour
     {
         [Header("Variables")]
-        [SerializeField] private int firstLevelIndex = 1;
+        [SerializeField] private int firstLevelIndex = 2;
+        [SerializeField] private int tutorialLevelIndex = 1;
 
         [Header("Main menu gameobjects")]
         [SerializeField] private GameObject mainMenuButtons;
