@@ -22,10 +22,15 @@ namespace RemixGame
         private int difficultyIndex;
         private float currentMovementSpeed;
 
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             healthManager = GameObject.FindWithTag(healthManagerTag);
+            animator = GetComponent<Animator>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         private void Start()

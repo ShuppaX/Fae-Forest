@@ -15,19 +15,26 @@ namespace RemixGame
         [Header("Main menu gameobjects")]
         [SerializeField] private GameObject mainMenuButtons;
         [SerializeField] private GameObject mainMenuOptionsButton;
+        [SerializeField] private GameObject tutorialButton;
 
         [Header("Options gameobjects")]
         [SerializeField] private GameObject options;
         [SerializeField] private GameObject optionsFirstButton;
 
-        [Header("Main menu song name")]
+        [Header("Main menu strings")]
         [SerializeField] private string songName;
 
         private AudioManager audioManager;
+        private bool tutorialPlayed = false;
+        private string tutorial = "TutorialCheck";
+        private int tutorialCheck;
 
         private void Awake()
         {
             audioManager = FindObjectOfType<AudioManager>();
+            tutorialCheck = PlayerPrefs.GetInt(tutorial);
+
+            CheckIfTutorialPlayed();
         }
 
         private void Start()
@@ -77,7 +84,32 @@ namespace RemixGame
 
         public void StartFirstLevel()
         {
-            SceneManager.LoadScene(firstLevelIndex);
+            if (tutorialPlayed)
+            {
+                SceneManager.LoadScene(firstLevelIndex);
+            }
+            else if (!tutorialPlayed)
+            {
+                SceneManager.LoadScene(tutorialLevelIndex);
+            }
+        }
+
+        public void StartTutorial()
+        {
+            SceneManager.LoadScene(tutorialLevelIndex);
+        }
+
+        private void CheckIfTutorialPlayed()
+        {
+            if (tutorialCheck == 0)
+            {
+                tutorialPlayed = false;
+            }
+            else if (tutorialCheck == 1)
+            {
+                tutorialPlayed = true;
+                tutorialButton.SetActive(true);
+            }
         }
     }
 }
