@@ -157,9 +157,9 @@ MonoBehaviour:
   projectileLaunchOffset: {fileID: 2939063349534281424}
   enemyProjectilePrefab: {fileID: 8815482007010425, guid: df9207510017956489aae051ff3da076, type: 3}
   fireRates:
+  - 2
+  - 1.75
   - 1.5
-  - 1.15
-  - 1
   healthManagerTag: HealthManager
 --- !u!95 &1002947624735439973
 Animator:
