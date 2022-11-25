@@ -73,7 +73,6 @@ namespace RemixGame
 
         private void Start()
         {
-            Debug.Log("Start was run now!");
             CheckOtherCharactersWayOfFacing();
 
             if (!spriteRenderer.flipX)

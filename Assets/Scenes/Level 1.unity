@@ -1472,7 +1472,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 766e4faed651e164087aaec5838488e6, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &205414625
 GameObject:
@@ -2157,7 +2157,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 766e4faed651e164087aaec5838488e6, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!251 &690465832
 PlatformEffector2D:
@@ -3966,7 +3966,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 766e4faed651e164087aaec5838488e6, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1001 &1582343162
 PrefabInstance:
