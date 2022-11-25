@@ -81,7 +81,8 @@ namespace RemixGame
         // Method to spawn the magicblock(s)
         private void SpawnMagicblock()
         {
-            Instantiate(magicblock, transform.position, Quaternion.identity);
+            Instantiate(magicblock, new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
+            Destroy(gameObject);
         }
 
         // Simple despawn timer coroutine to track determine if the projectile has been instantiated

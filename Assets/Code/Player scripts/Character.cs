@@ -69,21 +69,23 @@ namespace RemixGame
 
             animator = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
-            if (facingRight)
+        private void Start()
+        {
+            Debug.Log("Start was run now!");
+            CheckOtherCharactersWayOfFacing();
+
+            if (!spriteRenderer.flipX)
             {
-                spriteRenderer.flipX = false;
-
-                if (projectileLaunchOffset.transform.localPosition.x > 0)
+                if (projectileLaunchOffset.transform.localPosition.x < 0)
                 {
                     FlipProjectileOffset();
                 }
             }
-            else if (!facingRight)
+            else if (spriteRenderer.flipX)
             {
-                spriteRenderer.flipX = true;
-
-                if (projectileLaunchOffset.transform.localPosition.x < 0)
+                if (projectileLaunchOffset.transform.localPosition.x > 0)
                 {
                     FlipProjectileOffset();
                 }
@@ -105,6 +107,8 @@ namespace RemixGame
 
         private void UpdateAnimator()
         {
+            CheckWayOfFacing();
+
             if (rb.velocity.x < -Mathf.Epsilon)
             {
                 spriteRenderer.flipX = true;
@@ -182,7 +186,7 @@ namespace RemixGame
             {
                 Debug.Log("Jump triggered!");
                 sinceJump = 0;
-                rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Force);
+                rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 isJumping = true;
             }
 
@@ -214,10 +218,10 @@ namespace RemixGame
         public void Swap(InputAction.CallbackContext context)
         {
             otherCharacter.transform.position = transform.position;
-            otherCharacter.GetComponent<Character>().facingRight = facingRight;
-            otherCharacter.GetComponent<Character>().FlipOnSwap();
-
             otherCharacter.GetComponent<Rigidbody2D>().velocity = rb.velocity;
+
+            otherCharacter.GetComponent<Character>().CheckOtherCharactersWayOfFacing();
+            otherCharacter.GetComponent<Character>().CheckProjecileOffsetPosition();
 
             gameObject.SetActive(false);
             otherCharacter.SetActive(true);
@@ -236,16 +240,36 @@ namespace RemixGame
             }
         }
 
-        // Methos used to flip the character face the same way than the other character was facing
-        private void FlipOnSwap()
+        // Method used to face the current character the same way the previous character was facing
+        public void CheckOtherCharactersWayOfFacing()
         {
-            if (facingRight && !spriteRenderer.flipX)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else if (!facingRight && spriteRenderer.flipX)
+            if (otherCharacter.GetComponent<Character>().FacingRight)
             {
                 spriteRenderer.flipX = false;
+                facingRight = true;
+            }
+            else if (!otherCharacter.GetComponent<Character>().FacingRight)
+            {
+                spriteRenderer.flipX = true;
+                facingRight = false;
+            }
+        }
+
+        public void CheckProjecileOffsetPosition()
+        {
+            if (!spriteRenderer.flipX)
+            {
+                if (projectileLaunchOffset.transform.localPosition.x < 0)
+                {
+                    FlipProjectileOffset();
+                }
+            }
+            else if (spriteRenderer.flipX)
+            {
+                if (projectileLaunchOffset.transform.localPosition.x > 0)
+                {
+                    FlipProjectileOffset();
+                }
             }
         }
 
