@@ -133,7 +133,6 @@ namespace RemixGame
             // Jump
             if (isJumping)
             {
-                Debug.Log("Jump animation triggered!");
                 animator.SetTrigger(JumpParam);
                 isJumping = false;
             }
@@ -176,7 +175,6 @@ namespace RemixGame
         {
             if (context.performed && sinceJump > jumpCd && IsGrounded())
             {
-                Debug.Log("Jump triggered!");
                 sinceJump = 0;
                 rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 isJumping = true;
@@ -184,7 +182,6 @@ namespace RemixGame
             
             if (context.performed && sinceJump > jumpCd && IsOnMagicblock())
             {
-                Debug.Log("Jump triggered!");
                 sinceJump = 0;
                 rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 isJumping = true;
