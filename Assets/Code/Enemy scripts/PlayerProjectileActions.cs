@@ -15,6 +15,7 @@ namespace RemixGame
         public const string DeathParam = "Death";
 
         private bool stopActions = false;
+        private bool deathSequence = false;
         private bool stopActionsActive = false;
 
         private Animator animator;
@@ -22,6 +23,11 @@ namespace RemixGame
         public bool StopActions
         {
             get { return stopActions; }
+        }
+
+        public bool DeathSequence
+        {
+            get { return deathSequence; }
         }
 
         private void Awake()
@@ -35,7 +41,7 @@ namespace RemixGame
         {
             if (collision.gameObject.tag.Equals(damageTag))
             {
-                stopActions = true;
+                deathSequence = true;
                 animator.SetTrigger(DeathParam);
             } else if (collision.gameObject.tag.Equals(magicTag))
             {

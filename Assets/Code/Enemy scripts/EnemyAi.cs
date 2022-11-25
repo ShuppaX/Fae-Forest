@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.UIElements;
 
 namespace RemixGame
 {
@@ -36,6 +37,15 @@ namespace RemixGame
         [Header("Health Manager tag")]
         [SerializeField] private string healthManagerTag = "HealthManager";
 
+        [Header("Animator parameters")]
+        public const string JumpParam = "Jump";
+        public const string AirSpeedParam = "AirSpeedY";
+        public const string ChaseParam = "Chasing";
+        public const string GroundCheckParam = "GroundCheck";
+
+        [SerializeField] private Transform groundCheck;
+        [SerializeField] private LayerMask groundLayer;
+
         //Other variables
         private Transform target;
         private Path path;
@@ -47,12 +57,21 @@ namespace RemixGame
         private int difficultyIndex;
         private float currentMovementSpeed;
 
-        Seeker seeker;
-        Rigidbody2D rb;
-        RaycastHit2D isGrounded;
+        private bool isJumping = false;
+
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
+
+        private Seeker seeker;
+        private Rigidbody2D rb;
+        private RaycastHit2D isGrounded;
+
+        private Vector2 groundbox = new(0.6f, 0.1f);
 
         private void Awake()
         {
+            animator = GetComponent<Animator>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
             healthManager = GameObject.FindWithTag(healthManagerTag);
         }
 
@@ -78,6 +97,13 @@ namespace RemixGame
             currentMovementSpeed = movementSpeeds[difficultyIndex];
         }
 
+        private void Update()
+        {
+            UpdateAnimator();
+
+            Debug.Log("Chasers rb velocity = " + rb.velocity);
+        }
+
         private void FixedUpdate()
         {
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
@@ -91,7 +117,6 @@ namespace RemixGame
                 target = chara2.transform;
             }
 
-            
             if (!ActionsStopped)
             {
                 if (TargetInDistance() && followEnabled)
@@ -104,6 +129,36 @@ namespace RemixGame
                     rb.AddForce(patrolmovement * patrolmaxSpeed);
                 }  
             }
+        }
+
+        private void UpdateAnimator()
+        {
+            if (rb.velocity.x > 0)
+            {
+                spriteRenderer.flipX = true;
+                Debug.Log("Chasers spriterenderer flipped!");
+            }
+            else if (rb.velocity.x < 0)
+            {
+                spriteRenderer.flipX = false;
+                Debug.Log("Chasers spriterenderer NOT flipped!");
+            }
+
+            // Is the character on the ground?
+            animator.SetBool(GroundCheckParam, IsGrounded());
+
+            // Jump
+            if (isJumping)
+            {
+                animator.SetTrigger(JumpParam);
+                isJumping = false;
+            }
+
+            // For jumping and falling
+            animator.SetFloat(AirSpeedParam, rb.velocity.y);
+
+            // Chase
+            animator.SetBool(ChaseParam, TargetInDistance());
         }
 
         private void UpdatePath()
@@ -142,6 +197,7 @@ namespace RemixGame
                 if (direction.y > jumpNodeHeightRequirement)
                 {
                     rb.AddForce(Vector2.up * (currentMovementSpeed * jumpModifier));
+                    isJumping = true;
                 }
             }
 
@@ -174,6 +230,12 @@ namespace RemixGame
         private bool TargetInDistance()
         {
             return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
+        }
+
+        // Groundcheck using empty object under characters feet. Checks overlaps within a box
+        private bool IsGrounded()
+        {
+            return Physics2D.OverlapBox(groundCheck.position, groundbox, 0f, groundLayer);
         }
 
         private void OnPathComplete(Path p)
