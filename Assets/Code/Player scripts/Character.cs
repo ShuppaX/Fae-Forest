@@ -182,7 +182,7 @@ namespace RemixGame
             {
                 Debug.Log("Jump triggered!");
                 sinceJump = 0;
-                rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Force);
+                rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
                 isJumping = true;
             }
 
