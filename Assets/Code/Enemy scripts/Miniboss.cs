@@ -10,6 +10,7 @@ namespace RemixGame
          
         [FormerlySerializedAs("aggrorange")] [SerializeField] float aggroRange;
         [FormerlySerializedAs("castpoint")] [SerializeField] private Transform castPoint;
+        [SerializeField] private Transform projectileSpawnOffset;
         [SerializeField] private MinibossProjectile projectile;
 
         [SerializeField] private string healthManagerTag = "HealthManager";
@@ -92,7 +93,7 @@ namespace RemixGame
             if (Time.time > nextShotTime)
             {
                 //Create projectile
-                Instantiate(projectile, transform.position, Quaternion.identity);
+                Instantiate(projectile, projectileSpawnOffset.position, Quaternion.identity);
                 nextShotTime = Time.time + timeBetweenShots;
             }
 
