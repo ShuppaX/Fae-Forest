@@ -190,7 +190,8 @@ MonoBehaviour:
   Speed: 10
   projectileDespawnTime: 0.5
   magicblock: {fileID: 5527748475205286425, guid: dd4e5ae2ba38e794aabe1ee3ee422be0, type: 3}
-  enemyTag: Enemy
+  levelWallsParentTag: Walls
+  levelPlatformsParentTag: Platforms
 --- !u!198 &472901218694930144
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -443,8 +444,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.1
+      scalar: 0.2
+      minScalar: 0.01
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1025,7 +1026,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1077,8 +1078,8 @@ ParticleSystem:
         m_RotationOrder: 4
     rateOverDistance:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 50
+      minMaxState: 0
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1131,7 +1132,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -1142,21 +1143,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 1
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 0
+          value: 0
+          inSlope: -0.93715274
+          outSlope: -0.93715274
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.29551175
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1455,7 +1456,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1464,7 +1465,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3943,7 +3944,7 @@ ParticleSystem:
     radiusScale: 0.2
     collidesWith:
       serializedVersion: 2
-      m_Bits: 2147483647
+      m_Bits: 3583
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4919,7 +4920,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 51fe226b153e3de48b6657edbbd31882, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4943,8 +4944,8 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 2
-  m_MinParticleSize: 0.01
-  m_MaxParticleSize: 0.09
+  m_MinParticleSize: 0.001
+  m_MaxParticleSize: 0.03
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
