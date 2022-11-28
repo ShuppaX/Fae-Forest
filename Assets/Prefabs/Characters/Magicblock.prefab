@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6519c575452404588f45f9aebaebf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnTimer: 4
+  despawnTimer: 5
 --- !u!95 &9121486376816257243
 Animator:
   serializedVersion: 4
