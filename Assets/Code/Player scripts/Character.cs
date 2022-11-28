@@ -106,19 +106,21 @@ namespace RemixGame
 
         private void UpdateAnimator()
         {
-            CheckWayOfFacing();
+            //CheckWayOfFacing();
 
-            if (rb.velocity.x < -Mathf.Epsilon)
+            if (rb.velocity.x < -3.5)
             {
                 spriteRenderer.flipX = true;
+                facingRight = false;
                 if (projectileLaunchOffset.transform.localPosition.x > 0)
                 {
                     FlipProjectileOffset();
                 }
             }
-            else if (rb.velocity.x > Mathf.Epsilon)
+            else if (rb.velocity.x > 3.5)
             {
                 spriteRenderer.flipX = false;
+                facingRight = true;
                 if (projectileLaunchOffset.transform.localPosition.x < 0)
                 {
                     FlipProjectileOffset();
@@ -221,19 +223,6 @@ namespace RemixGame
 
             gameObject.SetActive(false);
             otherCharacter.SetActive(true);
-        }
-
-        // Method to check which way the character is already facing
-        private void CheckWayOfFacing()
-        {
-            if (!spriteRenderer.flipX)
-            {
-                facingRight = true;
-            }
-            else
-            {
-                facingRight = false;
-            }
         }
 
         // Method used to face the current character the same way the previous character was facing
