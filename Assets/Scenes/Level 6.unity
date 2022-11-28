@@ -4059,6 +4059,10 @@ PrefabInstance:
       propertyPath: characterTwo
       value: 
       objectReference: {fileID: 2129523745}
+    - target: {fileID: 6200283782297569852, guid: 280ab06b6b1733147890179781aab120, type: 3}
+      propertyPath: otherCharacter
+      value: 
+      objectReference: {fileID: 2129523745}
     - target: {fileID: 6200283782297569853, guid: 280ab06b6b1733147890179781aab120, type: 3}
       propertyPath: m_Mass
       value: 0.85
@@ -4090,6 +4094,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
       propertyPath: characterOne
+      value: 
+      objectReference: {fileID: 370541844}
+    - target: {fileID: 7147695549753841088, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
+      propertyPath: otherCharacter
       value: 
       objectReference: {fileID: 370541844}
     - target: {fileID: 7147695549753841089, guid: f7cee1a8d138e844c98d234ef069b666, type: 3}
