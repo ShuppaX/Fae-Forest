@@ -154,9 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeeds:
+  - 3
   - 4
-  - 6
-  - 7
+  - 5
   offsetToDestination: 0.25
   waypoints:
   - {fileID: 0}
