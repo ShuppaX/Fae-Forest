@@ -47,7 +47,7 @@ namespace RemixGame
         private SpriteRenderer spriteRenderer;
 
         //Variables
-        private Vector2 groundbox = new(0.6f, 0.15f);
+        private Vector2 groundbox = new(0.6f, 0.2f);
         private float horizontal;
         private bool facingRight = true;
         private float sinceJump = 0f;
