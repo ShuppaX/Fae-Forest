@@ -23,6 +23,7 @@ namespace RemixGame
 
         [Header("Main menu strings")]
         [SerializeField] private string songName;
+        [SerializeField] private string scorePlayerPref = "Score";
 
         private AudioManager audioManager;
         private bool tutorialPlayed = false;
@@ -84,6 +85,8 @@ namespace RemixGame
 
         public void StartFirstLevel()
         {
+            PlayerPrefs.SetInt(scorePlayerPref, 0);
+
             if (tutorialPlayed)
             {
                 SceneManager.LoadScene(firstLevelIndex);

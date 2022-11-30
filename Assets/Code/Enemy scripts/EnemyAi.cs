@@ -34,9 +34,6 @@ namespace RemixGame
         public bool jumpEnabled = true;
         public bool directionLookEnabled = true;
 
-        [Header("Health Manager tag")]
-        [SerializeField] private string healthManagerTag = "HealthManager";
-
         [Header("Animator parameters")]
         public const string JumpParam = "Jump";
         public const string AirSpeedParam = "AirSpeedY";
@@ -52,7 +49,7 @@ namespace RemixGame
         private int currentWaypoint = 0;
         private bool ActionsStopped;
 
-        private GameObject healthManager;
+        private PlayerHealthSystem playerHealthSystem;
         private int playersCurrentHealth;
         private int difficultyIndex;
         private float currentMovementSpeed;
@@ -72,7 +69,7 @@ namespace RemixGame
         {
             animator = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer>();
-            healthManager = GameObject.FindWithTag(healthManagerTag);
+            playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
         }
 
         public void Start()
@@ -82,12 +79,12 @@ namespace RemixGame
             
             InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
 
-            if (healthManager == null)
+            if (playerHealthSystem == null)
             {
-                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + healthManagerTag + "!");
+                Debug.LogError("The " + gameObject.name + " couldn't find a PlayerHealthSystem!");
             }
 
-            playersCurrentHealth = healthManager.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
+            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
 
             if (playersCurrentHealth != 0)
             {

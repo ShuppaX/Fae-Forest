@@ -12,8 +12,6 @@ namespace RemixGame
         [FormerlySerializedAs("castpoint")] [SerializeField] private Transform castPoint;
         [SerializeField] private Transform projectileSpawnOffset;
         [SerializeField] private MinibossProjectile projectile;
-
-        [SerializeField] private string healthManagerTag = "HealthManager";
         
         public float timeBetweenShots;
         private float nextShotTime;
@@ -25,7 +23,7 @@ namespace RemixGame
         private Transform target;
         private Rigidbody2D rb2d;
 
-        private GameObject healthManager;
+        private PlayerHealthSystem playerHealthSystem;
         private int playersCurrentHealth;
         private int difficultyIndex;
         private float currentMovementSpeed;
@@ -35,17 +33,17 @@ namespace RemixGame
             target = FindObjectOfType<Character>().gameObject.transform;
             rb2d = GetComponent<Rigidbody2D>();
             isFacingLeft = true;
-            healthManager = GameObject.FindWithTag(healthManagerTag);
+            playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
         }
 
         private void Start()
         {
-            if (healthManager == null)
+            if (playerHealthSystem == null)
             {
-                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + healthManagerTag + "!");
+                Debug.LogError("The " + gameObject.name + " couldn't find a PlayerHealthSystem!");
             }
 
-            playersCurrentHealth = healthManager.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
+            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
 
             if (playersCurrentHealth != 0)
             {

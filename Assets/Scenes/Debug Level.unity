@@ -2749,6 +2749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1366873856}
+  - component: {fileID: 1366873857}
   m_Layer: 0
   m_Name: Score Manager
   m_TagString: Untagged
@@ -2771,6 +2772,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366873857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366873855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6bb40d312d7424baf9f7a9ace8d9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 0}
+  scoreText: 'Score: '
+  scorePlayerPref: Score
 --- !u!1 &1418310198
 GameObject:
   m_ObjectHideFlags: 0
@@ -4129,18 +4145,6 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 884636222}
-    - target: {fileID: 3102996587627062789, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
-      propertyPath: movementSpeeds.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3102996587627062789, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
-      propertyPath: movementSpeeds.Array.data[1]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3102996587627062789, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
-      propertyPath: movementSpeeds.Array.data[2]
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15687b1e7cf6f494099df07f69c6a744, type: 3}
 --- !u!1001 &4173298091665978518
@@ -4385,7 +4389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6775145596214450748, guid: 20fe02c87ee72fe4ba4c56dbbf8ba1cc, type: 3}
       propertyPath: deathIndicator

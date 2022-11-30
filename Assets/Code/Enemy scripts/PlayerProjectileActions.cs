@@ -43,7 +43,8 @@ namespace RemixGame
             {
                 deathSequence = true;
                 animator.SetTrigger(DeathParam);
-            } else if (collision.gameObject.tag.Equals(magicTag))
+            }
+            else if (collision.gameObject.tag.Equals(magicTag))
             {
                 if (!stopActions)
                 {

@@ -10,14 +10,13 @@ namespace RemixGame
         [SerializeField] private float[] movementSpeeds = { 5f, 6f, 7f };
         [SerializeField] private float offsetToDestination = 0.0001f;
         [SerializeField] private Transform[] waypoints;
-        [SerializeField] private string healthManagerTag = "HealthManager";
 
         private Transform destination;
         private Vector2 currentPosition;
         private Vector2 destinationPos;
         private Rigidbody2D rb;
 
-        private GameObject healthManager;
+        private PlayerHealthSystem playerHealthSystem;
         private int playersCurrentHealth;
         private int difficultyIndex;
         private float currentMovementSpeed;
@@ -29,7 +28,7 @@ namespace RemixGame
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
-            healthManager = GameObject.FindWithTag(healthManagerTag);
+            playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
@@ -39,12 +38,12 @@ namespace RemixGame
             destinationPos = destination.position;
             transform.position = waypoints[0].position;
 
-            if (healthManager == null)
+            if (playerHealthSystem == null)
             {
-                Debug.LogError("The " + gameObject.name + " couldn't find an object with the tag " + healthManagerTag + "!");
+                Debug.LogError("The " + gameObject.name + " couldn't find a PlayerHealthSystem!");
             }
 
-            playersCurrentHealth = healthManager.GetComponent<PlayerHealthSystem>().PlayerCurrentHealth;
+            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
 
             if (playersCurrentHealth != 0)
             {
