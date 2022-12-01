@@ -74,6 +74,7 @@ namespace RemixGame
             {
                 deathSequence = true;
                 animator.SetTrigger(DeathParam);
+                Destroy(gameObject.GetComponent<CapsuleCollider2D>());
                 AddScore();
             }
             else if (collision.gameObject.tag.Equals(magicTag))
