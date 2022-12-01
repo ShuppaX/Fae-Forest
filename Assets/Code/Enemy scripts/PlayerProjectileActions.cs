@@ -68,7 +68,7 @@ namespace RemixGame
         // to destroy the gameobject or freeze the object
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.tag.Equals(damageTag))
+            if (collision.gameObject.tag.Equals(damageTag) && !deathSequence)
             {
                 deathSequence = true;
                 animator.SetTrigger(DeathParam);
