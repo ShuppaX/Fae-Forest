@@ -20,6 +20,7 @@ namespace RemixGame
         private float currentFireRate;
         private Animator animator;
         private SpriteRenderer spriteRenderer;
+        private bool deathSequence;
 
         private void Awake()
         {
@@ -74,7 +75,9 @@ namespace RemixGame
         // offset position that is set for the character.
         private void Update()
         {
-            if (allowFiring)
+            deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
+
+            if (allowFiring && !deathSequence)
             {
                 animator.SetTrigger(ShootParam);
                 Instantiate(enemyProjectilePrefab, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);

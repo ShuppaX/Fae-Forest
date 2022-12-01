@@ -28,6 +28,8 @@ namespace RemixGame
         private int difficultyIndex;
         private float currentMovementSpeed;
 
+        private bool deathSequence;
+
         private void Awake()
         {
             target = FindObjectOfType<Character>().gameObject.transform;
@@ -57,11 +59,12 @@ namespace RemixGame
         {
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
             SocialDistancing = Mathf.Abs(Vector2.Distance(transform.position, target.position));
+            deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
         }
 
         private void FixedUpdate()
         {
-            if (LineOfSight(aggroRange))
+            if (LineOfSight(aggroRange) && !deathSequence)
             {
                 MinibossAggro = true;
 

@@ -40,6 +40,7 @@ namespace RemixGame
         private Path path;
         private int currentWaypoint = 0;
         private bool ActionsStopped;
+        private bool deathSequence;
 
         Seeker seeker;
         Rigidbody2D rb;
@@ -57,8 +58,9 @@ namespace RemixGame
         private void FixedUpdate()
         {
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
+            deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
 
-            
+
             if (chara1.activeSelf)
             {
                 target = chara1.transform;
@@ -69,7 +71,7 @@ namespace RemixGame
             }
 
             
-            if (!ActionsStopped && !_miniboss.MinibossAggro)
+            if (!ActionsStopped && !_miniboss.MinibossAggro && !deathSequence)
             {
                 if (TargetInDistance() && followEnabled)
                 {
@@ -81,7 +83,11 @@ namespace RemixGame
                     rb.AddForce(patrolmovement * patrolmaxSpeed);
                 }  
             }
-            
+
+            if (deathSequence)
+            {
+                rb.velocity = Vector3.zero;
+            }
         }
 
         private void UpdatePath()

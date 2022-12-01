@@ -24,6 +24,7 @@ namespace RemixGame
         private Animator animator;
         private PlayerHealthSystem playerHealthSystem;
         private ScoreManager scoreManager;
+        private Rigidbody2D rb;
 
         public bool StopActions
         {
@@ -38,6 +39,7 @@ namespace RemixGame
         private void Awake()
         {
             animator = GetComponent<Animator>();
+            rb = GetComponent<Rigidbody2D>();
             playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
             scoreManager = FindObjectOfType<ScoreManager>();
 

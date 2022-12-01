@@ -56,6 +56,8 @@ namespace RemixGame
 
         private bool isJumping = false;
 
+        private bool deathSequence = false;
+
         private Animator animator;
         private SpriteRenderer spriteRenderer;
 
@@ -98,6 +100,8 @@ namespace RemixGame
         {
             UpdateAnimator();
 
+            deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
+
             Debug.Log("Chasers rb velocity = " + rb.velocity);
         }
 
@@ -114,7 +118,7 @@ namespace RemixGame
                 target = chara2.transform;
             }
 
-            if (!ActionsStopped)
+            if (!ActionsStopped && !deathSequence)
             {
                 if (TargetInDistance() && followEnabled)
                 {
@@ -125,6 +129,11 @@ namespace RemixGame
                     Patrolmove();
                     rb.AddForce(patrolmovement * patrolmaxSpeed);
                 }  
+            }
+
+            if (deathSequence)
+            {
+                rb.velocity = Vector3.zero;
             }
         }
 

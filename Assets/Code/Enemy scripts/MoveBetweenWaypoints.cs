@@ -21,7 +21,7 @@ namespace RemixGame
         private int difficultyIndex;
         private float currentMovementSpeed;
 
-        private bool characterDying = false;
+        private bool deathSequence = false;
 
         private SpriteRenderer spriteRenderer;
 
@@ -56,12 +56,13 @@ namespace RemixGame
         private void Update()
         {
             UpdateSprite();
-            CheckForDeath();
+
+            deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
         }
 
         private void FixedUpdate()
         {
-            if (!characterDying)
+            if (!deathSequence)
             {
                 Move(destinationPos, Time.fixedDeltaTime);
             }
@@ -113,19 +114,6 @@ namespace RemixGame
             else if (transform.localPosition.x < destinationPos.x)
             {
                 spriteRenderer.flipX = true;
-            }
-        }
-
-        // Method to check if character is in deathanimation
-        private void CheckForDeath()
-        {
-            if (GetComponent<PlayerProjectileActions>().DeathSequence)
-            {
-                characterDying = true;
-            }
-            else
-            {
-                characterDying = false;
             }
         }
     }

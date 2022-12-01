@@ -270,8 +270,10 @@ namespace RemixGame
             if (collision.gameObject.CompareTag(enemyTag) || collision.gameObject.CompareTag(enemyProjectileTag))
             {
                 //TODO: Trigger possible invincibility?
-
-                healthManager.GetComponent<PlayerHealthSystem>().ReduceHealth();
+                if (!collision.gameObject.GetComponent<PlayerProjectileActions>().DeathSequence)
+                {
+                    healthManager.GetComponent<PlayerHealthSystem>().ReduceHealth();
+                }
             }
         }
 
