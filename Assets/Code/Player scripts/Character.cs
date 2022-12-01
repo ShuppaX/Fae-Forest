@@ -32,7 +32,7 @@ namespace RemixGame
         [SerializeField] private string healthManagerTag = "HealthManager";
 
         [Header("Animator parameters")]
-        public const string AttackParam = "Attack";
+        public const string ShootParam = "Shoot";
         public const string AnimStateParam = "AnimState";
         public const string JumpParam = "Jump";
         public const string GroundCheckParam = "GroundCheck";
@@ -144,7 +144,7 @@ namespace RemixGame
             // Attack
             if (isAttacking)
             {
-                animator.SetTrigger(AttackParam);
+                animator.SetTrigger(ShootParam);
                 isAttacking = false;
             }
 

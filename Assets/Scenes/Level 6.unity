@@ -3778,14 +3778,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1924944864}
     m_Modifications:
-    - target: {fileID: 2939063349534281424, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 2939063349534281424, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 4122380411766175664, guid: 992760bd5872a914dbcc1048491e22e6, type: 3}
       propertyPath: m_Name
       value: Enemy 3 Shooter (1)

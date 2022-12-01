@@ -142,6 +142,7 @@ MonoBehaviour:
   damageTag: DamageProjectile
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
+  scoreValues: c800000090010000f4010000
 --- !u!114 &6119545113657412629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +161,6 @@ MonoBehaviour:
   - 2
   - 1.75
   - 1.5
-  healthManagerTag: HealthManager
 --- !u!95 &1002947624735439973
 Animator:
   serializedVersion: 4
