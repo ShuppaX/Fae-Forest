@@ -7,9 +7,12 @@ namespace RemixGame
 {
     public class ChangeScene : MonoBehaviour
     {
-        [SerializeField] private int indexOfLastLevel = 4;
+        [SerializeField] private int indexOfFinalLevel = 4;
         [SerializeField] private int indexOfFirstLevel = 0;
+        [SerializeField] private int indexOfTutorialLevel = 1;
         [SerializeField] private float endOfLevelTime = 5.0f;
+
+        private string tutorial = "TutorialCheck";
 
         private bool transitionStarted = false;
 
@@ -34,13 +37,18 @@ namespace RemixGame
         {
             activeSceneNumber = SceneManager.GetActiveScene().buildIndex;
 
-            if (activeSceneNumber < indexOfLastLevel)
+            if (activeSceneNumber < indexOfFinalLevel)
             {
                 nextSceneNumber = activeSceneNumber + 1;
             }
             else
             {
                 nextSceneNumber = indexOfFirstLevel;
+            }
+
+            if (activeSceneNumber == indexOfTutorialLevel)
+            {
+                PlayerPrefs.SetInt(tutorial, 1);
             }
         }
 

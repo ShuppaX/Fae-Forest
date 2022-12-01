@@ -26,6 +26,7 @@ namespace RemixGame
         [SerializeField] private string scorePlayerPref = "Score";
 
         private AudioManager audioManager;
+        private string storedHealth = "StoredHealth";
         private bool tutorialPlayed = false;
         private string tutorial = "TutorialCheck";
         private int tutorialCheck;
@@ -36,6 +37,9 @@ namespace RemixGame
             tutorialCheck = PlayerPrefs.GetInt(tutorial);
 
             CheckIfTutorialPlayed();
+
+            Debug.Log("Tutorial check value is: " + tutorialCheck);
+            Debug.Log("TutorialPlayed bool is: " + tutorialPlayed);
         }
 
         private void Start()
@@ -86,6 +90,7 @@ namespace RemixGame
         public void StartFirstLevel()
         {
             PlayerPrefs.SetInt(scorePlayerPref, 0);
+            PlayerPrefs.SetInt(storedHealth, 3);
 
             if (tutorialPlayed)
             {

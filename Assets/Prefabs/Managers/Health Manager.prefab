@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMaxHealth: 3
-  firstLevelsIndex: 1
+  firstLevelsIndex: 2
   mainMenuIndex: 0
   healthDefaultValue: 3
   deathScreenTime: 3
