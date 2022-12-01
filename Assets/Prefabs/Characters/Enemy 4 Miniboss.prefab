@@ -266,7 +266,6 @@ MonoBehaviour:
   castPoint: {fileID: 5467312464933008843}
   projectileSpawnOffset: {fileID: 8495975177305617543}
   projectile: {fileID: 4704883166760237947, guid: cb56d7385f1dd26479b32fa59b8d5f09, type: 3}
-  healthManagerTag: HealthManager
   timeBetweenShots: 0.75
   MinibossAggro: 0
 --- !u!114 &8280545886267945381
@@ -284,6 +283,7 @@ MonoBehaviour:
   damageTag: DamageProjectile
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
+  scoreValues: f4010000bc02000020030000
 --- !u!114 &4027556773401565281
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -174,6 +174,7 @@ MonoBehaviour:
   damageTag: DamageProjectile
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
+  scoreValues: 9001000058020000bc020000
 --- !u!114 &1931326862096827321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +204,6 @@ MonoBehaviour:
   followEnabled: 1
   jumpEnabled: 1
   directionLookEnabled: 1
-  healthManagerTag: HealthManager
   groundCheck: {fileID: 2719182419076868095}
   groundLayer:
     serializedVersion: 2

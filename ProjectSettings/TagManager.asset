@@ -15,6 +15,7 @@ TagManager:
   - HealthManager
   - DamageProjectile
   - Ground
+  - ScoreText
   layers:
   - Default
   - TransparentFX

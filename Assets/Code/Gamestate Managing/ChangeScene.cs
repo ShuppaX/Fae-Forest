@@ -18,6 +18,18 @@ namespace RemixGame
         private int activeSceneNumber;
         private int nextSceneNumber;
 
+        private ScoreManager scoreManager;
+
+        private void Awake()
+        {
+            scoreManager = FindObjectOfType<ScoreManager>();
+
+            if (scoreManager == null)
+            {
+                Debug.LogError(gameObject.name + " couldn't find the score manager!");
+            }
+        }
+
         private void Start()
         {
             activeSceneNumber = SceneManager.GetActiveScene().buildIndex;
@@ -53,6 +65,8 @@ namespace RemixGame
         IEnumerator NextScene()
         {
             transitionStarted = true;
+
+            scoreManager.SaveScore();
 
             yield return new WaitForSeconds(endOfLevelTime);
             SceneManager.LoadScene(nextSceneNumber);
