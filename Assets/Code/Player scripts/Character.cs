@@ -24,7 +24,7 @@ namespace RemixGame
         [Header("Player variables")]
         [SerializeField] private float movementSpeed = 8f;
         [SerializeField] private float jumpingPower = 10f;
-        [SerializeField] double jumpCd = 0.6;
+        [SerializeField] double jumpCd = 0.3;
 
         [Header("Tags")]
         [SerializeField] private string enemyTag = "Enemy";
