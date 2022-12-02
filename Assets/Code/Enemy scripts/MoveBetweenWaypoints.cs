@@ -65,6 +65,11 @@ namespace RemixGame
             {
                 Move(destinationPos, Time.fixedDeltaTime);
             }
+
+            if (deathSequence)
+            {
+                rb.velocity = Vector3.zero;
+            }
         }
 
         // Method to move the enemy to the destination
