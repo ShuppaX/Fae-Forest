@@ -22,10 +22,12 @@ namespace RemixGame
         private int nextSceneNumber;
 
         private ScoreManager scoreManager;
+        private PlayerHealthSystem playerHealthSystem;
 
         private void Awake()
         {
             scoreManager = FindObjectOfType<ScoreManager>();
+            playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
 
             if (scoreManager == null)
             {
@@ -62,6 +64,7 @@ namespace RemixGame
             }
         }
 
+        // Method to check if any enemies are left, if not toggle enemiesDead bool to be true.
         private void CheckForEnemies()
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
@@ -70,11 +73,15 @@ namespace RemixGame
             }
         }
 
+        // Method to transition to next scene, save the score of the current level and then
+        // use the method to add health if necessary.
         IEnumerator NextScene()
         {
             transitionStarted = true;
 
             scoreManager.SaveScore();
+
+            playerHealthSystem.AddHealth();
 
             yield return new WaitForSeconds(endOfLevelTime);
             SceneManager.LoadScene(nextSceneNumber);

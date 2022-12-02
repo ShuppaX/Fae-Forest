@@ -86,19 +86,18 @@ namespace RemixGame
                 Debug.LogError("The " + gameObject.name + " couldn't find a PlayerHealthSystem!");
             }
 
-            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
-
-            if (playersCurrentHealth != 0)
-            {
-                difficultyIndex = playersCurrentHealth - 1;
-            }
-
+            // Check the players current health and adjust difficulty index according to it.
+            CheckPlayersHealth();
             currentMovementSpeed = movementSpeeds[difficultyIndex];
         }
 
         private void Update()
         {
             UpdateAnimator();
+
+            // Check the players current health and adjust difficulty index according to it.
+            CheckPlayersHealth();
+            currentMovementSpeed = movementSpeeds[difficultyIndex];
 
             deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
 
@@ -263,6 +262,17 @@ namespace RemixGame
             {
                 patrolmovement = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
                 patroltimeLeft += patrolAcceleration;
+            }
+        }
+
+        // Method to check the players health and change the difficulty index according to it.
+        private void CheckPlayersHealth()
+        {
+            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
+
+            if (playersCurrentHealth != 0)
+            {
+                difficultyIndex = playersCurrentHealth - 1;
             }
         }
     }

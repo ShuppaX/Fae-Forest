@@ -45,13 +45,9 @@ namespace RemixGame
                 Debug.LogError("The " + gameObject.name + " couldn't find a PlayerHealthSystem!");
             }
 
-            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
-
-            if (playersCurrentHealth != 0)
-            {
-                difficultyIndex = playersCurrentHealth - 1;
-            }
-
+            // Check up on amount of players health, if players health is lower, the enemys movement
+            // is slower.
+            CheckPlayersHealth();
             currentMovementSpeed = speeds[difficultyIndex];
         }
 
@@ -60,6 +56,10 @@ namespace RemixGame
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
             SocialDistancing = Mathf.Abs(Vector2.Distance(transform.position, target.position));
             deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
+
+            // Same as above, but to force changes to the movementspeed if player loses health
+            CheckPlayersHealth();
+            currentMovementSpeed = speeds[difficultyIndex];
         }
 
         private void FixedUpdate()
@@ -161,6 +161,18 @@ namespace RemixGame
             }
 
             return val;
+        }
+
+        // Method to change difficulty index (the index of which movement speed value to use)
+        // according to the players health
+        private void CheckPlayersHealth()
+        {
+            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
+
+            if (playersCurrentHealth != 0)
+            {
+                difficultyIndex = playersCurrentHealth - 1;
+            }
         }
     }
 }

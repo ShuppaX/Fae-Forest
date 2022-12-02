@@ -12,6 +12,7 @@ namespace RemixGame
         [SerializeField] private int mainMenuIndex = 0;
         [SerializeField] private int healthDefaultValue = 3;
         [SerializeField] private float deathScreenTime = 5f;
+        [SerializeField] private int healthIncrement = 1;
 
         [Header("Health indicators")]
         [SerializeField] private GameObject[] healthIndicators;
@@ -22,6 +23,7 @@ namespace RemixGame
         private string storedHealth = "StoredHealth";
         private int damageToTake = 1;
         private int playerCurrentHealth;
+        private int playerHealthAtAwake;
 
         public int PlayerCurrentHealth 
         {
@@ -31,6 +33,7 @@ namespace RemixGame
         private void Awake()
         {
             playerCurrentHealth = PlayerPrefs.GetInt(storedHealth, healthDefaultValue);
+            playerHealthAtAwake = playerCurrentHealth;
 
             if (healthIndicators == null)
             {
@@ -100,6 +103,20 @@ namespace RemixGame
             SceneManager.LoadScene(mainMenuIndex);
 
             Time.timeScale = 1;
+        }
+
+        // Method to add health to the player, if they clear the level without taking any damage.
+        public void AddHealth()
+        {
+            if (playerCurrentHealth == playerHealthAtAwake)
+            {
+                if (playerCurrentHealth < playerMaxHealth)
+                {
+                    playerCurrentHealth += healthIncrement;
+
+                    PlayerPrefs.SetInt(storedHealth, playerCurrentHealth);
+                }
+            }
         }
     }
 }

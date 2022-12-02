@@ -104,10 +104,9 @@ namespace RemixGame
             sinceJump += Time.deltaTime;
         }
 
+        // Method to update animator and flip sprite if necessary
         private void UpdateAnimator()
         {
-            //CheckWayOfFacing();
-
             if (rb.velocity.x < -3.5)
             {
                 spriteRenderer.flipX = true;
@@ -240,6 +239,7 @@ namespace RemixGame
             }
         }
 
+        // Method used to check if the projectile offset should be moved.
         public void CheckProjecileOffsetPosition()
         {
             if (!spriteRenderer.flipX)
@@ -258,6 +258,7 @@ namespace RemixGame
             }
         }
 
+        // Method to actually flip the projectile offset.
         private void FlipProjectileOffset()
         {
             Vector3 position = projectileLaunchOffset.transform.localPosition;
@@ -265,6 +266,7 @@ namespace RemixGame
             projectileLaunchOffset.transform.localPosition = position;
         }
 
+        // Collision check which deals damage to the players health if hit by an enemy or an enemy projectile
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag(enemyTag) || collision.gameObject.CompareTag(enemyProjectileTag))

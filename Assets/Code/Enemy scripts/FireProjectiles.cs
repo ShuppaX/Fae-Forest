@@ -61,13 +61,8 @@ namespace RemixGame
                 }
             }
 
-            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
-
-            if (playersCurrentHealth != 0)
-            {
-                difficultyIndex = playersCurrentHealth - 1;
-            }
-
+            // Check the players current health and adjust difficulty index according to it
+            CheckPlayersHealth();
             currentFireRate = fireRates[difficultyIndex];
         }
 
@@ -76,6 +71,10 @@ namespace RemixGame
         private void Update()
         {
             deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
+
+            // Check the players current health and adjust difficulty index according to it
+            CheckPlayersHealth();
+            currentFireRate = fireRates[difficultyIndex];
 
             if (allowFiring && !deathSequence)
             {
@@ -93,6 +92,18 @@ namespace RemixGame
             {
                 yield return new WaitForSeconds(currentFireRate);
                 allowFiring = true;
+            }
+        }
+
+        // Method that checks the players current health and adjusts difficulty index (the firerate of the
+        // enemy) according to it.
+        private void CheckPlayersHealth()
+        {
+            playersCurrentHealth = playerHealthSystem.PlayerCurrentHealth;
+
+            if (playersCurrentHealth != 0)
+            {
+                difficultyIndex = playersCurrentHealth - 1;
             }
         }
     }
