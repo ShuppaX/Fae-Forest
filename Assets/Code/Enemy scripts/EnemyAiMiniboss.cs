@@ -34,6 +34,13 @@ namespace RemixGame
         public bool jumpEnabled = true;
         public bool directionLookEnabled = true;
 
+        [Header("Animator parameters")]
+        public const string JumpParam = "Jump";
+        public const string AirSpeedParam = "AirSpeedY";
+        public const string ChasingParam = "Chasing";
+        public const string GroundCheckParam = "GroundCheck";
+        public const string GettingAwayParam = "GettingAway";
+
         //Other variables
         private Transform target;
         private Miniboss _miniboss;
@@ -41,10 +48,21 @@ namespace RemixGame
         private int currentWaypoint = 0;
         private bool ActionsStopped;
         private bool deathSequence;
+        private bool isJumping;
+        private bool isGettingAway;
 
-        Seeker seeker;
-        Rigidbody2D rb;
-        RaycastHit2D isGrounded;
+        private Seeker seeker;
+        private Rigidbody2D rb;
+        private RaycastHit2D isGrounded;
+
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
+
+        private void Awake()
+        {
+            animator = GetComponent<Animator>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         public void Start()
         {
@@ -53,6 +71,11 @@ namespace RemixGame
             _miniboss = GetComponent<Miniboss>();
 
             InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
+        }
+
+        private void Update()
+        {
+            UpdateAnimator();
         }
 
         private void FixedUpdate()
@@ -90,6 +113,55 @@ namespace RemixGame
             }
         }
 
+        private void UpdateAnimator()
+        {
+            isGettingAway = GetComponent<Miniboss>().IsGettingAway;
+
+            // Change the characters spriterenderer flip to match the direction of movement
+            // and if the character is getting away or not
+            if (isGettingAway)
+            {
+                if (rb.velocity.x > 0)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else if (rb.velocity.x < 0)
+                {
+                    spriteRenderer.flipX = true;
+                }
+            }
+            else if (!isGettingAway)
+            {
+                if (rb.velocity.x > 0)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else if (rb.velocity.x < 0)
+                {
+                    spriteRenderer.flipX = true;
+                }
+            }
+
+            // Is the character grounded?
+            animator.SetBool(GroundCheckParam, isGrounded);
+
+            // Jump
+            if (isJumping)
+            {
+                animator.SetTrigger(JumpParam);
+                isJumping = false;
+            }
+
+            // Falling
+            animator.SetFloat(AirSpeedParam, rb.velocity.y);
+
+            // Chasing a target
+            animator.SetBool(ChasingParam, TargetInDistance());
+
+            // Getting away from target
+            animator.SetBool(GettingAwayParam, isGettingAway);
+        }
+
         private void UpdatePath()
         {
             if (followEnabled && TargetInDistance() && seeker.IsDone())
@@ -125,6 +197,7 @@ namespace RemixGame
             {
                 if (direction.y > jumpNodeHeightRequirement)
                 {
+                    isJumping = true;
                     rb.AddForce(Vector2.up * (speed * jumpModifier));
                 }
             }
@@ -137,21 +210,6 @@ namespace RemixGame
             if (distance < nextWaypointDistance)
             {
                 currentWaypoint++;
-            }
-
-            // Direction Graphics Handling prob very bad
-            if (directionLookEnabled)
-            {
-                if (rb.velocity.x > 0.05f)
-                {
-                    transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y,
-                        transform.localScale.z);
-                }
-                else if (rb.velocity.x < -0.05f)
-                {
-                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y,
-                        transform.localScale.z);
-                }
             }
         }
 

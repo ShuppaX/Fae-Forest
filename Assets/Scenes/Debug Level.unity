@@ -2042,7 +2042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998512, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3574805776670998513, guid: ca8423b5bc151214d90defcab246cafc, type: 3}
       propertyPath: m_RootOrder
@@ -4676,6 +4676,10 @@ PrefabInstance:
     - target: {fileID: 7233813142372747039, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
       propertyPath: m_TagString
       value: ScoreText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523183124636377496, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
+      propertyPath: m_text
+      value: Debugging level
       objectReference: {fileID: 0}
     - target: {fileID: 7523183124636377499, guid: efc5d45959d3d5a4884f6ecfd6e3129b, type: 3}
       propertyPath: m_AnchoredPosition.y

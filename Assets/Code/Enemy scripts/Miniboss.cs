@@ -12,10 +12,6 @@ namespace RemixGame
         [FormerlySerializedAs("castpoint")] [SerializeField] private Transform castPoint;
         [SerializeField] private Transform projectileSpawnOffset;
         [SerializeField] private MinibossProjectile projectile;
-
-        [Header("Animator parameters")]
-        public const string ChaseParam = "Chasing";
-        public const string RunningAwayParam = "GettingAway";
         
         public float timeBetweenShots;
         private float nextShotTime;
@@ -27,17 +23,15 @@ namespace RemixGame
         private Transform target;
         private Rigidbody2D rb2d;
 
-        private Animator animator;
-        private SpriteRenderer spriteRenderer;
-
         private PlayerHealthSystem playerHealthSystem;
         private int playersCurrentHealth;
         private int difficultyIndex;
         private float currentMovementSpeed;
 
         private bool deathSequence;
-        private bool isChasing;
-        private bool isRunningAway;
+        private bool isGettingAway;
+
+        public bool IsGettingAway { get { return isGettingAway; } }
 
         private void Awake()
         {
@@ -45,8 +39,6 @@ namespace RemixGame
             rb2d = GetComponent<Rigidbody2D>();
             isFacingLeft = true;
             playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
-            animator = GetComponent<Animator>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         private void Start()
@@ -64,8 +56,6 @@ namespace RemixGame
 
         private void Update()
         {
-            UpdateAnimator();
-
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
             SocialDistancing = Mathf.Abs(Vector2.Distance(transform.position, target.position));
             deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
@@ -95,18 +85,10 @@ namespace RemixGame
             }
             else
             {
+                isGettingAway = false;
                 MinibossAggro = false;
                 //Let enemy AI script handle
             }
-        }
-
-        private void UpdateAnimator()
-        {
-            // Is the miniboss chasing the player?
-            animator.SetBool(ChaseParam, isChasing);
-
-            // Is the miniboss running away from the player?
-            animator.SetBool(RunningAwayParam, isRunningAway);
         }
     
         private void ShootPlayer()
@@ -120,15 +102,13 @@ namespace RemixGame
             }
             rb2d.velocity *= 0.5f;
             // keeping the player at set distance
-            isRunningAway = true;
-            isChasing = false;
+            isGettingAway = true;
             transform.position = Vector2.MoveTowards(transform.position, target.position, -currentMovementSpeed * Time.deltaTime);
         }
 
         private void ChasePlayer()
         {
-            isChasing = true;
-            isRunningAway = false;
+            isGettingAway = false;
 
             if (transform.position.x < target.position.x && isFacingLeft)
             {
@@ -139,7 +119,6 @@ namespace RemixGame
             {
                 //Player on left side
                 isFacingLeft = true;
-                rb2d.velocity = new Vector2(currentMovementSpeed, 0);
             }
         }
 
