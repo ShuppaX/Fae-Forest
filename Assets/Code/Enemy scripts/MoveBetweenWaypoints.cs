@@ -111,11 +111,11 @@ namespace RemixGame
         // Method to update the sprites way of facing
         private void UpdateSprite()
         {
-            if (transform.localPosition.x > destinationPos.x)
+            if (transform.localPosition.x > destination.position.x)
             {
                 spriteRenderer.flipX = false;
             }
-            else if (transform.localPosition.x < destinationPos.x)
+            else if (transform.localPosition.x < destination.position.x)
             {
                 spriteRenderer.flipX = true;
             }
