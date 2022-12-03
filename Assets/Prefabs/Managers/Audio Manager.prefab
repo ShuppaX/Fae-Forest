@@ -96,35 +96,35 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
-  - name: CharTwo attack 1
+  - name: Fae attack 1
     clip: {fileID: 8300000, guid: de8a42ca76abf9143ba7617145de5af0, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
-  - name: CharTwo jump 1
+  - name: Fae jump 1
     clip: {fileID: 8300000, guid: ed92598bd0905564892d587530a65342, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
-  - name: CharTwo jump 2
+  - name: Fae jump 2
     clip: {fileID: 8300000, guid: 4f1d2b4c55bf8bb4d9558c32624de410, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
-  - name: CharTwo lose hp 1
+  - name: Fae lose hp 1
     clip: {fileID: 8300000, guid: c5b5f9d1e2023fa4e9ac7fb1d3600a4c, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
-  - name: CharTwo death 1
+  - name: Fae death 1
     clip: {fileID: 8300000, guid: 77007d005277598499ebbff61b13679e, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: Footstep 1
-    clip: {fileID: 8300000, guid: 2352822feb4caa14ebdbc0c713289f8d, type: 3}
-    volume: 1
-    loop: 1
+    clip: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+    volume: 0.5
+    loop: 0
     source: {fileID: 0}
   - name: Stun projectile hit 1
     clip: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}

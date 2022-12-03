@@ -29,7 +29,14 @@ namespace RemixGame
         [Header("Tags")]
         [SerializeField] private string enemyTag = "Enemy";
         [SerializeField] private string enemyProjectileTag = "EnemyProjectile";
-        [SerializeField] private string healthManagerTag = "HealthManager";
+
+        [Header("Sound effects")]
+        [SerializeField, Tooltip("The sound played when the character jumps.")] private string jump;
+        [SerializeField, Tooltip("The sound played when the character takes damage.")] private string takeDmg;
+        [SerializeField, Tooltip("The sound played when the character dies.")] private string death;
+        [SerializeField, Tooltip("The sound played when the character moves.")] private string move;
+        [Space(1)]
+        [SerializeField, Tooltip("The time between moving sound being played.")] private float moveDelay = 0.5f;
 
         [Header("Animator parameters")]
         public const string ShootParam = "Shoot";
@@ -38,13 +45,14 @@ namespace RemixGame
         public const string GroundCheckParam = "GroundCheck";
         public const string MagicBlockCheckParam = "MagicBlockCheck";
         public const string AirSpeedParam = "AirSpeedY";
+        public const string HitParam = "Hit";
 
         //Objects
         private Rigidbody2D rb;
-
-        private GameObject healthManager;
+        private PlayerHealthSystem playerHealthSystem;
         private Animator animator;
         private SpriteRenderer spriteRenderer;
+        private AudioManager audioManager;
 
         //Variables
         private Vector2 groundbox = new(0.6f, 0.2f);
@@ -53,6 +61,8 @@ namespace RemixGame
         private float sinceJump = 0f;
         private bool isJumping = false;
         private bool isAttacking = false;
+        private bool playerHit = false;
+        private bool deathSoundPlayed = false;
 
         public bool FacingRight
         {
@@ -65,7 +75,8 @@ namespace RemixGame
         {
             rb = GetComponent<Rigidbody2D>();
 
-            healthManager = GameObject.FindWithTag(healthManagerTag);
+            playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
+            audioManager = FindObjectOfType<AudioManager>();
 
             animator = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -94,6 +105,7 @@ namespace RemixGame
         private void Update()
         {
             UpdateAnimator();
+            PlayDeathSound();
         }
 
         // Update is called once per frame
@@ -147,6 +159,13 @@ namespace RemixGame
                 isAttacking = false;
             }
 
+            // Player hit by enemy
+            if (playerHit)
+            {
+                animator.SetTrigger(HitParam);
+                playerHit = false;
+            }
+
             // Run
             if (Mathf.Abs(rb.velocity.x) > 0.01)
             {
@@ -177,6 +196,7 @@ namespace RemixGame
             {
                 sinceJump = 0;
                 rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                audioManager.PlaySfx(jump);
                 isJumping = true;
             }
             
@@ -184,6 +204,7 @@ namespace RemixGame
             {
                 sinceJump = 0;
                 rb.AddForce(new Vector2(rb.velocity.x, jumpingPower), ForceMode2D.Impulse);
+                audioManager.PlaySfx(jump);
                 isJumping = true;
             }
 
@@ -269,14 +290,26 @@ namespace RemixGame
         // Collision check which deals damage to the players health if hit by an enemy or an enemy projectile
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag(enemyTag) || collision.gameObject.CompareTag(enemyProjectileTag))
+            if (collision.gameObject.CompareTag(enemyTag))
             {
-                //TODO: Trigger possible invincibility?
-                if (!collision.gameObject.GetComponent<PlayerProjectileActions>().DeathSequence)
+                bool enemyDying = collision.gameObject.GetComponent<PlayerProjectileActions>().DeathSequence;
+
+                if (!enemyDying)
                 {
-                    healthManager.GetComponent<PlayerHealthSystem>().ReduceHealth();
+                    playerHit = true;
+                    playerHealthSystem.ReduceHealth();
+                    audioManager.PlaySfx(takeDmg);
+                    //TODO: Trigger possible invincibility?
                 }
             }
+            else if (collision.gameObject.CompareTag(enemyProjectileTag))
+            {
+                playerHit = true;
+                playerHealthSystem.ReduceHealth();
+                audioManager.PlaySfx(takeDmg);
+                //TODO: Trigger possible invincibility?
+            }
+
         }
 
         private void OnDrawGizmos()
@@ -288,6 +321,20 @@ namespace RemixGame
         public void InstantiateProjectile()
         {
             Instantiate(projectile, projectileLaunchOffset.position, projectileLaunchOffset.transform.rotation);
+        }
+
+        private void PlayDeathSound()
+        {
+            if (playerHealthSystem.PlayerCurrentHealth == 0 && !deathSoundPlayed)
+            {
+                deathSoundPlayed = true;
+                audioManager.PlaySfx(death);
+            }
+        }
+
+        public void PlayMoveSound()
+        {
+            audioManager.PlaySfx(move);
         }
     }
 }

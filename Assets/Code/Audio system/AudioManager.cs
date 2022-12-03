@@ -111,6 +111,15 @@ namespace RemixGame
             s.source.Play();
         }
 
+        // Function to stop playing a sound with a set name
+        public void StopSfx(string name)
+        {
+            Sound s = Array.Find(sfx, sound => sound.name == name);
+            if (s == null) return;
+
+            s.source.Stop();
+        }
+
         // Function to play a song with a set name
         public void PlaySong(string name)
         {
@@ -121,7 +130,7 @@ namespace RemixGame
         }
 
         // Function to stop playing music
-        public void StopPlayingSong(string name)
+        public void StopSong(string name)
         {
             Sound m = Array.Find(songs, sound => sound.name == name);
             if (m == null) return;

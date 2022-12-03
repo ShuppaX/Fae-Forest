@@ -320,7 +320,11 @@ MonoBehaviour:
   jumpCd: 0.3
   enemyTag: Enemy
   enemyProjectileTag: EnemyProjectile
-  healthManagerTag: HealthManager
+  jump: Elf jump 1
+  takeDmg: Elf lose hp 1
+  death: Elf death 1
+  move: Footstep 1
+  moveDelay: 0.5
 --- !u!95 &5552181169664051123
 Animator:
   serializedVersion: 4

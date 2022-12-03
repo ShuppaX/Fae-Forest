@@ -404,7 +404,11 @@ MonoBehaviour:
   jumpCd: 0.3
   enemyTag: Enemy
   enemyProjectileTag: EnemyProjectile
-  healthManagerTag: HealthManager
+  jump: Fae jump 1
+  takeDmg: Fae lose hp 1
+  death: Fae death 1
+  move: Footstep 1
+  moveDelay: 0.1
 --- !u!95 &4938821656987620073
 Animator:
   serializedVersion: 4
