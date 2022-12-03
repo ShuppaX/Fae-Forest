@@ -37,9 +37,6 @@ namespace RemixGame
             tutorialCheck = PlayerPrefs.GetInt(tutorial);
 
             CheckIfTutorialPlayed();
-
-            Debug.Log("Tutorial check value is: " + tutorialCheck);
-            Debug.Log("TutorialPlayed bool is: " + tutorialPlayed);
         }
 
         private void Start()

@@ -35,8 +35,6 @@ namespace RemixGame
         [SerializeField, Tooltip("The sound played when the character takes damage.")] private string takeDmg;
         [SerializeField, Tooltip("The sound played when the character dies.")] private string death;
         [SerializeField, Tooltip("The sound played when the character moves.")] private string move;
-        [Space(1)]
-        [SerializeField, Tooltip("The time between moving sound being played.")] private float moveDelay = 0.5f;
 
         [Header("Animator parameters")]
         public const string ShootParam = "Shoot";
