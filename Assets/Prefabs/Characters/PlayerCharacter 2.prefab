@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 7147695549753841089}
   - component: {fileID: 7147695549753841092}
   - component: {fileID: 7147695549753841093}
-  - component: {fileID: 6500152638205772937}
+  - component: {fileID: 8716847505395504418}
   - component: {fileID: 7147695549753841095}
   - component: {fileID: 7147695549753841088}
   - component: {fileID: 4938821656987620073}
@@ -227,8 +227,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &6500152638205772937
-CapsuleCollider2D:
+--- !u!61 &8716847505395504418
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -240,9 +240,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03, y: 0.01}
-  m_Size: {x: 0.42, y: 0.61}
-  m_Direction: 0
+  m_Offset: {x: 0.018, y: 0.04}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.395, y: 0.694}
+  m_EdgeRadius: 0
 --- !u!114 &7147695549753841095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +418,6 @@ MonoBehaviour:
   takeDmg: Fae lose hp 1
   death: Fae death 1
   move: Footstep 1
-  moveDelay: 0.1
 --- !u!95 &4938821656987620073
 Animator:
   serializedVersion: 4
