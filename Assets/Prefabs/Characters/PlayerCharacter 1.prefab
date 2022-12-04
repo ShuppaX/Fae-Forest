@@ -333,7 +333,8 @@ MonoBehaviour:
   jump: Elf jump 1
   takeDmg: Elf lose hp 1
   death: Elf death 1
-  landingSound: Footstep 1
+  moveSound: Footstep 1
+  landingSound: Landing sound 1
   landingSoundDelay: 1
 --- !u!95 &5552181169664051123
 Animator:

@@ -161,8 +161,13 @@ MonoBehaviour:
     volume: 0.5
     loop: 0
     source: {fileID: 0}
-  SFXVolume: 1
-  MusicVolume: 1
+  - name: Landing sound 1
+    clip: {fileID: 8300000, guid: eaae8fe8d600e1f459f34aa5757fa3b8, type: 3}
+    volume: 0.5
+    loop: 0
+    source: {fileID: 0}
+  sfxVolume: 1
+  musicVolume: 1
   volumeDisplayMultiplier: 100
   sfxSlider: {fileID: 0}
   musicSlider: {fileID: 0}

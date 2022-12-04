@@ -417,7 +417,8 @@ MonoBehaviour:
   jump: Fae jump 1
   takeDmg: Fae lose hp 1
   death: Fae death 1
-  landingSound: Footstep 1
+  moveSound: Footstep 1
+  landingSound: Landing sound 1
   landingSoundDelay: 1
 --- !u!95 &4938821656987620073
 Animator:

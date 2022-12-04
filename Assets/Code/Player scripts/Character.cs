@@ -34,6 +34,7 @@ namespace RemixGame
         [SerializeField, Tooltip("The sound played when the character jumps.")] private string jump;
         [SerializeField, Tooltip("The sound played when the character takes damage.")] private string takeDmg;
         [SerializeField, Tooltip("The sound played when the character dies.")] private string death;
+        [SerializeField, Tooltip("The sound played when the character moves.")] private string moveSound;
         [SerializeField, Tooltip("The sound played when the character moves.")] private string landingSound;
         [SerializeField, Tooltip("The minimum delay to play the landing sound again.")] private float landingSoundDelay = 2f;
 
@@ -312,7 +313,7 @@ namespace RemixGame
             
             if (((1 << collision.gameObject.layer) & groundLayer) != 0)
             {
-                if (playLandingSound)
+                if (playLandingSound && IsGrounded())
                 {
                     audioManager.PlaySfx(landingSound);
                     playLandingSound = false;
@@ -322,7 +323,7 @@ namespace RemixGame
             }
             else if (((1 << collision.gameObject.layer) & magicblockLayer) != 0)
             {
-                if (playLandingSound)
+                if (playLandingSound && IsOnMagicblock())
                 {
                     audioManager.PlaySfx(landingSound);
                     playLandingSound = false;
@@ -359,6 +360,11 @@ namespace RemixGame
                 yield return new WaitForSeconds(landingSoundDelay);
                 playLandingSound = true;
             }
+        }
+
+        public void PlayMoveSound()
+        {
+            audioManager.PlaySfx(moveSound);
         }
     }
 }
