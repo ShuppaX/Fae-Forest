@@ -175,6 +175,7 @@ MonoBehaviour:
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
   scoreValues: 9001000058020000bc020000
+  deathSoundName: Warthog death 1
 --- !u!114 &1931326862096827321
 MonoBehaviour:
   m_ObjectHideFlags: 0

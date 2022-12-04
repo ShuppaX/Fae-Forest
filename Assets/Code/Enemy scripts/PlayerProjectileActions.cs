@@ -7,10 +7,11 @@ namespace RemixGame
 {
     public class PlayerProjectileActions : MonoBehaviour
     {
-        [SerializeField] private string damageTag = "DamageProjectile";
-        [SerializeField] private string magicTag = "MagicProjectile";
-        [SerializeField] private float timeForStoppedActions = 2.5f;
-        [SerializeField] private int[] scoreValues = { 200, 400, 500 };
+        [SerializeField, Tooltip("The tag of the players damaging projectile.")] private string damageTag = "DamageProjectile";
+        [SerializeField, Tooltip("The tag of the players magic projectile.")] private string magicTag = "MagicProjectile";
+        [SerializeField, Tooltip("The duration of the 'stun' effect.")] private float timeForStoppedActions = 2.5f;
+        [SerializeField, Tooltip("Score granted when killed. 1hp value, 2hp value, 3hp value")] private int[] scoreValues = { 200, 400, 500 };
+        [SerializeField, Tooltip("The death sound of the charcter.")] private string deathSoundName;
 
         [Header("Animation parameters")]
         public const string DeathParam = "Death";
@@ -24,7 +25,7 @@ namespace RemixGame
         private Animator animator;
         private PlayerHealthSystem playerHealthSystem;
         private ScoreManager scoreManager;
-        private Rigidbody2D rb;
+        private AudioManager audioManager;
 
         public bool StopActions
         {
@@ -39,9 +40,9 @@ namespace RemixGame
         private void Awake()
         {
             animator = GetComponent<Animator>();
-            rb = GetComponent<Rigidbody2D>();
             playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
             scoreManager = FindObjectOfType<ScoreManager>();
+            audioManager = FindObjectOfType<AudioManager>();
 
             CheckForNulls();
 
@@ -73,6 +74,7 @@ namespace RemixGame
             if (collision.gameObject.tag.Equals(damageTag) && !deathSequence)
             {
                 deathSequence = true;
+                audioManager.PlaySfx(deathSoundName);
                 animator.SetTrigger(DeathParam);
                 Destroy(gameObject.GetComponent<CapsuleCollider2D>());
                 AddScore();

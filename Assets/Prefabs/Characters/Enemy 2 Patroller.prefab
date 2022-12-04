@@ -141,6 +141,8 @@ MonoBehaviour:
   damageTag: DamageProjectile
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
+  scoreValues: c800000090010000f4010000
+  deathSoundName: Orc death 1
 --- !u!114 &3102996587627062789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +163,6 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  healthManagerTag: HealthManager
 --- !u!95 &2165785155632023679
 Animator:
   serializedVersion: 4

@@ -284,6 +284,7 @@ MonoBehaviour:
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
   scoreValues: f4010000bc02000020030000
+  deathSoundName: Miniboss death 1
 --- !u!114 &4027556773401565281
 MonoBehaviour:
   m_ObjectHideFlags: 0

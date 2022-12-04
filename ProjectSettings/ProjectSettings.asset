@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Team Remix
   productName: Fae Forest
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: a4d88546a3323af4ea3dfb3cbff948df, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 0
@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.7
+  bundleVersion: 0.8
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
@@ -159,7 +159,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.TeamRemix.2DProject
   buildNumber:
-    Standalone: 0.6
+    Standalone: 0.8
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1

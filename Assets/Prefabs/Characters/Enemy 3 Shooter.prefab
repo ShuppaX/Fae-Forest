@@ -143,6 +143,7 @@ MonoBehaviour:
   magicTag: MagicProjectile
   timeForStoppedActions: 2.5
   scoreValues: c800000090010000f4010000
+  deathSoundName: Plant death 1
 --- !u!114 &6119545113657412629
 MonoBehaviour:
   m_ObjectHideFlags: 0

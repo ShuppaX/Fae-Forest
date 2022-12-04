@@ -68,22 +68,22 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Elf jump 1
     clip: {fileID: 8300000, guid: e03c401494466364885549a06b42778a, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Elf jump 2
     clip: {fileID: 8300000, guid: 291b56b0a85ad104f873f5638f54fc4d, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Elf lose hp 1
     clip: {fileID: 8300000, guid: 5d5f587ae155eb94f867257211a96f5e, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Elf death 1
     clip: {fileID: 8300000, guid: d30c820ff550c794a86e903ad647e4ee, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Stun projectile launch 1
@@ -98,27 +98,27 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Fae attack 1
     clip: {fileID: 8300000, guid: de8a42ca76abf9143ba7617145de5af0, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Fae jump 1
     clip: {fileID: 8300000, guid: ed92598bd0905564892d587530a65342, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Fae jump 2
     clip: {fileID: 8300000, guid: 4f1d2b4c55bf8bb4d9558c32624de410, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Fae lose hp 1
     clip: {fileID: 8300000, guid: c5b5f9d1e2023fa4e9ac7fb1d3600a4c, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Fae death 1
     clip: {fileID: 8300000, guid: 77007d005277598499ebbff61b13679e, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Footstep 1
@@ -138,27 +138,27 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Orc death 1
     clip: {fileID: 8300000, guid: e3545f54c173ffd4798b6ba43d87d858, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Warthog death 1
     clip: {fileID: 8300000, guid: 8fac85f87f03a2848b579485cbba2f5e, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Miniboss death 1
     clip: {fileID: 8300000, guid: aa523d4b9a1977f47938edd6801e1fca, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Plant death 1
     clip: {fileID: 8300000, guid: 5e57f2bd9959b8540a2b06e659ad0bba, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Menu select 1
     clip: {fileID: 8300000, guid: 7cc057bed53baf34799f52aab3c84800, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   SFXVolume: 1

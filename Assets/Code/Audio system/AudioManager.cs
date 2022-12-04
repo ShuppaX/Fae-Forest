@@ -17,8 +17,8 @@ namespace RemixGame
         //public static AudioManager instance;
 
         [Header("Variables")]
-        [Range(0f, 1f)] public float SFXVolume = 1f;
-        [Range(0f, 1f)] public float MusicVolume = 1f;
+        [Range(0f, 1f)] public float sfxVolume = 1f;
+        [Range(0f, 1f)] public float musicVolume = 1f;
         [SerializeField] private float volumeDisplayMultiplier = 100f;
 
         [Header("Slider game objects")]
@@ -46,17 +46,14 @@ namespace RemixGame
                 ignoreTexts = true;
             }
 
-            SFXVolume = PlayerPrefs.GetFloat("SFXVol", 100);
-            MusicVolume = PlayerPrefs.GetFloat("MusicVol", 100);
-
-            UpdateTexts();
-            UpdateSliders();
+            sfxVolume = PlayerPrefs.GetFloat("SFXVol", 100);
+            musicVolume = PlayerPrefs.GetFloat("MusicVol", 100);
 
             foreach (Sound s in sfx)
             {
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.clip;
-                s.source.volume = SFXVolume;
+                s.source.volume = sfxVolume;
                 s.source.loop = s.loop;
             }
 
@@ -64,9 +61,15 @@ namespace RemixGame
             {
                 m.source = gameObject.AddComponent<AudioSource>();
                 m.source.clip = m.clip;
-                m.source.volume = MusicVolume;
+                m.source.volume = musicVolume;
                 m.source.loop = m.loop;
             }
+        }
+
+        private void Start()
+        {
+            sfxSlider.SetValueWithoutNotify(sfxVolume);
+            musicSlider.SetValueWithoutNotify(musicVolume);
         }
 
         private void Update()
@@ -77,32 +80,32 @@ namespace RemixGame
                 UpdateMusicVolume();
             }
         }
-        
-        // Function to update SFX volume
+
+        // Method to update SFX volume
         private void UpdateSFXVolume()
         {
-            SFXVolume = sfxSlider.value;
-            sfxText.text = sfxTextFirstPart + Mathf.Round(SFXVolume * volumeDisplayMultiplier);
+            sfxVolume = sfxSlider.value;
+            sfxText.text = sfxTextFirstPart + Mathf.Round(sfxVolume * volumeDisplayMultiplier);
 
             foreach (Sound s in sfx)
             {
-                s.source.volume = SFXVolume;
+                s.source.volume = sfxVolume;
             }
         }
 
-        // Function to update music volume
+        // Method to update music volume
         private void UpdateMusicVolume()
         {
-            MusicVolume = musicSlider.value;
-            musicText.text = musicTextFirstPart + Mathf.Round(MusicVolume * volumeDisplayMultiplier);
+            musicVolume = musicSlider.value;
+            musicText.text = musicTextFirstPart + Mathf.Round(musicVolume * volumeDisplayMultiplier);
 
             foreach (Sound s in songs)
             {
-                s.source.volume = MusicVolume;
+                s.source.volume = musicVolume;
             }
         }
 
-        // Function to play a sound with a set name
+        // Method to play a sound with a set name
         public void PlaySfx(string name)
         {
             Sound s = Array.Find(sfx, sound => sound.name == name);
@@ -111,7 +114,7 @@ namespace RemixGame
             s.source.Play();
         }
 
-        // Function to stop playing a sound with a set name
+        // Method to stop playing a sound with a set name
         public void StopSfx(string name)
         {
             Sound s = Array.Find(sfx, sound => sound.name == name);
@@ -120,7 +123,7 @@ namespace RemixGame
             s.source.Stop();
         }
 
-        // Function to play a song with a set name
+        // Method to play a song with a set name
         public void PlaySong(string name)
         {
             Sound m = Array.Find(songs, sound => sound.name == name);
@@ -129,7 +132,7 @@ namespace RemixGame
             m.source.Play();
         }
 
-        // Function to stop playing music
+        // Method to stop playing music
         public void StopSong(string name)
         {
             Sound m = Array.Find(songs, sound => sound.name == name);
@@ -138,35 +141,37 @@ namespace RemixGame
             m.source.Stop();
         }
 
-        // Function to save and change the SFX volume
+        // Method to save and change the SFX volume
         public void ChangeSFXOptions()
         {
-            SFXVolume = sfxSlider.value;
-            PlayerPrefs.SetFloat("SFXVol", SFXVolume);
+            sfxVolume = sfxSlider.value;
+            PlayerPrefs.SetFloat("SFXVol", sfxVolume);
         }
 
-        // Function to save and change the music volume
+        // Method to save and change the music volume
         public void ChangeMusicOptions()
         {
-            MusicVolume = musicSlider.value;
-            PlayerPrefs.SetFloat("MusicVol", MusicVolume);
+            musicVolume = musicSlider.value;
+            PlayerPrefs.SetFloat("MusicVol", musicVolume);
         }
 
+        // Method to update the sliders
         private void UpdateSliders()
         {
             if (!ignoreSliders)
             {
-                sfxSlider.value = SFXVolume;
-                musicSlider.value = MusicVolume;
+                sfxSlider.value = sfxVolume;
+                musicSlider.value = musicVolume;
             }
         }
 
+        // Method to update the texts that display the volume values
         private void UpdateTexts()
         {
             if (!ignoreTexts)
             {
-                sfxText.text = sfxTextFirstPart + Mathf.Round(SFXVolume * volumeDisplayMultiplier);
-                musicText.text = musicTextFirstPart + Mathf.Round(MusicVolume * volumeDisplayMultiplier);
+                sfxText.text = sfxTextFirstPart + Mathf.Round(sfxVolume * volumeDisplayMultiplier);
+                musicText.text = musicTextFirstPart + Mathf.Round(musicVolume * volumeDisplayMultiplier);
             }
         }
     }
