@@ -34,7 +34,8 @@ namespace RemixGame
         [SerializeField, Tooltip("The sound played when the character jumps.")] private string jump;
         [SerializeField, Tooltip("The sound played when the character takes damage.")] private string takeDmg;
         [SerializeField, Tooltip("The sound played when the character dies.")] private string death;
-        [SerializeField, Tooltip("The sound played when the character moves.")] private string move;
+        [SerializeField, Tooltip("The sound played when the character moves.")] private string landingSound;
+        [SerializeField, Tooltip("The minimum delay to play the landing sound again.")] private float landingSoundDelay = 2f;
 
         [Header("Animator parameters")]
         public const string ShootParam = "Shoot";
@@ -61,6 +62,7 @@ namespace RemixGame
         private bool isAttacking = false;
         private bool playerHit = false;
         private bool deathSoundPlayed = false;
+        private bool playLandingSound = true;
 
         public bool FacingRight
         {
@@ -307,7 +309,27 @@ namespace RemixGame
                 audioManager.PlaySfx(takeDmg);
                 //TODO: Trigger possible invincibility?
             }
+            
+            if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+            {
+                if (playLandingSound)
+                {
+                    audioManager.PlaySfx(landingSound);
+                    playLandingSound = false;
 
+                    StartCoroutine(DelayForLandingSound());
+                }
+            }
+            else if (((1 << collision.gameObject.layer) & magicblockLayer) != 0)
+            {
+                if (playLandingSound)
+                {
+                    audioManager.PlaySfx(landingSound);
+                    playLandingSound = false;
+
+                    StartCoroutine(DelayForLandingSound());
+                }
+            }
         }
 
         private void OnDrawGizmos()
@@ -330,9 +352,13 @@ namespace RemixGame
             }
         }
 
-        public void PlayMoveSound()
+        IEnumerator DelayForLandingSound()
         {
-            audioManager.PlaySfx(move);
+            if (!playLandingSound)
+            {
+                yield return new WaitForSeconds(landingSoundDelay);
+                playLandingSound = true;
+            }
         }
     }
 }

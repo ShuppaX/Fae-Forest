@@ -68,8 +68,11 @@ namespace RemixGame
 
         private void Start()
         {
-            sfxSlider.SetValueWithoutNotify(sfxVolume);
-            musicSlider.SetValueWithoutNotify(musicVolume);
+            if (!ignoreSliders && !ignoreTexts)
+            {
+                sfxSlider.SetValueWithoutNotify(sfxVolume);
+                musicSlider.SetValueWithoutNotify(musicVolume);
+            }
         }
 
         private void Update()
