@@ -136,6 +136,31 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - name: Orc death 1
+    clip: {fileID: 8300000, guid: e3545f54c173ffd4798b6ba43d87d858, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Warthog death 1
+    clip: {fileID: 8300000, guid: 8fac85f87f03a2848b579485cbba2f5e, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Miniboss death 1
+    clip: {fileID: 8300000, guid: aa523d4b9a1977f47938edd6801e1fca, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Plant death 1
+    clip: {fileID: 8300000, guid: 5e57f2bd9959b8540a2b06e659ad0bba, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Menu select 1
+    clip: {fileID: 8300000, guid: 7cc057bed53baf34799f52aab3c84800, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
   SFXVolume: 1
   MusicVolume: 1
   volumeDisplayMultiplier: 100
