@@ -166,6 +166,16 @@ MonoBehaviour:
     volume: 0.5
     loop: 0
     source: {fileID: 0}
+  - name: Miniboss projectile impact 1
+    clip: {fileID: 8300000, guid: 5c7b6d4002009e842bd2621585546d19, type: 3}
+    volume: 0.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Miniboss projectile launch 1
+    clip: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+    volume: 0.5
+    loop: 0
+    source: {fileID: 0}
   sfxVolume: 1
   musicVolume: 1
   volumeDisplayMultiplier: 100
