@@ -123,7 +123,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Footstep 1
     clip: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
-    volume: 0.007
+    volume: 0.019
     loop: 0
     source: {fileID: 0}
   - name: Damage projectile impact 1
