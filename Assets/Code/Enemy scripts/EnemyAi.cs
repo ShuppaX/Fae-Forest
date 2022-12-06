@@ -227,6 +227,11 @@ namespace RemixGame
         // Groundcheck using empty object under characters feet. Checks overlaps within a box
         private bool IsGrounded()
         {
+            if (deathSequence)
+            {
+                return false;
+            }
+
             return Physics2D.OverlapBox(groundCheck.position, groundbox, 0f, groundLayer);
         }
 

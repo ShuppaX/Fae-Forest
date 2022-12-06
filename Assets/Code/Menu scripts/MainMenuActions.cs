@@ -15,7 +15,6 @@ namespace RemixGame
         [Header("Main menu gameobjects")]
         [SerializeField] private GameObject mainMenuButtons;
         [SerializeField] private GameObject mainMenuOptionsButton;
-        [SerializeField] private GameObject tutorialButton;
 
         [Header("Options gameobjects")]
         [SerializeField, Tooltip("The options parent object.")] private GameObject options;
@@ -127,7 +126,6 @@ namespace RemixGame
             else if (tutorialCheck == 1)
             {
                 tutorialPlayed = true;
-                tutorialButton.SetActive(true);
             }
         }
 

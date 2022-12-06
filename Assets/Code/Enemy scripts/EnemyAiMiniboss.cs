@@ -215,6 +215,11 @@ namespace RemixGame
 
         private bool TargetInDistance()
         {
+            if (deathSequence)
+            {
+                return false;
+            }
+
             return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
         }
 

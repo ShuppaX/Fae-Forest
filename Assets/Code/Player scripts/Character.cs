@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -237,7 +238,6 @@ namespace RemixGame
         public void Swap(InputAction.CallbackContext context)
         {
             otherCharacter.transform.position = transform.position;
-            otherCharacter.GetComponent<Rigidbody2D>().velocity = rb.velocity;
 
             otherCharacter.GetComponent<Character>().CheckOtherCharactersWayOfFacing();
             otherCharacter.GetComponent<Character>().CheckProjecileOffsetPosition();
