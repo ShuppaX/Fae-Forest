@@ -10,6 +10,7 @@ namespace RemixGame
         [SerializeField] private int indexOfFinalLevel = 4;
         [SerializeField] private int indexOfFirstLevel = 0;
         [SerializeField] private int indexOfTutorialLevel = 1;
+        [SerializeField] private int indexOfEndingScreen;
         [SerializeField] private float endOfLevelTime = 5.0f;
 
         private string tutorial = "TutorialCheck";
@@ -18,8 +19,8 @@ namespace RemixGame
 
         private bool enemiesDead = false;
 
-        private int activeSceneNumber;
-        private int nextSceneNumber;
+        private int activeSceneIndex;
+        private int nextSceneIndex;
 
         private ScoreManager scoreManager;
         private PlayerHealthSystem playerHealthSystem;
@@ -37,18 +38,18 @@ namespace RemixGame
 
         private void Start()
         {
-            activeSceneNumber = SceneManager.GetActiveScene().buildIndex;
+            activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            if (activeSceneNumber < indexOfFinalLevel)
+            if (activeSceneIndex < indexOfFinalLevel)
             {
-                nextSceneNumber = activeSceneNumber + 1;
+                nextSceneIndex = activeSceneIndex + 1;
             }
-            else
+            else if (activeSceneIndex == indexOfFinalLevel)
             {
-                nextSceneNumber = indexOfFirstLevel;
+                nextSceneIndex = indexOfEndingScreen;
             }
 
-            if (activeSceneNumber == indexOfTutorialLevel)
+            if (activeSceneIndex == indexOfTutorialLevel)
             {
                 PlayerPrefs.SetInt(tutorial, 1);
             }
@@ -84,7 +85,7 @@ namespace RemixGame
             playerHealthSystem.AddHealth();
 
             yield return new WaitForSeconds(endOfLevelTime);
-            SceneManager.LoadScene(nextSceneNumber);
+            SceneManager.LoadScene(nextSceneIndex);
         }
     }
 }
