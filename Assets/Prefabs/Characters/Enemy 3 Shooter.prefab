@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 440215873
   m_SortingLayer: 4
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: 33a61a9145887a146a976f6bf1a2e75b, type: 3}
+  m_Sprite: {fileID: -1466292940, guid: 29f6a4b365aa6fa44aadee3ebb7e63e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,14 +98,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4122380411766175664}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.01
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -124,8 +124,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016347017, y: 0}
-  m_Size: {x: 0.77, y: 0.69}
+  m_Offset: {x: 0.016347017, y: -0.04}
+  m_Size: {x: 0.77, y: 0.63}
   m_Direction: 1
 --- !u!114 &4122380411766175668
 MonoBehaviour:

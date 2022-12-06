@@ -127,12 +127,12 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Damage projectile impact 1
-    clip: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+    clip: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Magic projectile impact 1
-    clip: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
+    clip: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}
