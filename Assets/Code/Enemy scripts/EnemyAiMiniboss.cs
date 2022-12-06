@@ -10,9 +10,7 @@ namespace RemixGame
     {
 
         //headers to improve editor readability
-        [Header("Pathfinding")] 
-        public GameObject chara1;
-        public GameObject chara2;
+        [Header("Pathfinding")]
         public float activateDistance = 50f;
         public float pathUpdateSeconds = 0.5f;
 
@@ -55,6 +53,8 @@ namespace RemixGame
         private Rigidbody2D rb;
         private RaycastHit2D isGrounded;
 
+        private Character playerCharacter;
+
         private Animator animator;
         private SpriteRenderer spriteRenderer;
 
@@ -62,6 +62,9 @@ namespace RemixGame
         {
             animator = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+            playerCharacter = FindObjectOfType<Character>();
+
+            target = playerCharacter.transform;
         }
 
         public void Start()
@@ -75,6 +78,9 @@ namespace RemixGame
 
         private void Update()
         {
+            playerCharacter = FindObjectOfType<Character>();
+            target = playerCharacter.transform;
+
             UpdateAnimator();
         }
 
@@ -82,16 +88,6 @@ namespace RemixGame
         {
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
             deathSequence = GetComponent<PlayerProjectileActions>().DeathSequence;
-
-
-            if (chara1.activeSelf)
-            {
-                target = chara1.transform;
-            }
-            else
-            {
-                target = chara2.transform;
-            }
 
             
             if (!ActionsStopped && !_miniboss.MinibossAggro && !deathSequence)

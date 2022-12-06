@@ -11,8 +11,6 @@ namespace RemixGame
     {
         //headers to improve editor readability
         [Header("Pathfinding")] 
-        public GameObject chara1;
-        public GameObject chara2;
         public float activateDistance = 50f;
         public float pathUpdateSeconds = 0.5f;
 
@@ -75,6 +73,8 @@ namespace RemixGame
             spriteRenderer = GetComponent<SpriteRenderer>();
             playerHealthSystem = FindObjectOfType<PlayerHealthSystem>();
             playerCharacter = FindObjectOfType<Character>();
+
+            target = playerCharacter.transform;
         }
 
         public void Start()
@@ -98,6 +98,8 @@ namespace RemixGame
         {
             playerCharacter = FindObjectOfType<Character>();
 
+            target = playerCharacter.transform;
+
             UpdateAnimator();
 
             // Check the players current health and adjust difficulty index according to it.
@@ -110,15 +112,6 @@ namespace RemixGame
         private void FixedUpdate()
         {
             ActionsStopped = GetComponent<PlayerProjectileActions>().StopActions;
-
-            if (chara1.activeSelf)
-            {
-                target = chara1.transform;
-            }
-            else
-            {
-                target = chara2.transform;
-            }
 
             if (!ActionsStopped && !deathSequence)
             {
