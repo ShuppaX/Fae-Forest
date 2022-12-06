@@ -237,13 +237,16 @@ namespace RemixGame
         // Method to swap between characters
         public void Swap(InputAction.CallbackContext context)
         {
-            otherCharacter.transform.position = transform.position;
+            if (context.performed)
+            {
+                otherCharacter.transform.position = transform.position;
 
-            otherCharacter.GetComponent<Character>().CheckOtherCharactersWayOfFacing();
-            otherCharacter.GetComponent<Character>().CheckProjecileOffsetPosition();
+                otherCharacter.GetComponent<Character>().CheckOtherCharactersWayOfFacing();
+                otherCharacter.GetComponent<Character>().CheckProjecileOffsetPosition();
 
-            gameObject.SetActive(false);
-            otherCharacter.SetActive(true);
+                gameObject.SetActive(false);
+                otherCharacter.SetActive(true);
+            }
         }
 
         // Method used to face the current character the same way the previous character was facing

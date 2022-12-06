@@ -8,7 +8,6 @@ namespace RemixGame
     public class ChangeScene : MonoBehaviour
     {
         [SerializeField] private int indexOfFinalLevel = 4;
-        [SerializeField] private int indexOfFirstLevel = 0;
         [SerializeField] private int indexOfTutorialLevel = 1;
         [SerializeField] private int indexOfEndingScreen;
         [SerializeField] private float endOfLevelTime = 5.0f;

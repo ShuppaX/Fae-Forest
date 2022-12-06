@@ -192,6 +192,7 @@ MonoBehaviour:
   magicblock: {fileID: 5527748475205286425, guid: dd4e5ae2ba38e794aabe1ee3ee422be0, type: 3}
   levelWallsParentTag: Walls
   levelPlatformsParentTag: Platforms
+  impactSoundName: Magic projectile impact 1
 --- !u!198 &472901218694930144
 ParticleSystem:
   m_ObjectHideFlags: 0

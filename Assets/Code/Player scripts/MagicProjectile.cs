@@ -11,9 +11,12 @@ namespace RemixGame
         [SerializeField] private Magicblock magicblock;
         [SerializeField] private string levelWallsParentTag = "Walls";
         [SerializeField] private string levelPlatformsParentTag = "Platforms";
+        [SerializeField] private string impactSoundName;
 
         private Rigidbody2D projectileRb;
-        private GameObject player;
+        private Character player;
+        private AudioManager audioManager;
+
         private bool playerFacingRight;
         private bool timerPassed = false;
 
@@ -24,18 +27,19 @@ namespace RemixGame
         private void Awake()
         {
             projectileRb = gameObject.GetComponent<Rigidbody2D>();
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = FindObjectOfType<Character>();
+            audioManager = FindObjectOfType<AudioManager>();
 
             if (player == null)
             {
-                Debug.LogError("Object with the tag 'Player' was not found for the projectile.");
+                Debug.LogError("The projectile didn't find a player character.");
             }
 
-            if (player.GetComponent<Character>().FacingRight)
+            if (player.FacingRight)
             {
                 playerFacingRight = true;
             }
-            else if (!player.GetComponent<Character>().FacingRight)
+            else if (!player.FacingRight)
             {
                 playerFacingRight = false;
             }
@@ -75,12 +79,14 @@ namespace RemixGame
                 SpawnMagicblock();
             }
 
+            audioManager.PlaySfx(impactSoundName);
             Destroy(gameObject);
         }
 
         // Method to spawn the magicblock(s)
         private void SpawnMagicblock()
         {
+            audioManager.PlaySfx(impactSoundName);
             Instantiate(magicblock, new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
             Destroy(gameObject);
         }

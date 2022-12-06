@@ -8,9 +8,12 @@ namespace RemixGame
     {
         [SerializeField] private float Speed = 4f;
         [SerializeField] private float projectileDespawnTime = 0.5f;
+        [SerializeField] private string impactSoundName;
 
         private Rigidbody2D projectileRb;
-        private GameObject player;
+        private Character player;
+        private AudioManager audioManager;
+
         private bool playerFacingRight;
         private bool timerPassed = false;
 
@@ -21,18 +24,19 @@ namespace RemixGame
         private void Awake()
         {
             projectileRb = gameObject.GetComponent<Rigidbody2D>();
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = FindObjectOfType<Character>();
+            audioManager = FindObjectOfType<AudioManager>();
 
             if (player == null)
             {
-                Debug.LogError("Object with the tag 'Player' was not found for the projectile.");
+                Debug.LogError("The projectile didn't find a player character.");
             }
 
-            if (player.GetComponent<Character>().FacingRight)
+            if (player.FacingRight)
             {
                 playerFacingRight = true;
             }
-            else if (!player.GetComponent<Character>().FacingRight)
+            else if (!player.FacingRight)
             {
                 playerFacingRight = false;
             }
@@ -67,6 +71,7 @@ namespace RemixGame
         // that it can collide with.
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            audioManager.PlaySfx(impactSoundName);
             Destroy(gameObject);
         }
 

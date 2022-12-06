@@ -88,6 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 7
   projectileDespawnTime: 0.6
+  impactSoundName: Damage projectile impact 1
 --- !u!198 &21433799839881002
 ParticleSystem:
   m_ObjectHideFlags: 0
