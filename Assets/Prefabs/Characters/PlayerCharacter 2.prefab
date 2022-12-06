@@ -408,7 +408,7 @@ MonoBehaviour:
     m_Bits: 2048
   projectileLaunchOffset: {fileID: 9187681200146730428}
   projectile: {fileID: 5823844965593964360, guid: 9ae0d91e47a43404aa45c207af8ff2af, type: 3}
-  otherCharacter: {fileID: 6200283782297569841, guid: 280ab06b6b1733147890179781aab120, type: 3}
+  otherCharacter: {fileID: 0}
   movementSpeed: 6
   jumpingPower: 6
   jumpCd: 0.3
