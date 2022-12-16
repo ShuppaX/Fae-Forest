@@ -132,27 +132,27 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Magic projectile impact 1
-    clip: {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
+    clip: {fileID: 8300000, guid: 75f497d794efce542b68f5be6aa8c05d, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Orc death 1
-    clip: {fileID: 8300000, guid: e3545f54c173ffd4798b6ba43d87d858, type: 3}
+    clip: {fileID: 8300000, guid: b8523e2ff09e050439dcaeb922cc2804, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Warthog death 1
-    clip: {fileID: 8300000, guid: 8fac85f87f03a2848b579485cbba2f5e, type: 3}
+    clip: {fileID: 8300000, guid: 884ac159452e46645b0accf06272b970, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Miniboss death 1
-    clip: {fileID: 8300000, guid: aa523d4b9a1977f47938edd6801e1fca, type: 3}
+    clip: {fileID: 8300000, guid: 4452eee97be79c047a184828f5a9ff88, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Plant death 1
-    clip: {fileID: 8300000, guid: 5e57f2bd9959b8540a2b06e659ad0bba, type: 3}
+    clip: {fileID: 8300000, guid: e7cd7ee244354854a8ca5a0280e71e3d, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}
