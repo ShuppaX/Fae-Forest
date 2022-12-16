@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexOfFinalLevel: 16
-  indexOfFirstLevel: 2
   indexOfTutorialLevel: 1
+  indexOfEndingScreen: 17
   endOfLevelTime: 2.5
 --- !u!114 &2608217712464204267
 MonoBehaviour:
